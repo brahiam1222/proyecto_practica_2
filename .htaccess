@@ -1,0 +1,9 @@
+#Options All -Indexes
+
+#RewriteEngine On
+#RewriteRule ^([-a-zA-Z0-9/]+)$ index.php?pagina=$1
+
+#<Files .htaccess>
+#order allow, deny
+#deny from allow
+#</Files>

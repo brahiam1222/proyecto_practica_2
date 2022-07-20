@@ -1,0 +1,110 @@
+.venEmergente {
+    display: none;
+    top: auto;
+    left: 45em;
+
+}
+
+#Ventana {
+    /* ventana con borde */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border: 1px solid #000;
+    background-color: rgb(111, 211, 255);
+    z-index: 10;
+    padding: 15px 35px;
+    /* color letra */
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    /* bordes redondeados */
+
+    border-radius: 20px;
+
+    box-shadow: 0 0 10px #000;
+
+}
+
+#enlace {
+    text-decoration: none;
+    /* boton */
+    background-color: rgb(255, 255, 255);
+    border: 1px solid #000;
+    border-radius: 20px;
+    padding: 8px 15px;
+    color: black;
+    font-weight: bold
+}
+
+#enlace:hover {
+    background-color: rgb(14, 157, 219);
+    color: white;
+    font-weight: bold
+}
+
+
+
+.button {
+    /*background-color: #4CAF50;  Green */
+    border: none;
+    color: white;
+    padding: 5px 12px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 20px;
+}
+
+#button-agregar {
+    background-color: #4CAF50C4;
+    color: white;
+    text-align: center;
+}
+
+#button-agregar:hover {
+    background-color: #56ca5ac4;
+}
+
+#button-eliminar {
+    background-color: #cf0707a3;
+    color: white;
+    text-align: center;
+}
+
+#button-eliminar:hover {
+    background-color: #db1f1fa3;
+}
+
+/* boton close */
+#btnClose {
+
+    background-color: #cf0707c4;
+    color: white;
+    float: right;
+}
+
+#btnClose:hover {
+    cursor: pointer;
+    background-color: #dd1e1ec4;
+
+    filter: alpha(opacity=40);
+}
+
+#btnClose:active {
+    color: #fff;
+
+    text-shadow: 0 1px 0 #000;
+
+    filter: alpha(opacity=50);
+}
+
+.separar {
+    padding-bottom: 12px;
+    margin-left: 5px;
+}
