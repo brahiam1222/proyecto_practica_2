@@ -49,11 +49,10 @@ if (!isset($_SESSION["validar"])) {
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#" onclick="show('conTerminaciones')">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-users align-text-bottom" aria-hidden="true">
-                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                  <circle cx="9" cy="7" r="4"></circle>
-                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shopping-cart align-text-bottom" aria-hidden="true">
+                  <circle cx="9" cy="21" r="1"></circle>
+                  <circle cx="20" cy="21" r="1"></circle>
+                  <path></path>
                 </svg>
                 Terminaciones
               </a>
@@ -153,7 +152,7 @@ if (!isset($_SESSION["validar"])) {
           </div>
         </div>
         <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-          <h1 class="h2">Registro de Terminacion</h1>
+          <h1 class="h2"></h1>
           <div class="btn-toolbar mb-2 mb-md-0">
             <div class="btn-group me-2">
               <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
@@ -181,30 +180,77 @@ if (!isset($_SESSION["validar"])) {
 
         </div>
 
-        <div id="conTerminaciones" class="container-fluid">
 
 
-          <div class="card">
-            <div class="card-header">
-              <h5 class="card-title">Terminaciones</h5>
-            </div>
-            <div class="card-body">
-              <div class="row">
-                <div class="col-md-12">
-                  <div class="form-group">
-                    <label for="exampleFormControlSelect1"> Seleccione el día del embarque</label>
-                    <input type="date" class="form-control" id="fecha">
+        <div id="tablaterminacion" class="container-fluid">
+          <div class="col-md-7 col-lg-8">
+
+            <div class="card">
+              <div class="card-header">
+                <h5 class="card-title">Terminaciones</h5>
+              </div>
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <label for="exampleFormControlSelect1"> Seleccione el día del embarque</label>
+                      <input type="date" class="form-control" id="fecha">
+                      <label for="fincas">Fincas</label>
+                      <select class="form-control mb-3" id="fincas">
+
+                        <?php $datosTerminacion = ControladorFormulario::ctrMostrarTerminacion("fincas")    ?>
+                        <?php foreach ($datosTerminacion as $selectFincas) { ?>
+                          <option value="<?php echo $selectFincas["id"];  ?>"><?php echo $selectFincas["nombre"];  ?></option>
+                        <?php } ?>
+
+                      </select>
+
+                      <div class="container">
+
+                        <!-- mostrar las terminaciones registradas en la base de datos -->
+                        <div class="row">
+                          <div class="col-md-12">
+                            <div class="table-responsive">
+                              <table class="table table-striped table-bordered table-condensed table-hover">
+                                <thead class="text-center">
+                                  <tr>
+                                    <th>Fecha</th>
+                                    <th>Finca</th>
+                                    <th>Cantidad</th>
+                                    <th>Acciones</th>
+                                  </tr>
+                                </thead>
+                                <tbody class="text-center">
+                                  <?php $datosTerminacion = ControladorFormulario::ctrMostrarTerminacion("terminacion")    ?>
+                                  <?php foreach ($datosTerminacion as $terminacion) { ?>
+                                    <tr>
+                                      <td><?php echo $terminacion["fecha"];  ?></td>
+                                      <td><?php echo $terminacion["finca"];  ?></td>
+
+                                      <td>
+                                        <a href="<?php echo $terminacion["id"];  ?>" class="btn btn-danger btn-sm btn-delete"><i class="fas fa-trash-alt"></i></a>
+                                      </td>
+                                    </tr>
+                                  <?php } ?>
+                                </tbody>
+                              </table>
+                            </div>
+                          </div>
+
+
+                        </div>
+
+
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-
-
         </div>
 
-
-        <div id="Terminacion" class="row g-5">
+        <div id="Terminacion" class="container-fluid">
           <!-- <div class="col-md-5 col-lg-4 order-md-last">
             <h4 class="d-flex justify-content-between align-items-center mb-3">
               <span class="text-primary">Your cart</span>
@@ -282,7 +328,7 @@ if (!isset($_SESSION["validar"])) {
 
                   <?php $datosTerminacion = ControladorFormulario::ctrMostrarTerminacion("fincas")    ?>
                   <?php foreach ($datosTerminacion as $selectFincas) { ?>
-                    <option value="<?php echo $selectFincas["acronimo"];  ?>"><?php echo $selectFincas["nombre"];  ?></option>
+                    <option value="<?php echo $selectFincas["id"];  ?>"><?php echo $selectFincas["nombre"];  ?></option>
                   <?php } ?>
 
                 </select>
@@ -589,3 +635,7 @@ if (!isset($_SESSION["validar"])) {
             </div>
 
           </div>-->
+
+
+
+        </div>

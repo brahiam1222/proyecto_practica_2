@@ -3,12 +3,12 @@ window.onload = function () {
     const inf_Consolidado = document.getElementById('Consolidado');
     const inf_Lluvia = document.getElementById('Lluvia');
     const inf_Terminacion = document.getElementById('Terminacion');
-    const inf_Terminaciones = document.getElementById('conTerminaciones');
+    const inf_tablaTerminaciones = document.getElementById('tablaterminacion');
     const inf_RacimosCortados = document.getElementById('RacimosCortados');
     const inf_FrutaExportada = document.getElementById('FrutaExportada');
 
-    inf_Terminacion.style.display = 'flex';
-    inf_Terminaciones.style.display = 'none';
+    inf_Terminacion.style.display = 'none';
+    inf_tablaTerminaciones.style.display = 'none';
     inf_Consolidado.style.display = 'none';
     inf_Lluvia.style.display = 'none';
     inf_RacimosCortados.style.display = 'none';
@@ -19,33 +19,31 @@ function show(param_div_id) {
     const inf_Consolidado = document.getElementById('Consolidado');
     const inf_Lluvia = document.getElementById('Lluvia');
     const inf_Terminacion = document.getElementById('Terminacion');
-    const inf_Terminaciones = document.getElementById('conTerminaciones');
+    const inf_tablaTerminaciones = document.getElementById('conTerminacion');
     if (param_div_id == 'Consolidado') {
         inf_Consolidado.style.display = 'flex';
         inf_Lluvia.style.display = 'none';
         inf_Terminacion.style.display = 'none';
-        inf_Terminaciones.style.display = 'none';
+        inf_tablaTerminaciones.style.display = 'none';
     }
     else if (param_div_id == 'Lluvia') {
         inf_Consolidado.style.display = 'none';
         inf_Lluvia.style.display = 'flex';
         inf_Terminacion.style.display = 'none';
-        inf_Terminaciones.style.display = 'none';
+        inf_tablaTerminaciones.style.display = 'none';
     }
     else if (param_div_id == 'Terminacion') {
         inf_Consolidado.style.display = 'none';
         inf_Lluvia.style.display = 'none';
         inf_Terminacion.style.display = 'flex';
-        inf_Terminaciones.style.display = 'none';
+        inf_tablaTerminaciones.style.display = 'none';
     }
-    else if (param_div_id == 'conTerminaciones') {
+    else if (param_div_id == 'conTerminacion') {
         inf_Consolidado.style.display = 'none';
         inf_Lluvia.style.display = 'none';
         inf_Terminacion.style.display = 'none';
-        inf_Terminaciones.style.display = 'flex';
+        inf_tablaTerminaciones.style.display = 'flex';
     }
-
-
 
 
 
