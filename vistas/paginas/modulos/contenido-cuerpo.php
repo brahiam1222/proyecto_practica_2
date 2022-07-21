@@ -180,7 +180,7 @@ if (!isset($_SESSION["validar"])) {
 
         </div>
 
-
+<!-- Display de la tabla terminaciones y el cambio de text a int en la tabla fincas de la BD -->
 
         <div id="tablaterminacion" class="container-fluid">
           <div class="col-md-7 col-lg-8">
