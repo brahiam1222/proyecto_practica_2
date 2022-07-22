@@ -19,7 +19,7 @@ function show(param_div_id) {
     const inf_Consolidado = document.getElementById('Consolidado');
     const inf_Lluvia = document.getElementById('Lluvia');
     const inf_Terminacion = document.getElementById('Terminacion');
-    const inf_tablaTerminaciones = document.getElementById('conTerminacion');
+    const inf_tablaTerminaciones = document.getElementById('tablaterminacion');
     if (param_div_id == 'Consolidado') {
         inf_Consolidado.style.display = 'flex';
         inf_Lluvia.style.display = 'none';
@@ -38,7 +38,7 @@ function show(param_div_id) {
         inf_Terminacion.style.display = 'flex';
         inf_tablaTerminaciones.style.display = 'none';
     }
-    else if (param_div_id == 'conTerminacion') {
+    else if (param_div_id == 'tablaterminacion') {
         inf_Consolidado.style.display = 'none';
         inf_Lluvia.style.display = 'none';
         inf_Terminacion.style.display = 'none';
