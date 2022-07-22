@@ -45,6 +45,22 @@ class ModeloFormulario
         // $stmt->close();
         $stmt = null;
     }
+    static public function mdlMostrarTerTabla($tabla, $fecha, $finca)
+    {
+        $stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE fecha = :fecha AND finca = :finca");
+        $stmt->bindParam(":fecha", $fecha, PDO::PARAM_STR);
+        $stmt->bindParam(":finca", $finca, PDO::PARAM_STR);
+        $stmt->execute();
+        return $stmt->fetchAll();
+        // $stmt->close();
+        $stmt = null;
+    }
+
+
+
+
+
+
     //ingresar datos en la base de datos
     static public function mdlIngresarTerminacion($tabla)
     {

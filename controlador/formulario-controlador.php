@@ -52,14 +52,20 @@ class ControladorFormulario
     // guardar datos en la base de datos
     static public function ctrMostrarTerminacion($tabla)
     {
-
-
-
         $respuesta = ModeloFormulario::mdlMostrarTerminacion($tabla);
-
         return $respuesta;
         echo ($respuesta);
     }
+    static public function ctrMostrarTerTabla($tabla, $fecha, $finca)
+    {
+        $respuesta = ModeloFormulario::mdlMostrarTerTabla($tabla, $fecha, $finca);
+        return $respuesta;
+        echo ($respuesta);
+    }
+
+
+
+
     static public function ctrIngresarTerminacion($tabla)
     {
 

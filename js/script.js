@@ -41,6 +41,20 @@ registro.addEventListener('keyup', (e) => {
 
 
 
+const selectFinca = document.querySelector('#fincas');
+selectFinca.addEventListener('change', (e) => {
+    console.log(e.target.value);
+}
+)
+
+
+
+
+
+
+
+
+
 
 
 

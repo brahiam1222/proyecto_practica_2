@@ -195,8 +195,8 @@ if (!isset($_SESSION["validar"])) {
                     <div class="form-group">
                       <label for="exampleFormControlSelect1"> Seleccione el día del embarque</label>
                       <input type="date" class="form-control" id="fecha">
-                      <label for="fincas">Fincas</label>
-                      <select class="form-control mb-3" id="fincas">
+                      <label for="terminacionesFincas">Fincas</label>
+                      <select class="form-control mb-3"  id="terminacionesFincas">
 
                         <?php $datosTerminacion = ControladorFormulario::ctrMostrarTerminacion("fincas")    ?>
                         <?php foreach ($datosTerminacion as $selectFincas) { ?>
@@ -208,6 +208,8 @@ if (!isset($_SESSION["validar"])) {
                       <div class="container">
 
                         <!-- mostrar las terminaciones registradas en la base de datos -->
+                        <!-- script para que se refresque la tabla -->
+                        <!-- Evento que inicie auto la busqueda de las terminaciones por fecha y finca  -->
                         <div class="row">
                           <div class="col-md-12">
                             <div class="table-responsive">
@@ -221,7 +223,7 @@ if (!isset($_SESSION["validar"])) {
                                   </tr>
                                 </thead>
                                 <tbody class="text-center">
-                                  <?php $datosTerminacion = ControladorFormulario::ctrMostrarTerminacion("terminacion")    ?>
+                                  <?php $datosTerminacion = ControladorFormulario::ctrMostrarTerTabla("terminacion", "0000-00-00", "3")    ?>
                                   <?php foreach ($datosTerminacion as $terminacion) { ?>
                                     <tr>
                                       <td><?php echo $terminacion["fecha"];  ?></td>
