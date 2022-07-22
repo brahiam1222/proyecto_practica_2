@@ -223,7 +223,7 @@ if (!isset($_SESSION["validar"])) {
                                   </tr>
                                 </thead>
                                 <tbody class="text-center">
-                                  <?php $datosTerminacion = ControladorFormulario::ctrMostrarTerTabla("terminacion", "0000-00-00", "3")    ?>
+                                  <?php $datosTerminacion = ControladorFormulario::ctrMostrarTerTabla("terminacion", "0000-00-00", "1")    ?>
                                   <?php foreach ($datosTerminacion as $terminacion) { ?>
                                     <tr>
                                       <td><?php echo $terminacion["fecha"];  ?></td>
