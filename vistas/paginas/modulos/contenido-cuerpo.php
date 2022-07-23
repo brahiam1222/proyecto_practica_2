@@ -194,7 +194,7 @@ if (!isset($_SESSION["validar"])) {
                   <div class="col-md-12">
                     <div class="form-group">
                       <label for="exampleFormControlSelect1"> Seleccione el día del embarque</label>
-                      <input type="date" class="form-control" id="fecha">
+                      <input type="date" class="form-control" id="fechaTabla">
                       <label for="terminacionesFincas">Fincas</label>
                       <select class="form-control mb-3"  id="terminacionesFincas">
 
@@ -223,11 +223,19 @@ if (!isset($_SESSION["validar"])) {
                                   </tr>
                                 </thead>
                                 <tbody class="text-center">
-                                  <?php $datosTerminacion = ControladorFormulario::ctrMostrarTerTabla("terminacion", "0000-00-00", "1")    ?>
+                                  <?php $datosTerminacion = ControladorFormulario::ctrMostrarTerTabla("terminacion", "0000-00-00", "3")    ?>
                                   <?php foreach ($datosTerminacion as $terminacion) { ?>
                                     <tr>
                                       <td><?php echo $terminacion["fecha"];  ?></td>
                                       <td><?php echo $terminacion["finca"];  ?></td>
+
+                                      <!-- ya que este modelo me trae toda la terminación que coincida con la fecha y la finca, puedo implementar
+                                            un botón que me redireccione a otra página con estos datos, donde se lleve a cabo la actualización(Update), para luego terminada me 
+                                            regrese a esta página inicial -->
+
+
+
+                                            <!-- No me guarda en la BD de la Página -->
 
                                       <td>
                                         <a href="<?php echo $terminacion["id"];  ?>" class="btn btn-danger btn-sm btn-delete"><i class="fas fa-trash-alt"></i></a>
