@@ -180,7 +180,7 @@ if (!isset($_SESSION["validar"])) {
 
         </div>
 
-<!-- Display de la tabla terminaciones y el cambio de text a int en la tabla fincas de la BD -->
+        <!-- Display de la tabla terminaciones y el cambio de text a int en la tabla fincas de la BD -->
 
         <div id="tablaterminacion" class="container-fluid">
           <div class="col-md-7 col-lg-8">
@@ -198,15 +198,15 @@ if (!isset($_SESSION["validar"])) {
                         <label for="exampleFormControlSelect1"> Seleccione el día del embarque</label>
                         <input type="date" class="form-control" id="fechaTabla">
                         <label for="terminacionesFincas">Fincas</label>
-                        <select class="form-control mb-3"  id="terminacionesFincas">
+                        <select class="form-control mb-3" id="terminacionesFincas">
 
                           <?php $datosTerminacion = ControladorFormulario::ctrMostrarTerminacion("fincas")    ?>
                           <?php foreach ($datosTerminacion as $selectFincas) { ?>
                             <option value="<?php echo $selectFincas["id"];  ?>"><?php echo $selectFincas["nombre"];  ?></option>
-                            <?php } ?>
-                            
-                          </select>
-                        </form>
+                          <?php } ?>
+
+                        </select>
+                      </form>
 
                       <div class="container">
 
@@ -227,15 +227,20 @@ if (!isset($_SESSION["validar"])) {
                                 </thead>
                                 <tbody class="text-center">
                                   <?php
-                                  var_dump($_POST);
-                                  if(isset($_POST["fechaTabla"])){
-                                    $fincaSeleccionada = $_POST["valorFinca"];
-                                    // $fechaSeleccionada = $_POST["valorFinca"];
+                                  // var_dump($_POST);
+                                  // if(isset($_POST["fechaTabla"])){
+                                  // $fincaSeleccionada = $_POST["valorFinca"];
+                                  // $fechaSeleccionada = $_POST["valorFinca"];
+                                //  if(isset($_GET["fechaS"]) && isset($_GET["fincaS"])){
+                                //   $fincaSeleccionada = $_GET["fincaS"];
+                                //   $fechaSeleccionada = $_GET["fechaS"];
+                                  // var_dump($fincaSeleccionada);
+                                  $datosTerminacion = ControladorFormulario::ctrMostrarTerTabla("terminacion", "0000-00-00","1" );
 
-                                    
-                                    $datosTerminacion = ControladorFormulario::ctrMostrarTerTabla("terminacion", "0000-00-00", $fincaSeleccionada);
+
+                                  // $datosTerminacion = ControladorFormulario::ctrMostrarTerTabla("terminacion", $valorFecha, $valorFinca);
                                   // $fincas = $_POST['fincaSeleccionada']; 
-                                  
+
                                   // $datosTerminacion = ControladorFormulario::ctrMostrarTerTabla("terminacion", "0000-00-00","1" )  
                                   ?>
                                   <?php foreach ($datosTerminacion as $terminacion) { ?>
@@ -249,15 +254,14 @@ if (!isset($_SESSION["validar"])) {
 
 
 
-                                            <!-- No me guarda en la BD de la Página -->
-                                            
+                                      <!-- No me guarda en la BD de la Página -->
+
 
                                       <td>
                                         <a href="<?php echo $terminacion["id"];  ?>" class="btn btn-danger btn-sm btn-delete"><i class="fas fa-trash-alt"></i></a>
                                       </td>
                                     </tr>
-                                  <?php } }
-                                      else{echo "No se recibieron datos POST";}?>
+                                  <?php }?>
                                 </tbody>
                               </table>
                             </div>

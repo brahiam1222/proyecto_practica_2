@@ -1,30 +1,34 @@
 const botonEnviar = document.getElementById('enviarterminacion');
 const msg = document.getElementById('mensaje');
-const SelectFinca = document.getElementById('terminacionesFincas');
 
 
 
-SelectFinca.addEventListener('change', function (e) {
-    e.preventDefault();
+
+// const SelectFinca = document.getElementById('terminacionesFincas');
+// let generaTabla = document.querySelector('#generaTabla');
 
 
-    let generaTabla = document.querySelector('#generaTabla');
-    const valorFinca = document.querySelector('#terminacionesFincas').value;
-    const valorFecha = document.getElementById('fechaTabla').value;
 
-    const datos = new FormData(generaTabla);
-    // console.log(e.target.value);
-    // console.log(valorFinca);
+// SelectFinca.addEventListener('change', function (e) {
+//     e.preventDefault();
 
-        fetch('./vistas/paginas/modulos/contenido-cuerpo.php', {
-            method: 'POST',
-            body: datos
-            })
-            .then(res => res.json())
-            .then(data => console.log(data))
-    });
+
+//     const valorFinca = document.querySelector('#terminacionesFincas').value;
+//     const valorFecha = document.getElementById('fechaTabla').value;
+//     window.location.href = window.location.href + "?fechaS=" + valorFecha + "&fincaS=" + valorFinca;
+
+    // const datos = new FormData(generaTabla);
+    // // console.log(e.target.value);
+    // // console.log(valorFinca);
+
+    //     fetch('./vistas/paginas/modulos/contenido-cuerpo.php', {
+    //         method: 'POST',
+    //         body: datos
+    //         })
+            
+    // });
        
-    
+// });
     
     
         // console.log(fincaSeleccionada);    
