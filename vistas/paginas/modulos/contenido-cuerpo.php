@@ -193,17 +193,20 @@ if (!isset($_SESSION["validar"])) {
                 <div class="row">
                   <div class="col-md-12">
                     <div class="form-group">
-                      <label for="exampleFormControlSelect1"> Seleccione el día del embarque</label>
-                      <input type="date" class="form-control" id="fechaTabla">
-                      <label for="terminacionesFincas">Fincas</label>
-                      <select class="form-control mb-3"  id="terminacionesFincas">
+                      <form id="generaTabla">
 
-                        <?php $datosTerminacion = ControladorFormulario::ctrMostrarTerminacion("fincas")    ?>
-                        <?php foreach ($datosTerminacion as $selectFincas) { ?>
-                          <option value="<?php echo $selectFincas["id"];  ?>"><?php echo $selectFincas["nombre"];  ?></option>
-                        <?php } ?>
+                        <label for="exampleFormControlSelect1"> Seleccione el día del embarque</label>
+                        <input type="date" class="form-control" id="fechaTabla">
+                        <label for="terminacionesFincas">Fincas</label>
+                        <select class="form-control mb-3"  id="terminacionesFincas">
 
-                      </select>
+                          <?php $datosTerminacion = ControladorFormulario::ctrMostrarTerminacion("fincas")    ?>
+                          <?php foreach ($datosTerminacion as $selectFincas) { ?>
+                            <option value="<?php echo $selectFincas["id"];  ?>"><?php echo $selectFincas["nombre"];  ?></option>
+                            <?php } ?>
+                            
+                          </select>
+                        </form>
 
                       <div class="container">
 
@@ -223,7 +226,18 @@ if (!isset($_SESSION["validar"])) {
                                   </tr>
                                 </thead>
                                 <tbody class="text-center">
-                                  <?php $datosTerminacion = ControladorFormulario::ctrMostrarTerTabla("terminacion", "0000-00-00", "3")    ?>
+                                  <?php
+                                  var_dump($_POST);
+                                  if(isset($_POST["fechaTabla"])){
+                                    $fincaSeleccionada = $_POST["valorFinca"];
+                                    // $fechaSeleccionada = $_POST["valorFinca"];
+
+                                    
+                                    $datosTerminacion = ControladorFormulario::ctrMostrarTerTabla("terminacion", "0000-00-00", $fincaSeleccionada);
+                                  // $fincas = $_POST['fincaSeleccionada']; 
+                                  
+                                  // $datosTerminacion = ControladorFormulario::ctrMostrarTerTabla("terminacion", "0000-00-00","1" )  
+                                  ?>
                                   <?php foreach ($datosTerminacion as $terminacion) { ?>
                                     <tr>
                                       <td><?php echo $terminacion["fecha"];  ?></td>
@@ -236,12 +250,14 @@ if (!isset($_SESSION["validar"])) {
 
 
                                             <!-- No me guarda en la BD de la Página -->
+                                            
 
                                       <td>
                                         <a href="<?php echo $terminacion["id"];  ?>" class="btn btn-danger btn-sm btn-delete"><i class="fas fa-trash-alt"></i></a>
                                       </td>
                                     </tr>
-                                  <?php } ?>
+                                  <?php } }
+                                      else{echo "No se recibieron datos POST";}?>
                                 </tbody>
                               </table>
                             </div>
@@ -408,7 +424,7 @@ if (!isset($_SESSION["validar"])) {
 
                     </div>
                   </div>
-                  <div class="row">
+                  <div class="separar">
 
                     <div class="col-sm-4 form-label">
                       <a for="RacimosRepicados" id="enlace" class="form-label" onclick="emergentes('RacimosRepicados')">Racimos Repicados</a>

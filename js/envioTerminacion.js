@@ -1,5 +1,35 @@
 const botonEnviar = document.getElementById('enviarterminacion');
 const msg = document.getElementById('mensaje');
+const SelectFinca = document.getElementById('terminacionesFincas');
+
+
+
+SelectFinca.addEventListener('change', function (e) {
+    e.preventDefault();
+
+
+    let generaTabla = document.querySelector('#generaTabla');
+    const valorFinca = document.querySelector('#terminacionesFincas').value;
+    const valorFecha = document.getElementById('fechaTabla').value;
+
+    const datos = new FormData(generaTabla);
+    // console.log(e.target.value);
+    // console.log(valorFinca);
+
+        fetch('./vistas/paginas/modulos/contenido-cuerpo.php', {
+            method: 'POST',
+            body: datos
+            })
+            .then(res => res.json())
+            .then(data => console.log(data))
+    });
+       
+    
+    
+    
+        // console.log(fincaSeleccionada);    
+    
+
 
 botonEnviar.addEventListener('click', function (e) {
 
@@ -168,6 +198,7 @@ botonEnviar.addEventListener('click', function (e) {
                 msg.innerHTML = `<div class="alert alert-success" role="alert">
                              Terminacion subida con éxito!
                            </div>`;
+                location.reload();
                 // msg.innerHTML = `<div class="alert alert-danger" role="alert">
                 // Error al enviar el mensaje!
                 // </div>`;
@@ -230,3 +261,4 @@ botonEnviar.addEventListener('click', function (e) {
         return ajax;
     }
 });
+

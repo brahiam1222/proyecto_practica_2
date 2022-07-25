@@ -41,11 +41,11 @@ registro.addEventListener('keyup', (e) => {
 
 
 
-const selectFinca = document.querySelector('#fincas');
-selectFinca.addEventListener('change', (e) => {
-    console.log(e.target.value);
-}
-)
+// const selectFinca = document.querySelector('#terminacionesFincas').value;
+// selectFinca.addEventListener('change', (e) => {
+//     console.log(e.target.value);
+// }
+// )
 
 
 
