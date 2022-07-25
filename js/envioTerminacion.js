@@ -172,7 +172,7 @@ botonEnviar.addEventListener('click', function (e) {
                 // Error al enviar el mensaje!
                 // </div>`;
 
-                console.log(enviado.length);     //Json Stringfy
+                console.log(enviado);     //Json Stringfy
                 //   console.log(enviado[0]["finca"]);
                 //    var terminacionList = datosTerminacion();
                 //   console.log(terminacionList);                
