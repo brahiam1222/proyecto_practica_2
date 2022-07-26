@@ -252,7 +252,9 @@ if (!isset($_SESSION["validar"])) {
                                   <?php foreach ($datosTerminacion as $terminacion) { ?>
                                     <tr>
                                       <td><?php echo $terminacion["fecha"];  ?></td>
-                                      <td><?php echo $terminacion["finca"];  ?></td>
+                                      <td><?php echo $terminacion["nombre"];  ?></td>
+                                      <td><?php echo json_decode($terminacion["fruta"])[0]->Cod.", ".json_decode($terminacion["fruta"])[1]->Cod;  ?></td>
+                                      
 
                                       <!-- ya que este modelo me trae toda la terminación que coincida con la fecha y la finca, puedo implementar
                                             un botón que me redireccione a otra página con estos datos, donde se lleve a cabo la actualización(Update), para luego terminada me 

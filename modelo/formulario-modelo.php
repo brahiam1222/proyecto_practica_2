@@ -51,15 +51,23 @@ class ModeloFormulario
         $valor = file_get_contents('./Json/terminacion.json');
         $valorTabla = json_decode($valor, true);
 
+        //inner join de fecha y finca
 
-        $stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE fecha = :fecha AND finca = :finca");
+
+
+        $stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla, fincas 
+                                                        WHERE fecha = :fecha 
+                                                        AND finca = :finca
+                                                        AND terminacion.finca = fincas.id;");
+
+                                            
         $stmt->bindParam(":fecha", $valorTabla[0][0]["fecha"], PDO::PARAM_STR);
         $stmt->bindParam(":finca", $valorTabla[0][0]["finca"], PDO::PARAM_STR);
         $stmt->execute();
         // echo json_encode($valorTabla[0][0]["finca"]);
         // echo (json_encode($stmt->fetchAll()));
-        
-        
+
+
         if ($stmt->execute()) {
             $fichero = './Json/terminacion.json';
             $actualJson = file_get_contents($fichero);
@@ -70,7 +78,6 @@ class ModeloFormulario
 
             file_put_contents($fichero, $actualJson);
             return $stmt->fetchAll();
-            
         } else {
             return "error";
         }
