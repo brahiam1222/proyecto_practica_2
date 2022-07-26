@@ -170,7 +170,7 @@ if (!isset($_SESSION["validar"])) {
           </div>
         </div>
 
-        <div id="Consolidado" class="container-fluid">
+        <!-- <div id="Consolidado" class="container-fluid">
           <iframe title="Informe Consolidado de Producción - CNS_MANANTIALES" width="1060" height="700" src="https://app.powerbi.com/view?r=eyJrIjoiMGE4MTY2NTctYzFmNC00ZWUxLWExNDQtNDEzNjRjZDMwMDgwIiwidCI6ImI5NDc0NWY2LTExYjgtNDlkYi04NTdmLTI0MDFhY2U3ZDViOCIsImMiOjR9" frameborder="0" allowFullScreen="true"></iframe>
 
         </div>
@@ -178,7 +178,7 @@ if (!isset($_SESSION["validar"])) {
         <div id="Lluvia" class="container-fluid">
           <iframe title="Informe Precipitacion  y Sigatoka - Lluvia" width="1060" height="750" src="https://app.powerbi.com/view?r=eyJrIjoiNDEyOTYyN2ItYjU3Yi00ZjViLTg4ODgtMzQ5NWRiMzE0ZTNiIiwidCI6ImI5NDc0NWY2LTExYjgtNDlkYi04NTdmLTI0MDFhY2U3ZDViOCIsImMiOjR9" frameborder="0" allowFullScreen="true"></iframe>
 
-        </div>
+        </div> -->
 
         <!-- Display de la tabla terminaciones y el cambio de text a int en la tabla fincas de la BD -->
 
@@ -201,12 +201,18 @@ if (!isset($_SESSION["validar"])) {
                         <select class="form-control mb-3" id="terminacionesFincas">
 
                           <?php $datosTerminacion = ControladorFormulario::ctrMostrarTerminacion("fincas")    ?>
+                          <option>Seleccione una Finca</option>
+                        
                           <?php foreach ($datosTerminacion as $selectFincas) { ?>
                             <option value="<?php echo $selectFincas["id"];  ?>"><?php echo $selectFincas["nombre"];  ?></option>
                           <?php } ?>
 
                         </select>
                       </form>
+
+                      <!-- boton para actualizar -->
+                      <button type="button" class="btn btn-primary" id="actualizaTabla">Actualizar</button>
+                      
 
                       <div class="container">
 
@@ -216,7 +222,7 @@ if (!isset($_SESSION["validar"])) {
                         <div class="row">
                           <div class="col-md-12">
                             <div class="table-responsive">
-                              <table class="table table-striped table-bordered table-condensed table-hover">
+                              <table id="tablaTerminaciones" class="table table-striped table-bordered table-condensed table-hover">
                                 <thead class="text-center">
                                   <tr>
                                     <th>Fecha</th>
@@ -235,13 +241,13 @@ if (!isset($_SESSION["validar"])) {
                                 //   $fincaSeleccionada = $_GET["fincaS"];
                                 //   $fechaSeleccionada = $_GET["fechaS"];
                                   // var_dump($fincaSeleccionada);
-                                  $datosTerminacion = ControladorFormulario::ctrMostrarTerTabla("terminacion", "0000-00-00","1" );
+                                  // $datosTerminacion = ControladorFormulario::ctrMostrarTerTabla("terminacion", "0000-00-00","1" );
 
 
                                   // $datosTerminacion = ControladorFormulario::ctrMostrarTerTabla("terminacion", $valorFecha, $valorFinca);
                                   // $fincas = $_POST['fincaSeleccionada']; 
 
-                                  // $datosTerminacion = ControladorFormulario::ctrMostrarTerTabla("terminacion", "0000-00-00","1" )  
+                                   $datosTerminacion = ControladorFormulario::ctrMostrarTerTabla("terminacion")  
                                   ?>
                                   <?php foreach ($datosTerminacion as $terminacion) { ?>
                                     <tr>
@@ -270,7 +276,7 @@ if (!isset($_SESSION["validar"])) {
 
                         </div>
 
-
+                                    
                       </div>
                     </div>
                   </div>

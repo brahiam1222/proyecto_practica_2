@@ -56,9 +56,9 @@ class ControladorFormulario
         return $respuesta;
         echo ($respuesta);
     }
-    static public function ctrMostrarTerTabla($tabla, $fecha, $finca)
+    static public function ctrMostrarTerTabla($tabla)
     {
-        $respuesta = ModeloFormulario::mdlMostrarTerTabla($tabla, $fecha, $finca);
+        $respuesta = ModeloFormulario::mdlMostrarTerTabla($tabla);
         return $respuesta;
         echo ($respuesta);
     }

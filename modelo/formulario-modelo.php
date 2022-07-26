@@ -45,13 +45,35 @@ class ModeloFormulario
         // $stmt->close();
         $stmt = null;
     }
-    static public function mdlMostrarTerTabla($tabla, $fecha, $finca)
+    static public function mdlMostrarTerTabla($tabla)
     {
+
+        $valor = file_get_contents('./Json/terminacion.json');
+        $valorTabla = json_decode($valor, true);
+
+
         $stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE fecha = :fecha AND finca = :finca");
-        $stmt->bindParam(":fecha", $fecha, PDO::PARAM_STR);
-        $stmt->bindParam(":finca", $finca, PDO::PARAM_STR);
+        $stmt->bindParam(":fecha", $valorTabla[0][0]["fecha"], PDO::PARAM_STR);
+        $stmt->bindParam(":finca", $valorTabla[0][0]["finca"], PDO::PARAM_STR);
         $stmt->execute();
-        return $stmt->fetchAll();
+        // echo json_encode($valorTabla[0][0]["finca"]);
+        // echo (json_encode($stmt->fetchAll()));
+        
+        
+        if ($stmt->execute()) {
+            $fichero = './Json/terminacion.json';
+            $actualJson = file_get_contents($fichero);
+            // $actual = json_decode($actualJson,true);
+            // $valorDecode = json_decode($valor,true);
+            // $actual[] = $valorDecode;
+            $actualJson = json_encode(null);
+
+            file_put_contents($fichero, $actualJson);
+            return $stmt->fetchAll();
+            
+        } else {
+            return "error";
+        }
         // $stmt->close();
         $stmt = null;
     }

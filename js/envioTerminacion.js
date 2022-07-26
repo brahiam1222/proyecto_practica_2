@@ -1,38 +1,94 @@
 const botonEnviar = document.getElementById('enviarterminacion');
 const msg = document.getElementById('mensaje');
+const TbTerminacion = document.getElementById("tablaTerminaciones");
 
 
 
 
-// const SelectFinca = document.getElementById('terminacionesFincas');
+const actualizaTabla = document.getElementById('actualizaTabla');
+
 // let generaTabla = document.querySelector('#generaTabla');
 
 
 
-// SelectFinca.addEventListener('change', function (e) {
-//     e.preventDefault();
+actualizaTabla.addEventListener('click', function (e) {
+    e.preventDefault();
+    var valorFinca = document.querySelector('#terminacionesFincas').value,
+        valorFecha = document.getElementById('fechaTabla').value;
+
+    $(function () {
+        crearTabla();   //crea la tabla
+        
+    });
+
+    function datTabla() {
+        var data = [];
+        data.push({
+            "fecha": valorFecha,
+            "finca": valorFinca
+        })
+        var jsDataTerminacion = { "data": data };
+        return data //jsData--;
+
+    }
+    
+    
+    
+    function crearTabla() {
+        
+        datos = new FormData();
+        datos.append("crearTabla", JSON.stringify(datTabla()));
+        console.log(JSON.stringify(datTabla()));
+
+        __ajax("./ajax/formulario.ajax.php", datos)
+            .done(function (enviado) {
+
+            }
+            )
+            .fail(function () {
+                // console.log("error");
+                window.location.reload();
+            }
+
+            );
+    }
 
 
-//     const valorFinca = document.querySelector('#terminacionesFincas').value;
-//     const valorFecha = document.getElementById('fechaTabla').value;
+    function __ajax(url, datos) {
+        var ajax = $.ajax({
+            url: url,
+            method: "POST",
+            data: datos,
+            cache: false,
+            contentType: false,
+            processData: false,
+            dataType: "json"
+        });
+        return ajax;
+    }
+
+}
+);
+
+
 //     window.location.href = window.location.href + "?fechaS=" + valorFecha + "&fincaS=" + valorFinca;
 
-    // const datos = new FormData(generaTabla);
-    // // console.log(e.target.value);
-    // // console.log(valorFinca);
+// const datos = new FormData(generaTabla);
+// // console.log(e.target.value);
+// // console.log(valorFinca);
 
-    //     fetch('./vistas/paginas/modulos/contenido-cuerpo.php', {
-    //         method: 'POST',
-    //         body: datos
-    //         })
-            
-    // });
-       
+//     fetch('./vistas/paginas/modulos/contenido-cuerpo.php', {
+//         method: 'POST',
+//         body: datos
+//         })
+
 // });
-    
-    
-        // console.log(fincaSeleccionada);    
-    
+
+// });
+
+
+// console.log(fincaSeleccionada);    
+
 
 
 botonEnviar.addEventListener('click', function (e) {
@@ -211,42 +267,6 @@ botonEnviar.addEventListener('click', function (e) {
                 //   console.log(enviado[0]["finca"]);
                 //    var terminacionList = datosTerminacion();
                 //   console.log(terminacionList);                
-            }
-
-            );
-    }
-
-
-
-    // function guardar() {
-
-
-    //     datos = new FormData();
-    //     datos.append("guardarTerminacion", "");
-    //     //  console.log(variableEnvio);
-    //     // var json = JSON.stringify(datosTerminacion());
-    //     __ajax("./ajax/formulario.ajax.php", datos)
-    //     .done(function(enviado){
-    //         console.log(enviado);
-    //         var enviado = JSON.parse(enviado);
-
-
-
-    //       });
-
-    // }
-
-
-    function listar() {
-        datos = new FormData();
-        datos.append("listarTerminacion", "");
-        // console.log(datos);
-
-        __ajax("./ajax/formulario.ajax.php", datos)
-            .done(function (enviado) {
-                console.log(enviado);
-                var terminacionList = JSON.stringify(enviado);
-                console.log(terminacionList);
             }
 
             );

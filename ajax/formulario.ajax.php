@@ -24,6 +24,7 @@ class AjaxFormularios
     public $validarEmail;
     public $validarTerminacion;
     public $saveTerminacion;
+    public $crearTabla;
 
 
     public function ajaxValidarEmail()
@@ -58,6 +59,25 @@ class AjaxFormularios
         $enviado = ControladorFormulario::ctrIngresarTerminacion($tabla);
         echo json_encode($enviado);
     }
+    public function ajaxCrearTabla()
+    {
+        $tabla = "terminacion";
+        $valorTabla = $this->crearTabla;
+        $fichero = '../Json/terminacion.json';
+        $actualJson = file_get_contents($fichero);
+        $actual = json_decode($actualJson, true);
+        $valorDecode = json_decode($valorTabla, true);
+        $actual[] = $valorDecode;
+        
+        $actualJson = json_encode($actual);
+
+        file_put_contents($fichero, $actualJson);
+        
+
+        // $valor = $this->validarTerminacion;
+        $enviado = ControladorFormulario::ctrMostrarTerTabla($tabla);
+        echo json_decode($enviado);
+    }
 
     //recibir datos json
     public function ajaxTerminacion()
@@ -81,6 +101,12 @@ if (isset($_POST["guardarTerminacion"])) {
     $guardar = new AjaxFormularios();
     $guardar->saveTerminacion = $_POST["guardarTerminacion"]; // Estaba en encode
     $guardar->ajaxGuardarTerminacion();
+}
+if (isset($_POST["crearTabla"])) {
+
+    $crear = new AjaxFormularios();
+    $crear->crearTabla = $_POST["crearTabla"]; // Estaba en encode
+    $crear->ajaxCrearTabla();
 }
 
 
