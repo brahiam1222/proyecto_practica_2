@@ -253,7 +253,13 @@ if (!isset($_SESSION["validar"])) {
                                     <tr>
                                       <td><?php echo $terminacion["fecha"];  ?></td>
                                       <td><?php echo $terminacion["nombre"];  ?></td>
-                                      <td><?php echo json_decode($terminacion["fruta"])[0]->Cod.", ".json_decode($terminacion["fruta"])[1]->Cod;  ?></td>
+                                      <td><?php for ($i = 0; $i < count(json_decode($terminacion["fruta"])); $i++) {?>
+                                          <!-- echo "&#x1F4A5;"; -->
+                                          <?php echo json_decode($terminacion["fruta"])[$i]->Cod; } ?>
+                                          
+                                        </td> 
+                                      </td>
+                                      
                                       
 
                                       <!-- ya que este modelo me trae toda la terminación que coincida con la fecha y la finca, puedo implementar
@@ -580,7 +586,7 @@ if (!isset($_SESSION["validar"])) {
                             <tbody>
                               <tr>
                                 <td><input type="text" class="form-control datosTabla" id="" placeholder="" value="1" disabled></td>
-                                <td><input type="text" class="form-control datosTabla" id="" placeholder="" value="" required></td>
+                                <td><input type="text" class="form-control datosTabla" id="fila1" placeholder="" value="" required></td>
                                 <td><input type="text" class="form-control datosTabla" id="" placeholder="" value="" disabled></td>
                                 <td><input type="text" class="form-control datosTabla" id="" placeholder="" value="" required=""></td>
                                 <td><input type="text" class="form-control datosTabla" id="" placeholder="" value="" required=""></td>

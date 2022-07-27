@@ -102,7 +102,7 @@ function insertaFila() {
     let cell5 = row.insertCell(4);
 
     cell1.innerHTML = "<input type='text' class='form-control datosTabla' id='' placeholder='' value=" + conta + " disabled>";
-    cell2.innerHTML = "<input type='text' class='form-control datosTabla' id='' placeholder='' value='' required>";
+    cell2.innerHTML = "<input type='text' class='form-control datosTabla' id='fila"+conta+"' placeholder='' value='' required>";
     cell3.innerHTML = "<input type='text' class='form-control datosTabla' id='' placeholder='' value'' disabled>";
     cell4.innerHTML = "<input type='text' class='form-control datosTabla' id='' placeholder='' value'' required=''>";
     cell5.innerHTML = "<input type='text' class='form-control datosTabla' id='' placeholder='' value'' required=''>";

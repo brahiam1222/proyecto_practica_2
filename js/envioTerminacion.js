@@ -6,11 +6,43 @@ const TbTerminacion = document.getElementById("tablaTerminaciones");
 
 
 const actualizaTabla = document.getElementById('actualizaTabla');
-
+const traerFruta = document.getElementById('tabla');
 // let generaTabla = document.querySelector('#generaTabla');
 
 
 
+traerFruta.addEventListener('change', function (e) {
+    e.preventDefault();
+
+    
+    var conteoFilas = document.getElementsByTagName('tr').length;
+    var valorCode = document.getElementById('fila1');
+    // var valorCode2 = valorCode.getElementsById('fila1');
+        // console.log(valorCode);
+        // console.log(conteoFilas);
+        //for para crear variables nuevas por cada fila
+        for (let i = 0; i < conteoFilas; i++) {
+            var valorCode = document.getElementById('fila' + i);
+            //añadir un id a cada tr fruta al igual que se hizo con la fila, para darle valores nuevos cuando sean leidos de la base de datos
+        }
+     $(function () {
+         traerFruta();
+        
+     });
+
+    // function datTabla() {
+    //     var data = [];
+    //     data.push({
+    //         "fecha": valorFecha,
+    //         "finca": valorFinca
+    //     })
+    //     var jsDataTerminacion = { "data": data };
+    //     return data //jsData--;
+
+    //}
+}
+);
+    
 actualizaTabla.addEventListener('click', function (e) {
     e.preventDefault();
     var valorFinca = document.querySelector('#terminacionesFincas').value,
