@@ -253,7 +253,7 @@ if (!isset($_SESSION["validar"])) {
                                     <tr>
                                       <td><?php echo $terminacion["fecha"];  ?></td>
                                       <td><?php echo $terminacion["nombre"];  ?></td>
-                                      <td><?php echo json_decode($terminacion["fruta"])[0]->Cod.", ".json_decode($terminacion["fruta"])[1]->Cod;  ?></td>
+                                      <td><?php echo json_decode($terminacion["fruta"])[0]->fila;  ?></td>
                                       
 
                                       <!-- ya que este modelo me trae toda la terminación que coincida con la fecha y la finca, puedo implementar
