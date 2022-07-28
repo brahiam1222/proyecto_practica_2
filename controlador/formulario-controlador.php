@@ -61,6 +61,15 @@ class ControladorFormulario
         $respuesta = ModeloFormulario::mdlMostrarTerTabla($tabla);
         return $respuesta;
         echo ($respuesta);
+        
+    }
+    static public function ctrTraerFruta($tabla)
+    {
+        $respuesta = ModeloFormulario::mdlTraerFruta($tabla);
+        return $respuesta;
+        echo ($respuesta);
+        //script de ventana modal
+        
     }
 
 

@@ -84,6 +84,42 @@ class ModeloFormulario
         // $stmt->close();
         $stmt = null;
     }
+    static public function mdlTraerFruta($tabla)
+    {
+
+        $valor = file_get_contents('./Json/terminacion.json');
+        $valorFrutas = json_decode($valor, true);
+
+        //inner join de fecha y finca
+
+
+        echo ($valorFrutas);
+
+        $stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE cod = :cod;");
+
+                                            
+         $stmt->bindParam(":cod", $valorFrutas[0]["cod"], PDO::PARAM_STR);
+        $stmt->execute();
+         // echo json_encode($valorFrutas[0][0]["cod"]);
+
+
+        if ($stmt->execute()) {
+            $fichero = './Json/terminacion.json';
+            $actualJson = file_get_contents($fichero);
+            // $actual = json_decode($actualJson,true);
+            // $valorDecode = json_decode($valor,true);
+            // $actual[] = $valorDecode;
+            $actualJson = json_encode(null);
+            echo ($stmt->fetch());
+
+            file_put_contents($fichero, $actualJson);
+            return $stmt->fetch();
+        } else {
+            return "error";
+        }
+        // $stmt->close();
+        $stmt = null;
+    }
 
 
 

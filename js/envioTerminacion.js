@@ -24,7 +24,7 @@ traerFruta.addEventListener('change', function (e) {
     for (var i = 1; i < filas.length; i++) {
         var celdas = filas[i].getElementsByTagName('td');
         var fila = {            
-            "Cod": celdas[1].firstChild.value,                        
+            "cod": celdas[1].firstChild.value,                        
         };
         ArrayCode.push(fila);
     }
@@ -46,6 +46,40 @@ traerFruta.addEventListener('change', function (e) {
         return dataCode //jsData--;
 
     }
+
+
+    function traerFruta() {
+        
+        datos = new FormData();
+        datos.append("traerFruta", JSON.stringify(datCodigos()));
+        
+        // console.log(JSON.stringify(datCodigos()));
+        __ajax("./ajax/formulario.ajax.php", datos)
+            .done(function (enviado) {
+
+            }
+            )
+            .fail(function () {
+                // console.log("error");
+                // window.location.reload();
+            }
+
+            );
+    }
+
+    function __ajax(url, datos) {
+        var ajax = $.ajax({
+            url: url,
+            method: "POST",
+            data: datos,
+            cache: false,
+            contentType: false,
+            processData: false,
+            dataType: "json"
+        });
+        return ajax;
+    }
+
     // console.log(ArrayCode);
 
 
@@ -90,7 +124,7 @@ actualizaTabla.addEventListener('click', function (e) {
         data.push({
             "fecha": valorFecha,
             "finca": valorFinca
-        })
+        });
         var jsDataTerminacion = { "data": data };
         return data //jsData--;
 

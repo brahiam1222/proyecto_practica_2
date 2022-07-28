@@ -586,7 +586,14 @@ if (!isset($_SESSION["validar"])) {
                             <tbody>
                               <tr>
                                 <td><input type="text" class="form-control datosTabla" id="" placeholder="" value="1" disabled></td>
-                                <td><input type="text" class="form-control datosTabla" id="fila1" placeholder="" value="" required></td>
+                                <td><input type="text" class="form-control datosTabla" id="fila1" placeholder="" value="" required><?php 
+                                                                                        
+                                                                                        
+                                                                                        $datosFruta = ControladorFormulario::ctrTraerFruta("tapas");
+                                                                                        echo json_decode(($datosFruta->cod));
+
+
+                                                                                                                                  ?></td>
                                 <td><input type="text" class="form-control datosTabla" id="" placeholder="" value="" disabled></td>
                                 <td><input type="text" class="form-control datosTabla" id="" placeholder="" value="" required=""></td>
                                 <td><input type="text" class="form-control datosTabla" id="" placeholder="" value="" required=""></td>
