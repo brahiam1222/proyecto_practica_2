@@ -13,22 +13,54 @@ const traerFruta = document.getElementById('tabla');
 
 traerFruta.addEventListener('change', function (e) {
     e.preventDefault();
+    var ArrayCode = new Array();
 
+   
     
-    var conteoFilas = document.getElementsByTagName('tr').length;
-    var valorCode = document.getElementById('fila1');
-    // var valorCode2 = valorCode.getElementsById('fila1');
-        // console.log(valorCode);
-        // console.log(conteoFilas);
-        //for para crear variables nuevas por cada fila
-        for (let i = 0; i < conteoFilas; i++) {
-            var valorCode = document.getElementById('fila' + i);
-            //añadir un id a cada tr fruta al igual que se hizo con la fila, para darle valores nuevos cuando sean leidos de la base de datos
-        }
-     $(function () {
-         traerFruta();
+
+
+    var tabla = document.getElementById('tabla');
+    var filas = tabla.getElementsByTagName('tr');
+    for (var i = 1; i < filas.length; i++) {
+        var celdas = filas[i].getElementsByTagName('td');
+        var fila = {            
+            "Cod": celdas[1].firstChild.value,                        
+        };
+        ArrayCode.push(fila);
+    }
+
+
+    $(function () {
+        traerFruta();
         
      });
+
+     
+
+    function datCodigos() {
+        var dataCode = [];
+        dataCode.push({
+            "ArrayCode": ArrayCode            
+        })
+        var jsdataCodeTerminacion = { "dataCode": dataCode };
+        return dataCode //jsData--;
+
+    }
+    // console.log(ArrayCode);
+
+
+
+    // var conteoFilas = document.getElementsByTagName('tr').length;
+    // var valorCode = document.getElementById('fila1');
+    // // var valorCode2 = valorCode.getElementsById('fila1');
+    // console.log(conteoFilas);
+    // //for para crear variables nuevas por cada fila
+    // for (let i = 0; i < conteoFilas; i++) {
+    //     var valorCode = document.getElementById('fila' + i).value;
+    //     console.log(valorCode);
+    //         //añadir un id a cada tr fruta al igual que se hizo con la fila, para darle valores nuevos cuando sean leidos de la base de datos
+    //     }
+     
 
     // function datTabla() {
     //     var data = [];
