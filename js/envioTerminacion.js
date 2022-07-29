@@ -60,7 +60,7 @@ traerFruta.addEventListener('change', function (e) {
             }
             )
             .fail(function () {
-                // console.log("error");
+                //  console.log(enviado);
                 // window.location.reload();
             }
 

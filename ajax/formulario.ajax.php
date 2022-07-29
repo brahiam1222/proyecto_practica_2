@@ -83,7 +83,7 @@ class AjaxFormularios
     {
         $tabla = "tapas";
         $valorCod = $this->traerFruta;
-        $fichero = '../Json/terminacion.json';
+        $fichero = '../Json/bdFrutas.json';
         $actualJson = file_get_contents($fichero);
         $actual = json_decode($actualJson, true);
         $valorDecode = json_decode($valorCod, true);
@@ -97,8 +97,8 @@ class AjaxFormularios
         
 
         // $valor = $this->validarTerminacion;
-      
-        echo json_decode($enviado);
+        
+        echo ($enviado);
     }
 
     //recibir datos json

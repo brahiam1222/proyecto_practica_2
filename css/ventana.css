@@ -5,6 +5,10 @@
 
 }
 
+.form-control .form-control2 {
+    width: 50%;
+}
+
 #Ventana {
     /* ventana con borde */
     position: absolute;

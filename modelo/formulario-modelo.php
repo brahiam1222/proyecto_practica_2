@@ -74,7 +74,7 @@ class ModeloFormulario
             // $actual = json_decode($actualJson,true);
             // $valorDecode = json_decode($valor,true);
             // $actual[] = $valorDecode;
-            $actualJson = json_encode(null);
+             $actualJson = json_encode(null);
 
             file_put_contents($fichero, $actualJson);
             return $stmt->fetchAll();
@@ -84,36 +84,51 @@ class ModeloFormulario
         // $stmt->close();
         $stmt = null;
     }
+
+
+
+//*IDEA* Traer los datos de fruta al momento de dar click en el "Boton" (Fruta Exportada) con js.
+
+
     static public function mdlTraerFruta($tabla)
     {
 
-        $valor = file_get_contents('./Json/terminacion.json');
+        $valor = file_get_contents('./Json/bdFrutas.json');
         $valorFrutas = json_decode($valor, true);
 
         //inner join de fecha y finca
 
 
-        echo ($valorFrutas);
+        // echo json_encode($valorFrutas);
 
         $stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE cod = :cod;");
+        $stmt->bindParam(":cod", $valorFrutas[0][0]["ArrayCode"][0]["cod"], PDO::PARAM_STR);
+        
+        // foreach($valorFrutas as $codigo){
 
-                                            
-         $stmt->bindParam(":cod", $valorFrutas[0]["cod"], PDO::PARAM_STR);
+        //     if (     ) {
+                
+        //     }
+
+
+
+        // }
+
         $stmt->execute();
          // echo json_encode($valorFrutas[0][0]["cod"]);
 
 
         if ($stmt->execute()) {
-            $fichero = './Json/terminacion.json';
+            $fichero = './Json/bdFrutas.json';
             $actualJson = file_get_contents($fichero);
             // $actual = json_decode($actualJson,true);
             // $valorDecode = json_decode($valor,true);
             // $actual[] = $valorDecode;
-            $actualJson = json_encode(null);
-            echo ($stmt->fetch());
+              $actualJson = json_encode(null);
+            //  echo count($valorFrutas[0][0]["ArrayCode"]);
 
             file_put_contents($fichero, $actualJson);
-            return $stmt->fetch();
+            return $stmt->fetchAll();
         } else {
             return "error";
         }
@@ -217,7 +232,7 @@ class ModeloFormulario
             // $actual = json_decode($actualJson,true);
             // $valorDecode = json_decode($valor,true);
             // $actual[] = $valorDecode;
-            $actualJson = json_encode(null);
+             $actualJson = json_encode(null);
 
             file_put_contents($fichero, $actualJson);
             return $valorTerminacion;

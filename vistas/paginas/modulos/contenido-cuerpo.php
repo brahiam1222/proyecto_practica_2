@@ -565,7 +565,7 @@ if (!isset($_SESSION["validar"])) {
 
 
                       </div>
-                      <div id="FrutaExportada" class="col-sm-4 form-group venEmergente">
+                      <div id="FrutaExportada" class="col-sm-6 form-group venEmergente">
                         <div id="Ventana">
                           <button id="btnClose" type="button" onclick="sinemergentes('FrutaExportada')" class="button" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
@@ -574,6 +574,7 @@ if (!isset($_SESSION["validar"])) {
 
                           <!-- tabla de 4 columnas -->
                           <table id="tabla" class="table table-bordered">
+                            <?php $datosFruta = ControladorFormulario::ctrTraerFruta("tapas"); ?>
                             <thead>
                               <tr>
                                 <th>#</th>
@@ -586,15 +587,8 @@ if (!isset($_SESSION["validar"])) {
                             <tbody>
                               <tr>
                                 <td><input type="text" class="form-control datosTabla" id="" placeholder="" value="1" disabled></td>
-                                <td><input type="text" class="form-control datosTabla" id="fila1" placeholder="" value="" required><?php 
-                                                                                        
-                                                                                        
-                                                                                        $datosFruta = ControladorFormulario::ctrTraerFruta("tapas");
-                                                                                        echo json_decode(($datosFruta->cod));
-
-
-                                                                                                                                  ?></td>
-                                <td><input type="text" class="form-control datosTabla" id="" placeholder="" value="" disabled></td>
+                                <td><input type="text" class="form-control datosTabla" id="fila1" placeholder="" value="" required></td>
+                                <td><input type="text" class="form-control datosTabla" id="" placeholder="" value="<?php   echo ($datosFruta[0]['descripcion']);  ?>" disabled></td>
                                 <td><input type="text" class="form-control datosTabla" id="" placeholder="" value="" required=""></td>
                                 <td><input type="text" class="form-control datosTabla" id="" placeholder="" value="" required=""></td>
                               </tr>
