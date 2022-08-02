@@ -88,24 +88,24 @@ function sinemergentes(param_div_id) {
 
 
 
-function insertaFila() {
+function insertaFila(tblId) {
     //bucle para insertar filas
-    let conta = document.getElementById('tabla').rows.length;
+    let conta = document.getElementById(tblId).rows.length;
 
     // let fila = document.getElementById('tabla').insertRow(i);
-    let table = document.getElementById("tabla");
-    let row = table.insertRow();
-    let cell1 = row.insertCell(0);
-    let cell2 = row.insertCell(1);
-    let cell3 = row.insertCell(2);
-    let cell4 = row.insertCell(3);
-    let cell5 = row.insertCell(4);
+    let table = document.getElementById(tblId).tBodies[0];
+    let row =   table.rows[0].cloneNode(true);
+    table.appendChild(row);
+    // let row = table.insertRow();
+    // let cell1 = row.insertCell(0);
+    // let cell2 = row.insertCell(2);
+    // let cell3 = row.insertCell(3);
+    // let cell4 = row.insertCell(4);
 
-    cell1.innerHTML = "<input type='text' class='form-control datosTabla' id='' placeholder='' value=" + conta + " disabled>";
-    cell2.innerHTML = "<input type='text' class='form-control datosTabla' id='fila"+conta+"' placeholder='' value='' required>";
-    cell3.innerHTML = "<input type='text' class='form-control datosTabla' id='' placeholder='' value'' disabled>";
-    cell4.innerHTML = "<input type='text' class='form-control datosTabla' id='' placeholder='' value'' required=''>";
-    cell5.innerHTML = "<input type='text' class='form-control datosTabla' id='' placeholder='' value'' required=''>";
+    // cell1.innerHTML = "<input type='text' class='form-control datosTabla' id='' placeholder='' value=" + conta + " disabled>";
+    // cell2.innerHTML = "<input type='text' class='form-control datosTabla' id='fila"+conta+"' placeholder='' value='' required>";
+    // cell3.innerHTML = "<input type='text' class='form-control datosTabla' id='' placeholder='' value'' required=''>";
+    // cell4.innerHTM   L = "<input type='text' class='form-control datosTabla' id='' placeholder='' value'' required=''>";
 
 
     // const tabla = document.getElementById('tabla').insertRow();

@@ -574,11 +574,10 @@ if (!isset($_SESSION["validar"])) {
 
                           <!-- tabla de 4 columnas -->
                           <table id="tabla" class="table table-bordered">
-                            <?php $datosFruta = ControladorFormulario::ctrTraerFruta("tapas"); ?>
+                          <?php  $conteo=0  ?>
                             <thead>
                               <tr>
                                 <th>#</th>
-                                <th>Codigo</th>
                                 <th>Fruta</th>
                                 <th>Cantidad</th>
                                 <th>Rechazo</th>
@@ -586,9 +585,19 @@ if (!isset($_SESSION["validar"])) {
                             </thead>
                             <tbody>
                               <tr>
-                                <td><input type="text" class="form-control datosTabla" id="" placeholder="" value="1" disabled></td>
-                                <td><input type="text" class="form-control datosTabla" id="fila1" placeholder="" value="" required></td>
-                                <td><input type="text" class="form-control datosTabla" id="" placeholder="" value="<?php   echo ($datosFruta[0]['descripcion']);  ?>" disabled></td>
+                                <td><input type="text" class="form-control datosTabla" id="" placeholder="" value="<?php echo ($conteo) ?>" disabled></td>
+                                <td><select class="form-control mb-3" id="Tapas">
+
+                                  
+                                  <?php $datosFruta = ControladorFormulario::ctrTraerFruta("tapas"); ?>
+                                      <option>Seleccione una Fruta</option>
+
+                                            <?php foreach ($datosFruta as $selectFrutas) { ?>
+                                              <option value="<?php echo ($selectFrutas["cod"]);  ?>"><?php echo ($selectFrutas["descripcion"]);  ?></option>
+                                            <?php } ?>
+
+                                            </select></td>
+
                                 <td><input type="text" class="form-control datosTabla" id="" placeholder="" value="" required=""></td>
                                 <td><input type="text" class="form-control datosTabla" id="" placeholder="" value="" required=""></td>
                               </tr>
@@ -596,7 +605,7 @@ if (!isset($_SESSION["validar"])) {
                           </table>
 
                           <input type="button" class="button" id="button-eliminar" value="-" onclick="eliminaFila()">
-                          <input type="button" class="button" id="button-agregar" value="+" onclick="insertaFila()">
+                          <input type="button" class="button" id="button-agregar" value="+" onclick="insertaFila('tabla')">
                         </div>
 
                       </div>

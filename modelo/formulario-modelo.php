@@ -93,16 +93,16 @@ class ModeloFormulario
     static public function mdlTraerFruta($tabla)
     {
 
-        $valor = file_get_contents('./Json/bdFrutas.json');
-        $valorFrutas = json_decode($valor, true);
+        // $valor = file_get_contents('./Json/bdFrutas.json');
+        // $valorFrutas = json_decode($valor, true);
 
         //inner join de fecha y finca
 
 
         // echo json_encode($valorFrutas);
 
-        $stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE cod = :cod;");
-        $stmt->bindParam(":cod", $valorFrutas[0][0]["ArrayCode"][0]["cod"], PDO::PARAM_STR);
+        $stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla");
+        // $stmt->bindParam(":cod", $valorFrutas[0][0]["ArrayCode"][0]["cod"], PDO::PARAM_STR);
         
         // foreach($valorFrutas as $codigo){
 
@@ -119,15 +119,15 @@ class ModeloFormulario
 
 
         if ($stmt->execute()) {
-            $fichero = './Json/bdFrutas.json';
-            $actualJson = file_get_contents($fichero);
+            // $fichero = './Json/bdFrutas.json';
+            // $actualJson = file_get_contents($fichero);
             // $actual = json_decode($actualJson,true);
             // $valorDecode = json_decode($valor,true);
             // $actual[] = $valorDecode;
-              $actualJson = json_encode(null);
+            //   $actualJson = json_encode(null);
             //  echo count($valorFrutas[0][0]["ArrayCode"]);
 
-            file_put_contents($fichero, $actualJson);
+            // file_put_contents($fichero, $actualJson);
             return $stmt->fetchAll();
         } else {
             return "error";

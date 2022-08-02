@@ -6,79 +6,79 @@ const TbTerminacion = document.getElementById("tablaTerminaciones");
 
 
 const actualizaTabla = document.getElementById('actualizaTabla');
-const traerFruta = document.getElementById('tabla');
+// const traerFruta = document.getElementById('tabla');
 // let generaTabla = document.querySelector('#generaTabla');
 
 
 
-traerFruta.addEventListener('change', function (e) {
-    e.preventDefault();
-    var ArrayCode = new Array();
+// traerFruta.addEventListener('change', function (e) {
+//     e.preventDefault();
+//     var ArrayCode = new Array();
 
    
     
 
 
-    var tabla = document.getElementById('tabla');
-    var filas = tabla.getElementsByTagName('tr');
-    for (var i = 1; i < filas.length; i++) {
-        var celdas = filas[i].getElementsByTagName('td');
-        var fila = {            
-            "cod": celdas[1].firstChild.value,                        
-        };
-        ArrayCode.push(fila);
-    }
+//     var tabla = document.getElementById('tabla');
+//     var filas = tabla.getElementsByTagName('tr');
+//     for (var i = 1; i < filas.length; i++) {
+//         var celdas = filas[i].getElementsByTagName('td');
+//         var fila = {            
+//             "cod": celdas[1].firstChild.value,                        
+//         };
+//         ArrayCode.push(fila);
+//     }
 
 
-    $(function () {
-        traerFruta();
+//     $(function () {
+//         traerFruta();
         
-     });
+//      });
 
      
 
-    function datCodigos() {
-        var dataCode = [];
-        dataCode.push({
-            "ArrayCode": ArrayCode            
-        })
-        var jsdataCodeTerminacion = { "dataCode": dataCode };
-        return dataCode //jsData--;
+//     function datCodigos() {
+//         var dataCode = [];
+//         dataCode.push({
+//             "ArrayCode": ArrayCode            
+//         })
+//         var jsdataCodeTerminacion = { "dataCode": dataCode };
+//         return dataCode //jsData--;
 
-    }
+//     }
 
 
-    function traerFruta() {
+//     function traerFruta() {
         
-        datos = new FormData();
-        datos.append("traerFruta", JSON.stringify(datCodigos()));
+//         datos = new FormData();
+//         datos.append("traerFruta", JSON.stringify(datCodigos()));
         
-        // console.log(JSON.stringify(datCodigos()));
-        __ajax("./ajax/formulario.ajax.php", datos)
-            .done(function (enviado) {
+//         // console.log(JSON.stringify(datCodigos()));
+//         __ajax("./ajax/formulario.ajax.php", datos)
+//             .done(function (enviado) {
 
-            }
-            )
-            .fail(function () {
-                //  console.log(enviado);
-                // window.location.reload();
-            }
+//             }
+//             )
+//             .fail(function () {
+//                 //  console.log(enviado);
+//                 // window.location.reload();
+//             }
 
-            );
-    }
+//             );
+//     }
 
-    function __ajax(url, datos) {
-        var ajax = $.ajax({
-            url: url,
-            method: "POST",
-            data: datos,
-            cache: false,
-            contentType: false,
-            processData: false,
-            dataType: "json"
-        });
-        return ajax;
-    }
+//     function __ajax(url, datos) {
+//         var ajax = $.ajax({
+//             url: url,
+//             method: "POST",
+//             data: datos,
+//             cache: false,
+//             contentType: false,
+//             processData: false,
+//             dataType: "json"
+//         });
+//         return ajax;
+//     }
 
     // console.log(ArrayCode);
 
@@ -106,8 +106,8 @@ traerFruta.addEventListener('change', function (e) {
     //     return data //jsData--;
 
     //}
-}
-);
+// }
+// );
     
 actualizaTabla.addEventListener('click', function (e) {
     e.preventDefault();
