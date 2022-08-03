@@ -90,12 +90,20 @@ function sinemergentes(param_div_id) {
 
 function insertaFila(tblId) {
     //bucle para insertar filas
-    let conta = document.getElementById(tblId).rows.length;
 
+    var tabla = document.getElementById('tabla');
+    
+    
     // let fila = document.getElementById('tabla').insertRow(i);
     let table = document.getElementById(tblId).tBodies[0];
     let row =   table.rows[0].cloneNode(true);
     table.appendChild(row);
+    let conta = document.getElementById(tblId).rows.length;
+    var filas = tabla.getElementsByTagName('tr')[conta-1];
+    var celdas = filas.getElementsByTagName('td')[0].firstChild;
+    celdas.value = conta-1;
+    // console.log(celdas);
+    // console.log(conta);
     // let row = table.insertRow();
     // let cell1 = row.insertCell(0);
     // let cell2 = row.insertCell(2);

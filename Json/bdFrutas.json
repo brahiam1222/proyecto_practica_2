@@ -1,1 +1,26 @@
-[[{"ArrayCode":[{"cod":"223"}]}]]
+[
+    {
+        "fila": 1,
+        "Fruta": "10000",
+        "Cjs": "54",
+        "CjsRechazadas": "1"
+    },
+    {
+        "fila": 2,
+        "Fruta": "23",
+        "Cjs": "216",
+        "CjsRechazadas": "9"
+    },
+    {
+        "fila": 3,
+        "Fruta": "10000",
+        "Cjs": "26",
+        "CjsRechazadas": "0"
+    },
+    {
+        "fila": 4,
+        "Fruta": "23",
+        "Cjs": "700",
+        "CjsRechazadas": "300"
+    }
+]

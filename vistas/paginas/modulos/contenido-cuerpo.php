@@ -202,7 +202,7 @@ if (!isset($_SESSION["validar"])) {
 
                           <?php $datosTerminacion = ControladorFormulario::ctrMostrarTerminacion("fincas")    ?>
                           <option>Seleccione una Finca</option>
-                        
+
                           <?php foreach ($datosTerminacion as $selectFincas) { ?>
                             <option value="<?php echo $selectFincas["id"];  ?>"><?php echo $selectFincas["nombre"];  ?></option>
                           <?php } ?>
@@ -212,7 +212,7 @@ if (!isset($_SESSION["validar"])) {
 
                       <!-- boton para actualizar -->
                       <button type="button" class="btn btn-primary" id="actualizaTabla">Actualizar</button>
-                      
+
 
                       <div class="container">
 
@@ -237,9 +237,9 @@ if (!isset($_SESSION["validar"])) {
                                   // if(isset($_POST["fechaTabla"])){
                                   // $fincaSeleccionada = $_POST["valorFinca"];
                                   // $fechaSeleccionada = $_POST["valorFinca"];
-                                //  if(isset($_GET["fechaS"]) && isset($_GET["fincaS"])){
-                                //   $fincaSeleccionada = $_GET["fincaS"];
-                                //   $fechaSeleccionada = $_GET["fechaS"];
+                                  //  if(isset($_GET["fechaS"]) && isset($_GET["fincaS"])){
+                                  //   $fincaSeleccionada = $_GET["fincaS"];
+                                  //   $fechaSeleccionada = $_GET["fechaS"];
                                   // var_dump($fincaSeleccionada);
                                   // $datosTerminacion = ControladorFormulario::ctrMostrarTerTabla("terminacion", "0000-00-00","1" );
 
@@ -247,20 +247,21 @@ if (!isset($_SESSION["validar"])) {
                                   // $datosTerminacion = ControladorFormulario::ctrMostrarTerTabla("terminacion", $valorFecha, $valorFinca);
                                   // $fincas = $_POST['fincaSeleccionada']; 
 
-                                   $datosTerminacion = ControladorFormulario::ctrMostrarTerTabla("terminacion")  
+                                  $datosTerminacion = ControladorFormulario::ctrMostrarTerTabla("terminacion")
                                   ?>
                                   <?php foreach ($datosTerminacion as $terminacion) { ?>
                                     <tr>
                                       <td><?php echo $terminacion["fecha"];  ?></td>
                                       <td><?php echo $terminacion["nombre"];  ?></td>
-                                      <td><?php for ($i = 0; $i < count(json_decode($terminacion["fruta"])); $i++) {?>
+                                      <td><?php for ($i = 0; $i < count(json_decode($terminacion["fruta"])); $i++) { ?>
                                           <!-- echo "&#x1F4A5;"; -->
-                                          <?php echo json_decode($terminacion["fruta"])[$i]->Cod; } ?>
-                                          
-                                        </td> 
+                                        <?php echo json_decode($terminacion["fruta"])[$i]->Fruta;
+                                          } ?>
+
                                       </td>
-                                      
-                                      
+                                      </td>
+
+
 
                                       <!-- ya que este modelo me trae toda la terminación que coincida con la fecha y la finca, puedo implementar
                                             un botón que me redireccione a otra página con estos datos, donde se lleve a cabo la actualización(Update), para luego terminada me 
@@ -275,7 +276,7 @@ if (!isset($_SESSION["validar"])) {
                                         <a href="<?php echo $terminacion["id"];  ?>" class="btn btn-danger btn-sm btn-delete"><i class="fas fa-trash-alt"></i></a>
                                       </td>
                                     </tr>
-                                  <?php }?>
+                                  <?php } ?>
                                 </tbody>
                               </table>
                             </div>
@@ -284,7 +285,7 @@ if (!isset($_SESSION["validar"])) {
 
                         </div>
 
-                                    
+
                       </div>
                     </div>
                   </div>
@@ -504,14 +505,18 @@ if (!isset($_SESSION["validar"])) {
                       <label for="defecto1">Defecto 1</label>
                       <div class="input-group">
 
-                        <select class="form-control mb-3" id="defecto1">
-                          <option value="108">Cicatriz Manejo</option>
-                          <option value="214">Desgarre</option>
-                          <option value="401">Malformado</option>
-                          <option value="106">Latex Viejo</option>
-                          <option value="502">Bajo Grado</option>
-                          <option value="210">Sobre Grado</option>
-                        </select>
+                        <td><select class="form-control mb-3" id="defecto1">
+
+
+                            <?php $datosDefecto = ControladorFormulario::ctrMostrarTerminacion("defectos"); ?>
+                            <option>Seleccione el Defecto</option>
+
+                            <?php foreach ($datosDefecto as $selectDefecto) { ?>
+                              <option value="<?php echo ($selectDefecto["codigo"]);  ?>"><?php echo ($selectDefecto["nombre"]);  ?></option>
+                            <?php } ?>
+
+                          </select></td>
+
                         <input class="form-control mb-3" id="valDefecto1" type="text">
                         <span class=""> % </span>
                       </div>
@@ -521,15 +526,17 @@ if (!isset($_SESSION["validar"])) {
                       <label for="defecto2">Defecto 2</label>
                       <div class="input-group">
 
-                        <select class="form-control mb-3" id="defecto2">
-                          <option value="108">Cicatriz Manejo</option>
-                          <option value="214">Desgarre</option>
-                          <option value="401">Malformado</option>
-                          <option value="106">Latex Viejo</option>
-                          <option value="502">Bajo Grado</option>
-                          <option value="320">Bacteriosis</option>
-                          <option value="210">Sobre Grado</option>
-                        </select>
+                        <td><select class="form-control mb-3" id="defecto2">
+
+
+                            <?php $datosDefecto = ControladorFormulario::ctrMostrarTerminacion("defectos"); ?>
+                            <option>Seleccione el Defecto</option>
+
+                            <?php foreach ($datosDefecto as $selectDefecto) { ?>
+                              <option value="<?php echo ($selectDefecto["codigo"]);  ?>"><?php echo ($selectDefecto["nombre"]);  ?></option>
+                            <?php } ?>
+
+                          </select></td>
                         <input class="form-control mb-3" id="valDefecto2" type="text">
                         <span class=""> % </span>
                       </div>
@@ -539,14 +546,17 @@ if (!isset($_SESSION["validar"])) {
                       <label for="defecto3">Defecto 3</label>
                       <div class="input-group">
 
-                        <select class="form-control mb-3" id="defecto3">
-                          <option value="108">Cicatriz Manejo</option>
-                          <option value="214">Desgarre</option>
-                          <option value="401">Malformado</option>
-                          <option value="106">Latex Viejo</option>
-                          <option value="502">Bajo Grado</option>
-                          <option value="210">Sobre Grado</option>
-                        </select>
+                        <td><select class="form-control mb-3" id="defecto3">
+
+
+                            <?php $datosDefecto = ControladorFormulario::ctrMostrarTerminacion("defectos"); ?>
+                            <option>Seleccione el Defecto</option>
+
+                            <?php foreach ($datosDefecto as $selectDefecto) { ?>
+                              <option value="<?php echo ($selectDefecto["codigo"]);  ?>"><?php echo ($selectDefecto["nombre"]);  ?></option>
+                            <?php } ?>
+
+                          </select></td>
                         <input class="form-control mb-3" id="valDefecto3" type="text">
                         <span class=""> % </span>
                       </div>
@@ -574,7 +584,7 @@ if (!isset($_SESSION["validar"])) {
 
                           <!-- tabla de 4 columnas -->
                           <table id="tabla" class="table table-bordered">
-                          <?php  $conteo=0  ?>
+                            <?php $conteo = 0  ?>
                             <thead>
                               <tr>
                                 <th>#</th>
@@ -585,18 +595,18 @@ if (!isset($_SESSION["validar"])) {
                             </thead>
                             <tbody>
                               <tr>
-                                <td><input type="text" class="form-control datosTabla" id="" placeholder="" value="<?php echo ($conteo) ?>" disabled></td>
+                                <td><input type="text" class="form-control datosTabla" id="fila" placeholder="" value="1" disabled></td>
                                 <td><select class="form-control mb-3" id="Tapas">
 
-                                  
-                                  <?php $datosFruta = ControladorFormulario::ctrTraerFruta("tapas"); ?>
-                                      <option>Seleccione una Fruta</option>
 
-                                            <?php foreach ($datosFruta as $selectFrutas) { ?>
-                                              <option value="<?php echo ($selectFrutas["cod"]);  ?>"><?php echo ($selectFrutas["descripcion"]);  ?></option>
-                                            <?php } ?>
+                                    <?php $datosFruta = ControladorFormulario::ctrTraerFruta("tapas"); ?>
+                                    <option>Seleccione una Fruta</option>
 
-                                            </select></td>
+                                    <?php foreach ($datosFruta as $selectFrutas) { ?>
+                                      <option value="<?php echo ($selectFrutas["cod"]);  ?>"><?php echo ($selectFrutas["descripcion"]);  ?></option>
+                                    <?php } ?>
+
+                                  </select></td>
 
                                 <td><input type="text" class="form-control datosTabla" id="" placeholder="" value="" required=""></td>
                                 <td><input type="text" class="form-control datosTabla" id="" placeholder="" value="" required=""></td>

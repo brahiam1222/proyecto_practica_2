@@ -218,11 +218,11 @@ botonEnviar.addEventListener('click', function (e) {
     for (var i = 1; i < filas.length; i++) {
         var celdas = filas[i].getElementsByTagName('td');
         var fila = {
-            "fila": celdas[0].firstChild.value,
-            "Cod": celdas[1].firstChild.value,
-            "Fruta": celdas[2].firstChild.value,
-            "Cjs": celdas[3].firstChild.value,
-            "CjsRechazadas": celdas[4].firstChild.value
+            "fila": i,
+            // "Cod": celdas[1].firstChild.value,
+            "Fruta": celdas[1].firstChild.value,
+            "Cjs": celdas[2].firstChild.value,
+            "CjsRechazadas": celdas[3].firstChild.value
         };
         ArrayTabla.push(fila);
     }
