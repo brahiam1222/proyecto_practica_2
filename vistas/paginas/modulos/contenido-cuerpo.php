@@ -247,7 +247,10 @@ if (!isset($_SESSION["validar"])) {
                                   // $datosTerminacion = ControladorFormulario::ctrMostrarTerTabla("terminacion", $valorFecha, $valorFinca);
                                   // $fincas = $_POST['fincaSeleccionada']; 
 
-                                  $datosTerminacion = ControladorFormulario::ctrMostrarTerTabla("terminacion")
+                                  $datosTerminacion = ControladorFormulario::ctrMostrarTerTabla("terminacion");
+                                  $datosFruta = ControladorFormulario::ctrTraerFruta("tapas")
+
+                                  //enviar el cod de fruta encontrada por el controlador para que se muestre en el select
                                   ?>
                                   <?php foreach ($datosTerminacion as $terminacion) { ?>
                                     <tr>
