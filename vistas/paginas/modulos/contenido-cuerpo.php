@@ -276,7 +276,7 @@ if (!isset($_SESSION["validar"])) {
 
 
                                       <td>
-                                        <a href="<?php echo $terminacion["id"];  ?>" class="btn btn-danger btn-sm btn-delete"><i class="fas fa-trash-alt"></i></a>
+                                        <a href="index.php?pagina=contenido-editar" class="btn btn-danger btn-sm btn-delete"><i class="fas fa-trash-alt"></i></a>
                                       </td>
                                     </tr>
                                   <?php } ?>
