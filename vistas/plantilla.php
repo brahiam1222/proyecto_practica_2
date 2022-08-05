@@ -20,15 +20,15 @@
   include "paginas/modulos/cabecera.php";
 
 
-  if (isset($_GET["pagina"])) {
-    if ($_GET["pagina"] == "contenido-editar"){
-    include "paginas/modulos/cabecera.php";
+  // if (isset($_GET["pagina"])) {
+  //   if ($_GET["pagina"] == "contenido-editar"){
+  //   include "paginas/modulos/cabecera.php";
 
 
-    $pagina = $_GET["pagina"];
+  //   $pagina = $_GET["pagina"];
     
-    include "./vistas/paginas/modulos/" . $pagina . ".php";}
-  } else {
+  //   include "./vistas/paginas/modulos/" . $pagina . ".php";}
+  // } else {
 
 
     if (isset($_GET["pagina"])) {
@@ -61,7 +61,7 @@
 
 
     include "paginas/modulos/footer.php";
-  }
+  
 
   //hacer la redirección de otras paginas en el contenido del cuerpo con el get paginas
   ?>

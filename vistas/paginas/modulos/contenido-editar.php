@@ -1,3 +1,15 @@
+
+<?php  if(isset($_GET["id"])){
+    $tabla = "terminacion";
+    $item =  $_GET["id"];;
+    $respuesta = ControladorFormulario::ctrMostrarTerminacion($tabla, $item);
+    echo json_encode($respuesta);
+}
+
+
+
+?>
+
 <div id="TerminacionActualizar" class="container-fluid">
     <div id="tablaterminacion" class="container-fluid">
         <div class="col-md-7 col-lg-8">
@@ -17,7 +29,7 @@
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label for="exampleFormControlSelect1"> Seleccione el día del embarque</label>
-                                            <input type="date" class="form-control" id="fecha">
+                                            <input type="date" value="<?php echo $respuesta["fecha"]; ?>"class="form-control" id="fecha">
                                         </div>
                                     </div>
                                 </div>
@@ -30,9 +42,9 @@
                         <label for="fincas">Fincas</label>
                         <select class="form-control mb-3" id="fincas">
 
-                            <?php $datosTerminacion = ControladorFormulario::ctrMostrarTerminacion("fincas")    ?>
+                            <?php $datosTerminacion = ControladorFormulario::ctrMostrarTerminacion("fincas", null)    ?>
                             <?php foreach ($datosTerminacion as $selectFincas) { ?>
-                                <option value="<?php echo $selectFincas["id"];  ?>"><?php echo $selectFincas["nombre"];  ?></option>
+                                <option value="<?php echo $selectFincas["id_fincas"];  ?>"><?php echo $selectFincas["nombre"];  ?></option>
                             <?php } ?>
 
                         </select>
@@ -48,28 +60,28 @@
                         <div class="row g-3">
                             <div class="col-sm-2 form-group">
                                 <label for="area" class="form-label">Area Recorrida</label>
-                                <input type="text" class="form-control" id="area" placeholder="" value="" required="">
+                                <input type="text" class="form-control" id="area" placeholder="" value="<?php echo $respuesta["arecorrida"]; ?>" required="">
 
                             </div>
                             <div class="col-sm-2 form-group">
                                 <label for="cajas" class="form-label">Cajas Estimadas</label>
-                                <input type="text" class="form-control" id="cajas" placeholder="" value="" required="">
+                                <input type="text" class="form-control" id="cajas" placeholder="" value="<?php echo $respuesta["cjsestimadas"]; ?>" required="">
 
                             </div>
 
                             <div class="col-sm-2 form-group">
                                 <label for="empaca" class="form-label">Persona Empacadora</label>
-                                <input type="text" class="form-control" id="empaca" placeholder="" value="" required="">
+                                <input type="text" class="form-control" id="empaca" placeholder="" value="<?php echo $respuesta["pempaca"]; ?>" required="">
 
                             </div>
                             <div class="col-sm-2 form-group">
                                 <label for="campo" class="form-label">Persona Campo</label>
-                                <input type="text" class="form-control" id="campo" placeholder="" value="" required="">
+                                <input type="text" class="form-control" id="campo" placeholder="" value="<?php echo $respuesta["pcampo"]; ?>" required="">
 
                             </div>
                             <div class="col-sm-2 form-group">
                                 <label for="mano" class="form-label">Calibre 2da Mano</label>
-                                <input type="text" class="form-control" id="mano" placeholder="" value="" required="">
+                                <input type="text" class="form-control" id="mano" placeholder="" value="<?php echo $respuesta["cmano"]; ?>" required="">
 
                             </div>
 
@@ -167,7 +179,7 @@
                                         <td><select class="form-control mb-3" id="defecto1">
 
 
-                                                <?php $datosDefecto = ControladorFormulario::ctrMostrarTerminacion("defectos"); ?>
+                                                <?php $datosDefecto = ControladorFormulario::ctrMostrarTerminacion("defectos", null); ?>
                                                 <option>Seleccione el Defecto</option>
 
                                                 <?php foreach ($datosDefecto as $selectDefecto) { ?>
@@ -188,7 +200,7 @@
                                         <td><select class="form-control mb-3" id="defecto2">
 
 
-                                                <?php $datosDefecto = ControladorFormulario::ctrMostrarTerminacion("defectos"); ?>
+                                                <?php $datosDefecto = ControladorFormulario::ctrMostrarTerminacion("defectos", null); ?>
                                                 <option>Seleccione el Defecto</option>
 
                                                 <?php foreach ($datosDefecto as $selectDefecto) { ?>
@@ -208,7 +220,7 @@
                                         <td><select class="form-control mb-3" id="defecto3">
 
 
-                                                <?php $datosDefecto = ControladorFormulario::ctrMostrarTerminacion("defectos"); ?>
+                                                <?php $datosDefecto = ControladorFormulario::ctrMostrarTerminacion("defectos", null); ?>
                                                 <option>Seleccione el Defecto</option>
 
                                                 <?php foreach ($datosDefecto as $selectDefecto) { ?>
@@ -316,7 +328,7 @@
 
                             <hr class="my-4">
                             <div id="mensaje"></div>
-                            <button class="w-50 btn btn-primary btn-lg" id="enviarterminacion" type="button">Registrar Terminacion</button>
+                            <button class="w-50 btn btn-primary btn-lg" id="enviarterminacion" type="button">Actualizar Terminacion</button>
                             <!-- <button type="button" class="btn btn-primary" id="actualizaTabla">Actualizar</button> -->
                         </form>
                 </div>
@@ -326,3 +338,4 @@
         </div>
     </div>
 </div>
+<script src="./js/navActualizar.js"></script>

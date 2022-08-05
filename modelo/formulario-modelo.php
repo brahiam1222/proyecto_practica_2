@@ -36,14 +36,22 @@ class ModeloFormulario
     }
 
     //mostrar terminacion
-    static public function mdlMostrarTerminacion($tabla)
+    static public function mdlMostrarTerminacion($tabla, $item)
     {
-        $stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla");
-        $stmt->execute();
-        return $stmt->fetchAll();
-
-        // $stmt->close();
-        $stmt = null;
+        if ($item != null) {
+            $stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE $item = :$item");
+            $stmt->bindParam(":$item", $item, PDO::PARAM_STR);
+            $stmt->execute();
+            return $stmt->fetch();
+        } else {
+            
+            $stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla");
+            $stmt->execute();
+            return $stmt->fetchAll();
+    
+            // $stmt->close();
+            $stmt = null;
+        }
     }
     static public function mdlMostrarTerTabla($tabla)
     {
@@ -58,7 +66,7 @@ class ModeloFormulario
         $stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla, fincas 
                                                         WHERE fecha = :fecha 
                                                         AND finca = :finca
-                                                        AND terminacion.finca = fincas.id;");
+                                                        AND terminacion.finca = fincas.id_fincas;");
 
                                             
         $stmt->bindParam(":fecha", $valorTabla[0][0]["fecha"], PDO::PARAM_STR);
