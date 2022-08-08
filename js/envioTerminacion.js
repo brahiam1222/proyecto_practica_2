@@ -190,6 +190,7 @@ botonEnviar.addEventListener('click', function (e) {
         Rsm10 = ArrayRacimosRepicados[5],
         Rsm11 = ArrayRacimosRepicados[6],
         Rsm12 = ArrayRacimosRepicados[7],
+        Rsm13 = ArrayRacimosRepicados[8],
         //
         //        
         defecto1 = document.querySelector('#defecto1').value,
@@ -240,7 +241,8 @@ botonEnviar.addEventListener('click', function (e) {
                     "Rsm9": Rsm9,
                     "Rsm10": Rsm10,
                     "Rsm11": Rsm11,
-                    "Rsm12": Rsm12
+                    "Rsm12": Rsm12,
+                    "Rsm13": Rsm13
                 }
             ],
             "Defectos": [

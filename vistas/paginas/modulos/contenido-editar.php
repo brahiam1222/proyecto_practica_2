@@ -1,9 +1,14 @@
-
-<?php  if(isset($_GET["id"])){
+<?php if (isset($_GET["id"])) {
     $tabla = "terminacion";
     $item =  $_GET["id"];;
     $respuesta = ControladorFormulario::ctrMostrarTerminacion($tabla, $item);
-    echo json_encode($respuesta);
+    $defectoDefault = ControladorFormulario::ctrMostrarTerminacion("defectos", 216);
+    var_dump(($defectoDefault));
+    echo ("<br><br><br><br>");
+    // echo(json_decode($respuesta["racimoscortados"])[0]->sem5);
+    // print_r(($respuesta["racimoscortados"])[0]->sem5);
+    echo (json_decode($respuesta["defectos"])[1]->defecto2);
+    // echo(json_decode($respuesta["racimoscortados"]->sem5));
 }
 
 
@@ -29,7 +34,7 @@
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label for="exampleFormControlSelect1"> Seleccione el día del embarque</label>
-                                            <input type="date" value="<?php echo $respuesta["fecha"]; ?>"class="form-control" id="fecha">
+                                            <input type="date" value="<?php echo $respuesta["fecha"]; ?>" class="form-control" id="fecha">
                                         </div>
                                     </div>
                                 </div>
@@ -100,16 +105,16 @@
                                             <span aria-hidden="true">&times;</span>
                                         </button>
 
-                                        <input type="text" class="form-control racimos" id="sm5" placeholder="Corte 5 semanas" value="" required="">
-                                        <input type="text" class="form-control racimos" id="sm6" placeholder="Corte 6 semanas" value="" required="">
-                                        <input type="text" class="form-control racimos" id="sm7" placeholder="Corte 7 semanas" value="" required="">
-                                        <input type="text" class="form-control racimos" id="sm8" placeholder="Corte 8 semanas" value="" required="">
-                                        <input type="text" class="form-control racimos" id="sm9" placeholder="Corte 9 semanas" value="" required="">
-                                        <input type="text" class="form-control racimos" id="sm10" placeholder="Corte 10 semanas" value="" required="">
-                                        <input type="text" class="form-control racimos" id="sm11" placeholder="Corte 11 semanas" value="" required="">
-                                        <input type="text" class="form-control racimos" id="sm12" placeholder="Corte 12 semanas" value="" required="">
-                                        <input type="text" class="form-control racimos" id="sm13" placeholder="Corte 13 semanas" value="" required="">
-                                        <input type="text" class="form-control racimos" id="rechazados" placeholder="Racimos Rechazados" value="" required="">
+                                        <input type="text" class="form-control racimos" id="sm5" placeholder="Corte 5 semanas" value="<?php echo (json_decode($respuesta["racimoscortados"])[0]->sem5) ?>" required="">
+                                        <input type="text" class="form-control racimos" id="sm6" placeholder="Corte 6 semanas" value="<?php echo (json_decode($respuesta["racimoscortados"])[0]->sem6) ?>" required="">
+                                        <input type="text" class="form-control racimos" id="sm7" placeholder="Corte 7 semanas" value="<?php echo (json_decode($respuesta["racimoscortados"])[0]->sem7) ?>" required="">
+                                        <input type="text" class="form-control racimos" id="sm8" placeholder="Corte 8 semanas" value="<?php echo (json_decode($respuesta["racimoscortados"])[0]->sem8) ?>" required="">
+                                        <input type="text" class="form-control racimos" id="sm9" placeholder="Corte 9 semanas" value="<?php echo (json_decode($respuesta["racimoscortados"])[0]->sem9) ?>" required="">
+                                        <input type="text" class="form-control racimos" id="sm10" placeholder="Corte 10 semanas" value="<?php echo (json_decode($respuesta["racimoscortados"])[0]->sem10) ?>" required="">
+                                        <input type="text" class="form-control racimos" id="sm11" placeholder="Corte 11 semanas" value="<?php echo (json_decode($respuesta["racimoscortados"])[0]->sem11) ?>" required="">
+                                        <input type="text" class="form-control racimos" id="sm12" placeholder="Corte 12 semanas" value="<?php echo (json_decode($respuesta["racimoscortados"])[0]->sem12) ?>" required="">
+                                        <input type="text" class="form-control racimos" id="sm13" placeholder="Corte 13 semanas" value="<?php echo (json_decode($respuesta["racimoscortados"])[0]->sem13) ?>" required="">
+                                        <input type="text" class="form-control racimos" id="rechazados" placeholder="Racimos Rechazados" value="<?php echo (json_decode($respuesta["racimoscortados"])[0]->rechazados) ?>" required="">
                                     </div>
 
                                 </div>
@@ -129,15 +134,15 @@
                                             <span aria-hidden="true">&times;</span>
                                         </button>
 
-                                        <input type="text" class="form-control repicados" id="Rsm5" placeholder="Corte 5 semanas" value="" required="">
-                                        <input type="text" class="form-control repicados" id="Rsm6" placeholder="Corte 6 semanas" value="" required="">
-                                        <input type="text" class="form-control repicados" id="Rsm7" placeholder="Corte 7 semanas" value="" required="">
-                                        <input type="text" class="form-control repicados" id="Rsm8" placeholder="Corte 8 semanas" value="" required="">
-                                        <input type="text" class="form-control repicados" id="Rsm9" placeholder="Corte 9 semanas" value="" required="">
-                                        <input type="text" class="form-control repicados" id="Rsm10" placeholder="Corte 10 semanas" value="" required="">
-                                        <input type="text" class="form-control repicados" id="Rsm11" placeholder="Corte 11 semanas" value="" required="">
-                                        <input type="text" class="form-control repicados" id="Rsm12" placeholder="Corte 12 semanas" value="" required="">
-                                        <input type="text" class="form-control repicados" id="Rsm13" placeholder="Corte 13 semanas" value="" required="">
+                                        <input type="text" class="form-control repicados" id="Rsm5" placeholder="Corte 5 semanas" value="<?php echo (json_decode($respuesta["racimosrepicados"])[0]->Rsm5) ?>" required="">
+                                        <input type="text" class="form-control repicados" id="Rsm6" placeholder="Corte 6 semanas" value="<?php echo (json_decode($respuesta["racimosrepicados"])[0]->Rsm6) ?>" required="">
+                                        <input type="text" class="form-control repicados" id="Rsm7" placeholder="Corte 7 semanas" value="<?php echo (json_decode($respuesta["racimosrepicados"])[0]->Rsm7) ?>" required="">
+                                        <input type="text" class="form-control repicados" id="Rsm8" placeholder="Corte 8 semanas" value="<?php echo (json_decode($respuesta["racimosrepicados"])[0]->Rsm8) ?>" required="">
+                                        <input type="text" class="form-control repicados" id="Rsm9" placeholder="Corte 9 semanas" value="<?php echo (json_decode($respuesta["racimosrepicados"])[0]->Rsm9) ?>" required="">
+                                        <input type="text" class="form-control repicados" id="Rsm10" placeholder="Corte 10 semanas" value="<?php echo (json_decode($respuesta["racimosrepicados"])[0]->Rsm10) ?>" required="">
+                                        <input type="text" class="form-control repicados" id="Rsm11" placeholder="Corte 11 semanas" value="<?php echo (json_decode($respuesta["racimosrepicados"])[0]->Rsm11) ?>" required="">
+                                        <input type="text" class="form-control repicados" id="Rsm12" placeholder="Corte 12 semanas" value="<?php echo (json_decode($respuesta["racimosrepicados"])[0]->Rsm12) ?>" required="">
+                                        <input type="text" class="form-control repicados" id="Rsm13" placeholder="Corte 13 semanas" value="<?php echo (json_decode($respuesta["racimosrepicados"])[0]->Rsm13) ?>" required="">
                                     </div>
 
                                 </div>
@@ -180,7 +185,8 @@
 
 
                                                 <?php $datosDefecto = ControladorFormulario::ctrMostrarTerminacion("defectos", null); ?>
-                                                <option>Seleccione el Defecto</option>
+                                                <?php $defectoDefault = ControladorFormulario::ctrMostrarTerminacion("defectos", json_decode($respuesta["defectos"])[0]->defecto1); ?>
+                                                <option selected="true" value="<?php echo $defectoDefault["codigo"] ?>" disabled="disabled"><?php echo $defectoDefault["nombre"] ?></option>
 
                                                 <?php foreach ($datosDefecto as $selectDefecto) { ?>
                                                     <option value="<?php echo ($selectDefecto["codigo"]);  ?>"><?php echo ($selectDefecto["nombre"]);  ?></option>
@@ -201,7 +207,8 @@
 
 
                                                 <?php $datosDefecto = ControladorFormulario::ctrMostrarTerminacion("defectos", null); ?>
-                                                <option>Seleccione el Defecto</option>
+                                                <?php $defectoDefault = ControladorFormulario::ctrMostrarTerminacion("defectos", json_decode($respuesta["defectos"])[1]->defecto2); ?>
+                                                <option selected="true" value="<?php echo $defectoDefault["codigo"] ?>" disabled="disabled"><?php print_r($defectoDefault) ?></option>
 
                                                 <?php foreach ($datosDefecto as $selectDefecto) { ?>
                                                     <option value="<?php echo ($selectDefecto["codigo"]);  ?>"><?php echo ($selectDefecto["nombre"]);  ?></option>
@@ -330,7 +337,7 @@
                             <div id="mensaje"></div>
                             <button class="w-50 btn btn-primary btn-lg" id="enviarterminacion" type="button">Actualizar Terminacion</button>
                             <!-- <button type="button" class="btn btn-primary" id="actualizaTabla">Actualizar</button> -->
-                        </form>
+                    </form>
                 </div>
             </div>
 

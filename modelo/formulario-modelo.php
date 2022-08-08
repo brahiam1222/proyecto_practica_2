@@ -39,8 +39,8 @@ class ModeloFormulario
     static public function mdlMostrarTerminacion($tabla, $item)
     {
         if ($item != null) {
-            $stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE $item = :$item");
-            $stmt->bindParam(":$item", $item, PDO::PARAM_STR);
+            $stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE $item = :item");
+            $stmt->bindParam(":item", $item, PDO::PARAM_STR);
             $stmt->execute();
             return $stmt->fetch();
         } else {
