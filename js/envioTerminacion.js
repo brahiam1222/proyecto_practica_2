@@ -11,8 +11,8 @@ const TbTerminacion = document.getElementById("tablaTerminaciones");
 //     e.preventDefault();
 //     var ArrayCode = new Array();
 
-   
-    
+
+
 
 
 //     var tabla = document.getElementById('tabla');
@@ -28,10 +28,10 @@ const TbTerminacion = document.getElementById("tablaTerminaciones");
 
 //     $(function () {
 //         traerFruta();
-        
+
 //      });
 
-     
+
 
 //     function datCodigos() {
 //         var dataCode = [];
@@ -45,10 +45,10 @@ const TbTerminacion = document.getElementById("tablaTerminaciones");
 
 
 //     function traerFruta() {
-        
+
 //         datos = new FormData();
 //         datos.append("traerFruta", JSON.stringify(datCodigos()));
-        
+
 //         // console.log(JSON.stringify(datCodigos()));
 //         __ajax("./ajax/formulario.ajax.php", datos)
 //             .done(function (enviado) {
@@ -76,35 +76,35 @@ const TbTerminacion = document.getElementById("tablaTerminaciones");
 //         return ajax;
 //     }
 
-    // console.log(ArrayCode);
+// console.log(ArrayCode);
 
 
 
-    // var conteoFilas = document.getElementsByTagName('tr').length;
-    // var valorCode = document.getElementById('fila1');
-    // // var valorCode2 = valorCode.getElementsById('fila1');
-    // console.log(conteoFilas);
-    // //for para crear variables nuevas por cada fila
-    // for (let i = 0; i < conteoFilas; i++) {
-    //     var valorCode = document.getElementById('fila' + i).value;
-    //     console.log(valorCode);
-    //         //añadir un id a cada tr fruta al igual que se hizo con la fila, para darle valores nuevos cuando sean leidos de la base de datos
-    //     }
-     
+// var conteoFilas = document.getElementsByTagName('tr').length;
+// var valorCode = document.getElementById('fila1');
+// // var valorCode2 = valorCode.getElementsById('fila1');
+// console.log(conteoFilas);
+// //for para crear variables nuevas por cada fila
+// for (let i = 0; i < conteoFilas; i++) {
+//     var valorCode = document.getElementById('fila' + i).value;
+//     console.log(valorCode);
+//         //añadir un id a cada tr fruta al igual que se hizo con la fila, para darle valores nuevos cuando sean leidos de la base de datos
+//     }
 
-    // function datTabla() {
-    //     var data = [];
-    //     data.push({
-    //         "fecha": valorFecha,
-    //         "finca": valorFinca
-    //     })
-    //     var jsDataTerminacion = { "data": data };
-    //     return data //jsData--;
 
-    //}
+// function datTabla() {
+//     var data = [];
+//     data.push({
+//         "fecha": valorFecha,
+//         "finca": valorFinca
+//     })
+//     var jsDataTerminacion = { "data": data };
+//     return data //jsData--;
+
+//}
 // }
 // );
-    
+
 
 
 

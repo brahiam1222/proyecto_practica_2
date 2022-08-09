@@ -21,10 +21,10 @@ function show(param_div_id) {
     const inf_Terminacion = document.getElementById('Terminacion');
     const inf_tablaTerminaciones = document.getElementById('tablaterminacion');
     // if (param_div_id == 'Consolidado') {
-        // inf_Consolidado.style.display = 'flex';
-        // inf_Lluvia.style.display = 'none';
-        // inf_Terminacion.style.display = 'none';
-        // inf_tablaTerminaciones.style.display = 'none';
+    // inf_Consolidado.style.display = 'flex';
+    // inf_Lluvia.style.display = 'none';
+    // inf_Terminacion.style.display = 'none';
+    // inf_tablaTerminaciones.style.display = 'none';
     // }
     // else if (param_div_id == 'Lluvia') {
     //     // inf_Consolidado.style.display = 'none';
@@ -32,7 +32,7 @@ function show(param_div_id) {
     //     inf_Terminacion.style.display = 'none';
     //     inf_tablaTerminaciones.style.display = 'none';
     // }
-     if (param_div_id == 'Terminacion') {
+    if (param_div_id == 'Terminacion') {
         // inf_Consolidado.style.display = 'none';
         // inf_Lluvia.style.display = 'none';
         inf_Terminacion.style.display = 'flex';
@@ -92,16 +92,16 @@ function insertaFila(tblId) {
     //bucle para insertar filas
 
     var tabla = document.getElementById('tabla');
-    
-    
+
+
     // let fila = document.getElementById('tabla').insertRow(i);
     let table = document.getElementById(tblId).tBodies[0];
-    let row =   table.rows[0].cloneNode(true);
+    let row = table.rows[0].cloneNode(true);
     table.appendChild(row);
     let conta = document.getElementById(tblId).rows.length;
-    var filas = tabla.getElementsByTagName('tr')[conta-1];
+    var filas = tabla.getElementsByTagName('tr')[conta - 1];
     var celdas = filas.getElementsByTagName('td')[0].firstChild;
-    celdas.value = conta-1;
+    celdas.value = conta - 1;
     // console.log(celdas);
     // console.log(conta);
     // let row = table.insertRow();

@@ -7,7 +7,7 @@ actualizaTabla.addEventListener('click', function (e) {
 
     $(function () {
         crearTabla();   //crea la tabla
-        
+
     });
 
     function datTabla() {
@@ -20,11 +20,11 @@ actualizaTabla.addEventListener('click', function (e) {
         return data //jsData--;
 
     }
-    
-    
-    
+
+
+
     function crearTabla() {
-        
+
         datos = new FormData();
         datos.append("crearTabla", JSON.stringify(datTabla()));
         console.log(JSON.stringify(datTabla()));
