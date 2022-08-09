@@ -36,14 +36,23 @@ class ModeloFormulario
     }
 
     //mostrar terminacion
-    static public function mdlMostrarTerminacion($tabla, $item)
+    static public function mdlMostrarTerminacion($tabla,$columna, $item)
     {
-        if ($item != null) {
-            $stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE $item = :item");
-            $stmt->bindParam(":item", $item, PDO::PARAM_STR);
+        if ($columna != null) {
+            $stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE $columna = :item");
+            $stmt->bindParam(":item", $item, PDO::PARAM_INT);
             $stmt->execute();
             return $stmt->fetch();
-        } else {
+        } elseif ($columna == null && $item != null) {
+            
+            $stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla where id = :item");
+            $stmt->bindParam(":item", $item, PDO::PARAM_INT);
+            $stmt->execute();
+            return $stmt->fetchAll();
+    
+            // $stmt->close();
+            $stmt = null;
+        }else {
             
             $stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla");
             $stmt->execute();
