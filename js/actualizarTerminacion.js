@@ -1,138 +1,10 @@
-const botonEnviar = document.getElementById('enviarterminacion');
-const msg = document.getElementById('mensaje');
-const TbTerminacion = document.getElementById("tablaTerminaciones");
-// const actualizaTabla = document.getElementById('actualizaTabla');
-// const traerFruta = document.getElementById('tabla');
-// let generaTabla = document.querySelector('#generaTabla');
+const botonActualizar = document.getElementById('actualizarTerminacion');
 
-
-
-// traerFruta.addEventListener('change', function (e) {
-//     e.preventDefault();
-//     var ArrayCode = new Array();
-
-
-
-
-
-//     var tabla = document.getElementById('tabla');
-//     var filas = tabla.getElementsByTagName('tr');
-//     for (var i = 1; i < filas.length; i++) {
-//         var celdas = filas[i].getElementsByTagName('td');
-//         var fila = {            
-//             "cod": celdas[1].firstChild.value,                        
-//         };
-//         ArrayCode.push(fila);
-//     }
-
-
-//     $(function () {
-//         traerFruta();
-
-//      });
-
-
-
-//     function datCodigos() {
-//         var dataCode = [];
-//         dataCode.push({
-//             "ArrayCode": ArrayCode            
-//         })
-//         var jsdataCodeTerminacion = { "dataCode": dataCode };
-//         return dataCode //jsData--;
-
-//     }
-
-
-//     function traerFruta() {
-
-//         datos = new FormData();
-//         datos.append("traerFruta", JSON.stringify(datCodigos()));
-
-//         // console.log(JSON.stringify(datCodigos()));
-//         __ajax("./ajax/formulario.ajax.php", datos)
-//             .done(function (enviado) {
-
-//             }
-//             )
-//             .fail(function () {
-//                 //  console.log(enviado);
-//                 // window.location.reload();
-//             }
-
-//             );
-//     }
-
-//     function __ajax(url, datos) {
-//         var ajax = $.ajax({
-//             url: url,
-//             method: "POST",
-//             data: datos,
-//             cache: false,
-//             contentType: false,
-//             processData: false,
-//             dataType: "json"
-//         });
-//         return ajax;
-//     }
-
-// console.log(ArrayCode);
-
-
-
-// var conteoFilas = document.getElementsByTagName('tr').length;
-// var valorCode = document.getElementById('fila1');
-// // var valorCode2 = valorCode.getElementsById('fila1');
-// console.log(conteoFilas);
-// //for para crear variables nuevas por cada fila
-// for (let i = 0; i < conteoFilas; i++) {
-//     var valorCode = document.getElementById('fila' + i).value;
-//     console.log(valorCode);
-//         //añadir un id a cada tr fruta al igual que se hizo con la fila, para darle valores nuevos cuando sean leidos de la base de datos
-//     }
-
-
-// function datTabla() {
-//     var data = [];
-//     data.push({
-//         "fecha": valorFecha,
-//         "finca": valorFinca
-//     })
-//     var jsDataTerminacion = { "data": data };
-//     return data //jsData--;
-
-//}
-// }
-// );
-
-
-
-
-//     window.location.href = window.location.href + "?fechaS=" + valorFecha + "&fincaS=" + valorFinca;
-
-// const datos = new FormData(generaTabla);
-// // console.log(e.target.value);
-// // console.log(valorFinca);
-
-//     fetch('./vistas/paginas/modulos/contenido-cuerpo.php', {
-//         method: 'POST',
-//         body: datos
-//         })
-
-// });
-
-// });
-
-
-// console.log(fincaSeleccionada);    
-
-
-
-botonEnviar.addEventListener('click', function (e) {
+botonActualizar.addEventListener('click', function (e) {
 
     $(function () {
         // listar();
-        guardar();
+        actualizar();
 
     });
 
@@ -277,7 +149,7 @@ botonEnviar.addEventListener('click', function (e) {
 
     // const fs = require('fs');
 
-    function guardar() {
+    function actualizar() {
 
 
         //     let jsonData = JSON.stringify(datosTerminacion());
@@ -288,8 +160,9 @@ botonEnviar.addEventListener('click', function (e) {
 
 
         datos = new FormData();
-        datos.append("guardarTerminacion", JSON.stringify(datosTerminacion())); //Json Stringfy
-         console.log(datos);
+        datos.append("actualizarTerminacion", JSON.stringify(datosTerminacion())); //Json Stringfy
+        console.log(datosTerminacion());
+        //  console.log(datos);
         //  var guardarJSON = JSON.stringify(datosTerminacion());
 
         __ajax("./ajax/formulario.ajax.php", datos)
@@ -324,4 +197,3 @@ botonEnviar.addEventListener('click', function (e) {
         return ajax;
     }
 });
-

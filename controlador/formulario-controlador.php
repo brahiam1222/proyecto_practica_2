@@ -85,6 +85,16 @@ class ControladorFormulario
         return $respuesta;
         echo ($respuesta);
     }
+    static public function ctrActualizarTerminacion($tabla, $id)
+    {
+
+
+
+        $respuesta = ModeloFormulario::mdlActualizarTerminacion($tabla, $id);
+
+        return $respuesta;
+        echo ($respuesta);
+    }
 
 
 

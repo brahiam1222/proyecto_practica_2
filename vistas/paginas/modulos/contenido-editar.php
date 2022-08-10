@@ -1,6 +1,6 @@
 <?php if (isset($_GET["id"])) {
     $tabla = "terminacion";
-    $item =  $_GET["id"];;
+    $item =  $_GET["id"];
     $respuesta = ControladorFormulario::ctrMostrarTerminacion($tabla, null, $item);
     $defectoDefault = ControladorFormulario::ctrMostrarTerminacion("tapas", null, null);
     $frutaDefault = ControladorFormulario::ctrMostrarTerminacion("tapas", "cod", json_decode($respuesta[0]["fruta"])[1]->Fruta);
@@ -379,7 +379,7 @@
 
                             <hr class="my-4">
                             <div id="mensaje"></div>
-                            <button class="w-50 btn btn-primary btn-lg" id="enviarterminacion" type="button">Actualizar Terminacion</button>
+                            <button class="w-50 btn btn-primary btn-lg" id="actualizarTerminacion" type="button">Actualizar Terminacion</button>
                             <!-- <button type="button" class="btn btn-primary" id="actualizaTabla">Actualizar</button> -->
                     </form>
                 </div>
@@ -390,3 +390,4 @@
     </div>
 </div>
 <script src="./js/navActualizar.js"></script>
+<script src="./js/actualizarTerminacion.js"></script>

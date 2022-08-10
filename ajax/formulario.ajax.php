@@ -25,6 +25,7 @@ class AjaxFormularios
     public $validarTerminacion;
     public $saveTerminacion;
     public $crearTabla;
+    public $updateTerminacion;
     public $traerFruta;
 
 
@@ -58,6 +59,30 @@ class AjaxFormularios
 
         // $valor = $this->validarTerminacion;
         $enviado = ControladorFormulario::ctrIngresarTerminacion($tabla);
+        echo json_encode($enviado);
+    }
+    public function ajaxActualizarTerminacion()
+    {
+        $tabla = "terminacion";
+        $id = $_GET["id"];
+        $valor = $this->updateTerminacion;
+        $fichero = '../Json/terminacion.json';
+        $ficheroBD = '../Json/bdTerminacionJson.json';
+        $actualJson = file_get_contents($fichero);
+        $actualJsonBD = file_get_contents($ficheroBD);
+        $actual = json_decode($actualJson, true);
+        $actualBD = json_decode($actualJsonBD, true);
+        $valorDecode = json_decode($valor, true);
+        $actual[] = $valorDecode;
+        $actualBD[] = $valorDecode;
+        $actualJson = json_encode($actual);
+        $actualJsonBD = json_encode($actualBD);
+
+        file_put_contents($fichero, $actualJson);
+        file_put_contents($ficheroBD, $actualJsonBD);
+
+        // $valor = $this->validarTerminacion;
+        $enviado = ControladorFormulario::ctrActualizarTerminacion($tabla, 625);
         echo json_encode($enviado);
     }
     public function ajaxCrearTabla()
@@ -123,6 +148,12 @@ if (isset($_POST["guardarTerminacion"])) {
     $guardar = new AjaxFormularios();
     $guardar->saveTerminacion = $_POST["guardarTerminacion"]; // Estaba en encode
     $guardar->ajaxGuardarTerminacion();
+}
+if (isset($_POST["actualizarTerminacion"])) {
+
+    $actualizar = new AjaxFormularios();
+    $actualizar->updateTerminacion = $_POST["actualizarTerminacion"]; // Estaba en encode
+    $actualizar->ajaxActualizarTerminacion();
 }
 if (isset($_POST["crearTabla"])) {
 

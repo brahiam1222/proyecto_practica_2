@@ -710,3 +710,4 @@ if (!isset($_SESSION["validar"])) {
 
         <script src="./js/traerInformacion.js"></script>
         <script src="./js/navegacion.js"></script>
+        <script src="./js/envioTerminacion.js"></script>
