@@ -64,7 +64,7 @@ class AjaxFormularios
     public function ajaxActualizarTerminacion()
     {
         $tabla = "terminacion";
-        $id = $_GET["id"];
+        // $id = $_GET["id"];
         $valor = $this->updateTerminacion;
         $fichero = '../Json/terminacion.json';
         $ficheroBD = '../Json/bdTerminacionJson.json';
@@ -82,7 +82,7 @@ class AjaxFormularios
         file_put_contents($ficheroBD, $actualJsonBD);
 
         // $valor = $this->validarTerminacion;
-        $enviado = ControladorFormulario::ctrActualizarTerminacion($tabla, 625);
+        $enviado = ControladorFormulario::ctrActualizarTerminacion($tabla);
         echo json_encode($enviado);
     }
     public function ajaxCrearTabla()

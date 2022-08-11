@@ -207,13 +207,13 @@ class ModeloFormulario
         $stmt = null;
 
     }
-    static public function mdlActualizarTerminacion($tabla, $id)
+    static public function mdlActualizarTerminacion($tabla)
     {
   
         $valor = file_get_contents('../Json/terminacion.json');
         $valorTerminacion = json_decode($valor, true);
         // echo json_decode($valorTerminacion);
-        echo $id;
+        // echo $id;
 
 
         $stmt = Conexion::conectar()->prepare("UPDATE `terminacion` SET `fecha`='" . $valorTerminacion[0][0]["fecha"] . "' 
@@ -223,7 +223,7 @@ class ModeloFormulario
                                                                     , `pempaca`='" . $valorTerminacion[0][0]["pEmpaca"] . "' 
                                                                     , `pcampo`='" . $valorTerminacion[0][0]["pCampo"] . "' 
                                                                     , `cmano`='" . $valorTerminacion[0][0]["cMano"] . "' 
-                                                                    , `racimoscortados`='" . $id . "' 
+                                                                    , `racimoscortados`='" . json_encode($valorTerminacion[0][0]["RacimosCortados"]) . "' 
                                                                     , `racimosrepicados`='" . json_encode($valorTerminacion[0][0]["Repiques"]) . "' 
                                                                     , `defectos`='" . json_encode($valorTerminacion[0][0]["Defectos"]) . "' 
                                                                     , `cjsnal`='" . $valorTerminacion[0][0]["cjsNal"] . "' 
@@ -232,7 +232,7 @@ class ModeloFormulario
                                                                     , `klspersonal`='" . $valorTerminacion[0][0]["klsPersonal"] . "' 
                                                                     , `klsfrpiso`='" . $valorTerminacion[0][0]["klsFrPiso"] . "' 
                                                                     , `fruta`='" . json_encode($valorTerminacion[0][0]["ArrayTabla"]) . "'
-                                                                       WHERE id = 625");
+                                                                       WHERE id = '" . $valorTerminacion[0][0]["id"] . "'");
 
 
         if ($stmt->execute()) {
@@ -242,7 +242,7 @@ class ModeloFormulario
             // $valorDecode = json_decode($valor,true);
             // $actual[] = $valorDecode;
              $actualJson = json_encode(null);
-             echo $id;
+            //  echo $valorTerminacion[0][0]["id"];
 
             file_put_contents($fichero, $actualJson);
             return $valorTerminacion;

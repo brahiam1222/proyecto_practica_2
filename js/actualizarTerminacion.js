@@ -1,4 +1,5 @@
 const botonActualizar = document.getElementById('actualizarTerminacion');
+const msg = document.getElementById('mensaje');
 
 botonActualizar.addEventListener('click', function (e) {
 
@@ -77,11 +78,16 @@ botonActualizar.addEventListener('click', function (e) {
         klsNacional = document.getElementById('klsnacional').value,
         klsPersonal = document.getElementById('klspersonal').value,
         klsFrPiso = document.getElementById('klsfrpiso').value;
+        var queryString = window.location.search;
+        var urlParams = new URLSearchParams(queryString);
+        var anuncioParam = urlParams.get('id');
+        console.log(anuncioParam)
 
 
     function datosTerminacion() {
         var data = [];
         data.push({
+            "id":anuncioParam,
             "fecha": fecha,
             "finca": finca,
             "aRecorrida": aRecorrida,
@@ -165,12 +171,14 @@ botonActualizar.addEventListener('click', function (e) {
         //  console.log(datos);
         //  var guardarJSON = JSON.stringify(datosTerminacion());
 
+       
+
         __ajax("./ajax/formulario.ajax.php", datos)
             .done(function (enviado) {
                 msg.innerHTML = `<div class="alert alert-success" role="alert">
-                             Terminacion subida con éxito!
+                             Terminacion Actualizada con éxito!
                            </div>`;
-                location.reload();
+                location.href="index.php?pagina=contenido-cuerpo";
                 // msg.innerHTML = `<div class="alert alert-danger" role="alert">
                 // Error al enviar el mensaje!
                 // </div>`;
