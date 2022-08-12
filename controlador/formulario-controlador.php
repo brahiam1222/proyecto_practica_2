@@ -95,6 +95,16 @@ class ControladorFormulario
         return $respuesta;
         echo ($respuesta);
     }
+    static public function ctrBorrarTerminacion($tabla, $id)
+    {
+
+
+
+        $respuesta = ModeloFormulario::mdlBorrarTerminacion($tabla, $id);
+
+        return $respuesta;
+        echo ($respuesta);
+    }
 
 
 

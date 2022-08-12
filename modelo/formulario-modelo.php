@@ -216,7 +216,7 @@ class ModeloFormulario
         // echo $id;
 
 
-        $stmt = Conexion::conectar()->prepare("UPDATE `terminacion` SET `fecha`='" . $valorTerminacion[0][0]["fecha"] . "' 
+        $stmt = Conexion::conectar()->prepare("UPDATE $tabla SET `fecha`='" . $valorTerminacion[0][0]["fecha"] . "' 
                                                                     , `finca`='" . $valorTerminacion[0][0]["finca"] . "' 
                                                                     , `arecorrida`='" . $valorTerminacion[0][0]["aRecorrida"] . "' 
                                                                     , `cjsestimadas`='" . $valorTerminacion[0][0]["cjsEstimadas"] . "' 
@@ -252,7 +252,17 @@ class ModeloFormulario
         $stmt = null;
 
     }
-
+        static public function mdlBorrarTerminacion($tabla, $id)
+    {
+        $stmt = Conexion::conectar()->prepare("DELETE FROM $tabla WHERE id = :id");
+        $stmt->bindParam(":id", $id, PDO::PARAM_INT);
+        if ($stmt->execute()) {
+            return "ok";
+        } else {
+            return "error";
+        }
+        $stmt = null;
+    }
 
     static public function mdlSeleccionarUsuario($tabla, $item, $valor)
     {

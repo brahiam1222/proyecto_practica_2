@@ -11,6 +11,7 @@
 <!-- <script src="./js/envioTerminacion.js"></script> -->
 <script src="./json/envioDatos.js"></script> 
 <script src="./json/tomaDatos.js"></script>
+<script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" integrity="sha384-rOA1PnstxnOBLzCLMcre8ybwbTmemjzdNlILg8O7z1lUkLXozs4DHonlDtnE7fpc" crossorigin="anonymous"></script>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <!-- <script src="js/node_modules/socket.io/node_modules/socket.io-client/dist/socket.io.js"></script> -->
