@@ -8,6 +8,14 @@
 .form-control .form-control2 {
     width: 50%;
 }
+#tabla{
+    border: transparent;
+    
+}
+#filainicial{
+    
+    color: aqua;
+}
 
 #Ventana {
     /* ventana con borde */
@@ -16,7 +24,8 @@
     left: 0;
     width: 100%;
     border: 1px solid #000;
-    background-color: rgb(111, 211, 255);
+    background-color: rgb(220, 222, 223);
+    /* background-color: rgb(111, 211, 255); */
     z-index: 10;
     padding: 15px 35px;
     /* color letra */
@@ -26,9 +35,7 @@
     font-weight: bold;
     text-align: center;
     /* bordes redondeados */
-
     border-radius: 20px;
-
     box-shadow: 0 0 10px #000;
 
 }

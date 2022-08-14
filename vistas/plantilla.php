@@ -10,6 +10,7 @@
   <link href="./css/carousel.rtl.css" rel="stylesheet">
   <link href="./css/ventana.css" rel="stylesheet">
   <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
 
   <title>Principal</title>
 </head>

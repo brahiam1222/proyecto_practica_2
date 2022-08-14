@@ -16,9 +16,9 @@ if (!isset($_SESSION["validar"])) {
 
   <div class="container-fluid">
     <div class="row">
-      <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+      <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-lightNew sidebar collapse">
         <div class="position-sticky pt-3">
-          <ul class="nav flex-column">
+          <ul class="nav rediseño flex-column">
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="#" onclick="show('Consolidado')">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home align-text-bottom" aria-hidden="true">
@@ -224,7 +224,7 @@ if (!isset($_SESSION["validar"])) {
                             <div class="table-responsive">
                               <table id="tablaTerminaciones" class="table table-striped table-bordered table-condensed table-hover">
                                 <thead class="text-center">
-                                  <tr>
+                                  <tr id="">
                                     <th>Fecha</th>
                                     <th>Finca</th>
                                     <th>Cantidad</th>
@@ -590,7 +590,7 @@ if (!isset($_SESSION["validar"])) {
                           <table id="tabla" class="table table-bordered">
                             <?php $conteo = 0  ?>
                             <thead>
-                              <tr>
+                              <tr id="filainicial">
                                 <th>#</th>
                                 <th>Fruta</th>
                                 <th>Cantidad</th>
@@ -604,7 +604,7 @@ if (!isset($_SESSION["validar"])) {
 
 
                                     <?php $datosFruta = ControladorFormulario::ctrTraerFruta("tapas"); ?>
-                                    <option>Seleccione una Fruta</option>
+                                    <option value="">Seleccione una Fruta</option>
 
                                     <?php foreach ($datosFruta as $selectFrutas) { ?>
                                       <option value="<?php echo ($selectFrutas["cod"]);  ?>"><?php echo ($selectFrutas["descripcion"]);  ?></option>

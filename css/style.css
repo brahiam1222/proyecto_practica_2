@@ -1,0 +1,19 @@
+#diseño{
+    background-color: #e1ffd0;
+    /* width: 90%; */
+    height: 100%;
+    border-radius: 10px;
+    margin-left: 17%;
+    margin-right: 17%;
+}
+
+.rediseño{
+
+    color: #316c1b;
+    font-weight: bold;
+}
+
+.bg-lightNew{
+    --bs-bg-opacity: 1;
+    background-color: #e1ffd091;
+}
