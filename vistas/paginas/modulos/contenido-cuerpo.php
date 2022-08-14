@@ -200,7 +200,7 @@ if (!isset($_SESSION["validar"])) {
                         <label for="terminacionesFincas">Fincas</label>
                         <select class="form-control mb-3" id="terminacionesFincas">
 
-                          <?php $datosTerminacion = ControladorFormulario::ctrMostrarTerminacion("fincas",null, null)    ?>
+                          <?php $datosTerminacion = ControladorFormulario::ctrMostrarTerminacion("fincas", null, null)    ?>
                           <option>Seleccione una Finca</option>
 
                           <?php foreach ($datosTerminacion as $selectFincas) { ?>
@@ -277,7 +277,12 @@ if (!isset($_SESSION["validar"])) {
 
 
                                       <td>
-                                        <a href="index.php?pagina=contenido-editar&id=<?php echo $terminacion["id"]?>" class="btn btn-danger btn-sm btn-delete"><i class="fas fa-trash-alt"></i></a>
+                                        <a href="index.php?pagina=contenido-editar&id=<?php echo $terminacion["id"] ?>" class="btn btn-warning btn-sm btn-warning"><i class="fas fa-pencil-alt"></i></a>
+                                        
+                                      </td>
+
+                                      <td>
+                                        <button type="button" class="btn btn-danger btn-sm btn-danger" data-toggle="modal" data-target="#modalEliminar<?php echo $terminacion["id"] ?>"><i class="fas fa-trash-alt"></i></button>
                                       </td>
                                     </tr>
                                   <?php } ?>
@@ -375,7 +380,7 @@ if (!isset($_SESSION["validar"])) {
                 <label for="fincas">Fincas</label>
                 <select class="form-control mb-3" id="fincas">
 
-                  <?php $datosTerminacion = ControladorFormulario::ctrMostrarTerminacion("fincas",null, null)    ?>
+                  <?php $datosTerminacion = ControladorFormulario::ctrMostrarTerminacion("fincas", null, null)    ?>
                   <?php foreach ($datosTerminacion as $selectFincas) { ?>
                     <option value="<?php echo $selectFincas["id_fincas"];  ?>"><?php echo $selectFincas["nombre"];  ?></option>
                   <?php } ?>
@@ -512,7 +517,7 @@ if (!isset($_SESSION["validar"])) {
                         <td><select class="form-control mb-3" id="defecto1">
 
 
-                            <?php $datosDefecto = ControladorFormulario::ctrMostrarTerminacion("defectos",null, null); ?>
+                            <?php $datosDefecto = ControladorFormulario::ctrMostrarTerminacion("defectos", null, null); ?>
                             <option value="NULL">Seleccione el Defecto</option>
 
                             <?php foreach ($datosDefecto as $selectDefecto) { ?>
@@ -533,7 +538,7 @@ if (!isset($_SESSION["validar"])) {
                         <td><select class="form-control mb-3" id="defecto2">
 
 
-                            <?php $datosDefecto = ControladorFormulario::ctrMostrarTerminacion("defectos",null, null); ?>
+                            <?php $datosDefecto = ControladorFormulario::ctrMostrarTerminacion("defectos", null, null); ?>
                             <option value="NULL">Seleccione el Defecto</option>
 
                             <?php foreach ($datosDefecto as $selectDefecto) { ?>
@@ -553,7 +558,7 @@ if (!isset($_SESSION["validar"])) {
                         <td><select class="form-control mb-3" id="defecto3">
 
 
-                            <?php $datosDefecto = ControladorFormulario::ctrMostrarTerminacion("defectos",null, null); ?>
+                            <?php $datosDefecto = ControladorFormulario::ctrMostrarTerminacion("defectos", null, null); ?>
                             <option value="NULL">Seleccione el Defecto</option>
 
                             <?php foreach ($datosDefecto as $selectDefecto) { ?>
