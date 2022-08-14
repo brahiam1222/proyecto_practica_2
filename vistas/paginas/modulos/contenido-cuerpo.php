@@ -228,7 +228,8 @@ if (!isset($_SESSION["validar"])) {
                                     <th>Fecha</th>
                                     <th>Finca</th>
                                     <th>Cantidad</th>
-                                    <th>Acciones</th>
+                                    <th>Editar</th>
+                                    <th>Borrar</th>
                                   </tr>
                                 </thead>
                                 <tbody class="text-center">
@@ -278,11 +279,11 @@ if (!isset($_SESSION["validar"])) {
 
                                       <td>
                                         <a href="index.php?pagina=contenido-editar&id=<?php echo $terminacion["id"] ?>" class="btn btn-warning btn-sm btn-warning"><i class="fas fa-pencil-alt"></i></a>
-                                        
+
                                       </td>
 
                                       <td>
-                                        <button type="button" class="btn btn-danger btn-sm btn-danger" data-toggle="modal" data-target="#modalEliminar<?php echo $terminacion["id"] ?>"><i class="fas fa-trash-alt"></i></button>
+                                        <a href="index.php?pagina=contenido-borrar&id=<?php echo $terminacion["id"] ?>" class="btn btn-danger btn-sm btn-danger"><i class="fas fa-trash-alt"></i></a>
                                       </td>
                                     </tr>
                                   <?php } ?>
@@ -609,7 +610,7 @@ if (!isset($_SESSION["validar"])) {
 
 
                                     <?php $datosFruta = ControladorFormulario::ctrTraerFruta("tapas"); ?>
-                                    <option value="">Seleccione una Fruta</option>
+                                    <option value="NULL">Seleccione una Fruta</option>
 
                                     <?php foreach ($datosFruta as $selectFrutas) { ?>
                                       <option value="<?php echo ($selectFrutas["cod"]);  ?>"><?php echo ($selectFrutas["descripcion"]);  ?></option>

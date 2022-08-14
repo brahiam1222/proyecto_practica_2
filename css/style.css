@@ -16,4 +16,19 @@
 .bg-lightNew{
     --bs-bg-opacity: 1;
     background-color: #e1ffd091;
+    border-radius: 20px;
+}
+
+.centrarDiv{
+
+    margin-left: 25%;
+    text-align: center;
+
+
+}
+.divAjustable{
+
+    min-width: 70%;
+
+
 }

@@ -34,7 +34,7 @@
 
     if (isset($_GET["pagina"])) {
 
-      if ($_GET["pagina"] == "contenido-inicio" ||  $_GET["pagina"] == "contenido-cuerpo" || $_GET["pagina"] == "contenido-consolidado" || $_GET["pagina"] == "contenido-terminacion" || $_GET["pagina"] == "contenido-lluvia" || $_GET["pagina"] == "contenido-editar" || $_GET["pagina"] == "salir") {
+      if ($_GET["pagina"] == "contenido-inicio" ||  $_GET["pagina"] == "contenido-cuerpo" || $_GET["pagina"] == "contenido-consolidado" || $_GET["pagina"] == "contenido-terminacion" || $_GET["pagina"] == "contenido-lluvia" || $_GET["pagina"] == "contenido-editar" || $_GET["pagina"] == "contenido-borrar" || $_GET["pagina"] == "salir") {
 
         //   echo  "<div class='alert alert-success'>
         //   <strong>¡Registro exitoso!</strong> Ya puedes ingresar.

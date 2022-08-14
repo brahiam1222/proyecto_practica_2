@@ -3,13 +3,13 @@
     $item =  $_GET["id"];
     $respuesta = ControladorFormulario::ctrMostrarTerminacion($tabla, null, $item);
     $defectoDefault = ControladorFormulario::ctrMostrarTerminacion("tapas", null, null);
-    $frutaDefault = ControladorFormulario::ctrMostrarTerminacion("tapas", "cod", json_decode($respuesta[0]["fruta"])[1]->Fruta);
+    // $frutaDefault = ControladorFormulario::ctrMostrarTerminacion("tapas", "cod", json_decode($respuesta[0]["fruta"])[1]->Fruta);
     // $fincaDefault = ControladorFormulario::ctrMostrarTerminacion("fincas", "id_fincas", json_decode($respuesta[0]["finca"]));
     // var_dump(json_decode($respuesta[0]["defectos"])[2]->defecto3);
     // var_dump($defectoDefault);
     // var_dump(($fincaDefault["nombre"]));
     // var_dump($frutaDefault);
-    echo ("<br><br><br><br>");
+    // echo ("<br><br><br><br>");
     // echo(json_decode($respuesta["racimoscortados"])[0]->sem5);
     // print_r(($respuesta["racimoscortados"])[0]->sem5);
     // echo (json_decode($respuesta["defectos"])[1]->defecto2);
@@ -20,7 +20,7 @@
 
 ?>
 
-<div id="TerminacionActualizar" class="container-fluid">
+<div id="TerminacionActualizar" class="container-fluid centrarDiv">
     <div id="tablaterminacion" class="container-fluid">
         <div class="col-md-7 col-lg-8">
 
@@ -183,7 +183,7 @@
                             <div class="">
 
 
-                                <div class="col-sm-6 form-group">
+                                <div class="col-sm-6 form-group divAjustable">
 
                                     <label for="defecto1">Defecto 1</label>
                                     <div class="input-group">
@@ -215,7 +215,7 @@
                                         <span class=""> % </span>
                                     </div>
                                 </div>
-                                <div class="col-sm-6 form-group">
+                                <div class="col-sm-6 form-group divAjustable">
 
                                     <label for="defecto2">Defecto 2</label>
                                     <div class="input-group">
@@ -244,7 +244,7 @@
                                         <span class=""> % </span>
                                     </div>
                                 </div>
-                                <div class="col-sm-6 form-group">
+                                <div class="col-sm-6 form-group divAjustable">
 
                                     <label for="defecto3">Defecto 3</label>
                                     <div class="input-group">
@@ -307,27 +307,51 @@
                                                 </thead>
                                                 <tbody>
                                                     <tr>
-                                                        <?php for ($i = 0; $i <= (json_decode($respuesta[0]["fruta"])[0]->fila); $i++) { ?>
+                                                        <?php for ($i = 0; $i < count(json_decode($respuesta[0]["fruta"])); $i++) { ?>
 
 
-                                                            <td><input type="text" class="form-control datosTabla" id="fila" placeholder="" value="<?php echo (json_decode($respuesta[0]["fruta"])[$i]->fila); ?>" disabled></td>
-                                                            <td><select class="form-control mb-3" id="Tapas">
+                                                            <?php if (json_decode($respuesta[0]["fruta"])[$i]->Fruta != "" && json_decode($respuesta[0]["fruta"])[$i]->Fruta != "NULL") { ?>
+                                                                <td><input type="text" class="form-control datosTabla" id="fila" placeholder="" value="<?php echo (json_decode($respuesta[0]["fruta"])[$i]->fila); ?>" disabled></td>
+                                                                <td><select class="form-control mb-3" id="Tapas">
 
 
-                                                                    <?php $datosFruta = ControladorFormulario::ctrTraerFruta("tapas"); ?>
-                                                                    <?php $frutaDefault = ControladorFormulario::ctrMostrarTerminacion("tapas", "cod", json_decode($respuesta[0]["fruta"])[$i]->Fruta); ?>
+                                                                        <?php var_dump(json_decode($respuesta[0]["fruta"])[$i]->Fruta); ?>
+                                                                        <?php $datosFruta = ControladorFormulario::ctrTraerFruta("tapas"); ?>
+                                                                        <?php $frutaDefault = ControladorFormulario::ctrMostrarTerminacion("tapas", "cod", json_decode($respuesta[0]["fruta"])[$i]->Fruta); ?>
 
-                                                                    <option>Seleccione una Fruta</option>
-                                                                    <option selected="true" value="<?php echo $frutaDefault["cod"] ?>" disabled="disabled"><?php echo $frutaDefault["descripcion"] ?></option>
-                                                                    <?php foreach ($datosFruta as $selectFrutas) { ?>
-                                                                        <option value="<?php echo ($selectFrutas["cod"]);  ?>"><?php echo ($selectFrutas["descripcion"]);  ?></option>
-                                                                    <?php } ?>
-                                                                    <!-- COMO MIERDA HAGO ESTO!!! -->
-                                                                </select></td>
+                                                                        <option>Seleccione una Fruta</option>
+                                                                        <option selected="true" value="<?php echo $frutaDefault["cod"] ?>" disabled="disabled"><?php echo $frutaDefault["descripcion"]
+                                                                                                                                                                ?></option>
+                                                                        <?php foreach ($datosFruta as $selectFrutas) { ?>
+                                                                            <option value="<?php echo ($selectFrutas["cod"]);  ?>"><?php echo ($selectFrutas["descripcion"]);  ?></option>
+                                                                        <?php } ?>
+                                                                        <!-- COMO MIERDA HAGO ESTO!!! -->
+                                                                    </select></td>
 
-                                                            <td><input type="text" class="form-control datosTabla" id="" placeholder="" value="<?php echo (json_decode($respuesta[0]["fruta"])[$i]->Cjs); ?>" required=""></td>
-                                                            <td><input type="text" class="form-control datosTabla" id="" placeholder="" value="<?php echo (json_decode($respuesta[0]["fruta"])[$i]->CjsRechazadas); ?>" required=""></td>
+                                                                <td><input type="text" class="form-control datosTabla" id="" placeholder="" value="<?php echo (json_decode($respuesta[0]["fruta"])[$i]->Cjs); ?>" required=""></td>
+                                                                <td><input type="text" class="form-control datosTabla" id="" placeholder="" value="<?php echo (json_decode($respuesta[0]["fruta"])[$i]->CjsRechazadas); ?>" required=""></td>
+                                                            <?php } else {
+                                                                var_dump(json_decode($respuesta[0]["fruta"])[$i]->Fruta); ?>
+
+                                                                <td><input type="text" class="form-control datosTabla" id="fila" placeholder="" value="<?php echo (json_decode($respuesta[0]["fruta"])[$i]->fila); ?>" disabled></td>
+                                                                <td><select class="form-control mb-3" id="Tapas">
+
+                                                                        <?php $datosFruta = ControladorFormulario::ctrTraerFruta("tapas"); ?>
+
+
+                                                                        <option>Seleccione una Fruta</option>
+
+                                                                        <?php foreach ($datosFruta as $selectFrutas) { ?>
+                                                                            <option value="<?php echo ($selectFrutas["cod"]);  ?>"><?php echo ($selectFrutas["descripcion"]);  ?></option>
+                                                                        <?php } ?>
+
+                                                                    </select></td>
+                                                                <td><input type="text" class="form-control datosTabla" id="" placeholder="" value="" required=""></td>
+                                                                <td><input type="text" class="form-control datosTabla" id="" placeholder="" value="" required=""></td>
+
+                                                            <?php  } ?>
                                                     </tr>
+
 
 
 
