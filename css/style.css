@@ -5,11 +5,28 @@
     border-radius: 10px;
     margin-left: 17%;
     margin-right: 17%;
+    border-color: #000;
+}
+
+#diseño li{
+    list-style: none;
+    display: inline-block;
+    text-align: center;
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+    border-color: #000;
+}
+#diseño li:hover{
+    background-color: rgb(155, 245, 166);
+    color: #000;
+    border-radius: 10px;
+    
 }
 
 .rediseño{
 
-    color: #316c1b;
+    color: #000;
     font-weight: bold;
 }
 
@@ -17,6 +34,17 @@
     --bs-bg-opacity: 1;
     background-color: #e1ffd091;
     border-radius: 20px;
+}
+.bg-lightNew:hover{
+    background-color: #fff;
+    color: #000;
+    border-radius: 20px;
+}
+
+#rediseñoBarra:hover{
+    background-color: rgb(155, 245, 166);;
+    color: #000;
+    border-radius: 10px;
 }
 
 .centrarDiv{
