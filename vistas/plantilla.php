@@ -32,16 +32,20 @@
   //   include "./vistas/paginas/modulos/" . $pagina . ".php";}
   // } else {
 
-
     if (isset($_GET["pagina"])) {
+      $rutas = explode("/", $_GET["pagina"]);
+      echo '<prev class="bg-white">'; print_r($rutas[0]); echo '</prev>';
 
-      if ($_GET["pagina"] == "contenido-inicio" ||  $_GET["pagina"] == "contenido-cuerpo" || $_GET["pagina"] == "contenido-consolidado" || $_GET["pagina"] == "contenido-terminacion" || $_GET["pagina"] == "contenido-lluvia" || $_GET["pagina"] == "contenido-editar" || $_GET["pagina"] == "contenido-borrar" || $_GET["pagina"] == "salir") {
+      if(isset($rutas[1]) && $rutas[1] == "terminacionNew"){
+        include "./vistas/paginas/modulos/paginacion/".$rutas[1].".php";
+      }
+      elseif ($rutas[0] == "contenido-inicio" ||  $rutas[0] == "contenido-cuerpo" || $rutas[0] == "contenido-consolidado" || $rutas[0] == "contenido-terminacion" || $rutas[0] == "contenido-lluvia" || $rutas[0] == "contenido-editar" || $rutas[0] == "contenido-borrar" || $rutas[0] == "salir") {
 
         //   echo  "<div class='alert alert-success'>
         //   <strong>¡Registro exitoso!</strong> Ya puedes ingresar.
         // </div>";
 
-        $pagina = $_GET["pagina"];
+        $pagina = $rutas[0];
         //incluye la pagina dentro del body como debe hacerlo un pagina, pero el "Contenido-inicio" es otra página
         //hallar la forma de iniciar otra página al darle al botón inicio
         //Cambiar la forma de redirigir las páginas, usar el Dashboard para navegar entre consolidado, lluvia, etc. en sus href enviando gets
@@ -49,7 +53,11 @@
         // el método de redigir con header puede ser una opción para cambiar entre informes u otras opciones
 
         include "./vistas/paginas/modulos/" . $pagina . ".php";
-      } else {
+      } 
+      
+      
+      
+      else {
         include "./vistas/paginas/404.php";
       }
     } else {
