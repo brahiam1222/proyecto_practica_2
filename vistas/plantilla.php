@@ -9,6 +9,7 @@
   <link href="./css/carousel.css" rel="stylesheet">
   <link href="./css/carousel.rtl.css" rel="stylesheet">
   <link href="./css/ventana.css" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/eeaede5d80.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/style.css">
 

@@ -1,4 +1,4 @@
-#diseño{
+#diseño {
     background-color: #e1ffd0;
     /* width: 90%; */
     height: 100%;
@@ -8,7 +8,7 @@
     border-color: #000;
 }
 
-#diseño li{
+#diseño li {
     list-style: none;
     display: inline-block;
     text-align: center;
@@ -17,44 +17,61 @@
     cursor: pointer;
     border-color: #000;
 }
-#diseño li:hover{
+
+#iconosBarra {
+    font-size: 1.5em;
+    align-self: center;
+    margin: 0 8px;
+}
+
+#diseño li:hover {
     background-color: rgb(155, 245, 166);
     color: #000;
     border-radius: 10px;
-    
+
 }
 
-.rediseño{
+.rediseño {
 
     color: #000;
     font-weight: bold;
 }
 
-.bg-lightNew{
+.rediseño .bordear {
+    border-bottom: solid 1px #000;
+    /* border-top: solid 1px gray; */
+    border-radius: 10px;
+
+}
+
+.bg-lightNew {
     --bs-bg-opacity: 1;
     background-color: #e1ffd091;
     border-radius: 20px;
 }
-.bg-lightNew:hover{
+
+.bg-lightNew:hover {
     background-color: #fff;
     color: #000;
     border-radius: 20px;
 }
 
-#rediseñoBarra:hover{
-    background-color: rgb(155, 245, 166);;
+#rediseñoBarra:hover {
+    background-color: rgb(155, 245, 166);
+    ;
     color: #000;
     border-radius: 10px;
 }
 
-.centrarDiv{
+.centrarDiv {
 
     margin-left: 25%;
     text-align: center;
 
 
 }
-.divAjustable{
+
+.divAjustable {
 
     min-width: 70%;
 
