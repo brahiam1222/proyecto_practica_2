@@ -22,41 +22,44 @@ if (!isset($_SESSION["validar"])) {
             <li class="nav-item bordear bordear">
               <a class="nav-link active" id="rediseñoBarra" aria-current="page" href="index.php?pagina=contenido-cuerpo/consolidado">
                 
-                <i id="iconosBarra" class="fa-regular fa-file-lines"></i>
-                Consolidado
+              <img id="iconos" src="./img/Consolidado.png">
+              
+              <!-- <svg class="" xmlns="expand.svg" viewBox="0 0 100 100"></svg> -->
+                <!-- <i id="iconosBarra" class="fa-regular fa-file-lines"></i> -->
+                Informe Consolidado Anual
               </a>
             </li>
             <li class="nav-item bordear">
               <a class="nav-link" id="rediseñoBarra" href="index.php?pagina=contenido-cuerpo/terminacionNew">
                 
-              <i id="iconosBarra" class="fa-regular fa-pen-to-square"></i>
+              <img id="iconos" src="./img/registrarTerminacion.png">
                 Registrar Terminacion
               </a>
             </li>
             <li class="nav-item bordear">
-              <a class="nav-link" href="#" id="rediseñoBarra" onclick="show('Lluvia')">
-              <i id="iconosBarra" class="fa-regular fa-cloud-showers-heavy"></i>
-                Lluvia
+              <a class="nav-link" href="index.php?pagina=contenido-cuerpo/lluvia" id="rediseñoBarra">
+              <img id="iconos" src="./img/precipitacion.png">
+                Reporte de Precipitaciones
               </a>
             </li>
             <li class="nav-item bordear">
               <a class="nav-link" href="index.php?pagina=contenido-cuerpo/tablaTerminacion" id="rediseñoBarra" >
-                
-              <i id="iconosBarra" class="fa-regular fa-hand-spock"></i>
-                Terminaciones
+              <img id="iconos" src="./img/tabla.png">
+              <!-- <i id="iconosBarra" class="fa-regular fa-hand-spock"></i> -->
+                Tabla Terminaciones
               </a>
             </li>
             <li class="nav-item bordear">
               <a class="nav-link" id="rediseñoBarra" href="#">
                 
-              <i id="iconosBarra" class="fa-regular fa-hand-spock"></i>
+              <!-- <i id="iconosBarra" class="fa-regular fa-hand-spock"></i> -->
                 Reports
               </a>
             </li>
             <li class="nav-item bordear">
               <a class="nav-link" id="rediseñoBarra" href="#">
                 
-              <i id="iconosBarra" class="fa-regular fa-hand-spock"></i>
+              <!-- <i id="iconosBarra" class="fa-regular fa-hand-spock"></i> -->
                 Integrations
               </a>
             </li>

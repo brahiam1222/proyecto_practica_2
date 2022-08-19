@@ -100,12 +100,12 @@
 
 
                                       <td>
-                                        <a href="index.php?pagina=contenido-editar&id=<?php echo $terminacion["id"] ?>" class="btn btn-warning btn-sm btn-warning"><i class="fas fa-pencil-alt"></i></a>
+                                        <a href="index.php?pagina=contenido-editar&id=<?php echo $terminacion["id"] ?>" class="btn btn-warning btn-sm btn-warning"><img id="iconosEdit" src="./img/lapiz.png"></i></a>
 
                                       </td>
 
                                       <td>
-                                        <a href="index.php?pagina=contenido-borrar&id=<?php echo $terminacion["id"] ?>" class="btn btn-danger btn-sm btn-danger"><i class="fas fa-trash-alt"></i></a>
+                                        <a href="index.php?pagina=contenido-borrar&id=<?php echo $terminacion["id"] ?>" class="btn btn-danger btn-sm btn-danger"><img id="iconosEditTrash" src="./img/BasuraIOS.png"></a>
                                       </td>
                                     </tr>
                                   <?php } ?>

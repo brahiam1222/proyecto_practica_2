@@ -411,3 +411,4 @@
 
         </div>
         <script src="./js/envioTerminacion.js"></script>
+        <script src="./js/navegacion.js"></script>

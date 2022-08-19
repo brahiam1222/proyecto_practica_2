@@ -9,7 +9,7 @@
   <link href="./css/carousel.css" rel="stylesheet">
   <link href="./css/carousel.rtl.css" rel="stylesheet">
   <link href="./css/ventana.css" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/eeaede5d80.js" crossorigin="anonymous"></script>
+  <!-- <script src="https://kit.fontawesome.com/eeaede5d80.js" crossorigin="anonymous"></script> -->
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/style.css">
 
@@ -34,10 +34,12 @@
 
     if (isset($_GET["pagina"])) {
       $rutas = explode("/", $_GET["pagina"]);
-      echo '<prev class="bg-white">'; print_r($rutas[0]); echo '</prev>';
+      // echo '<prev class="bg-white">'; print_r($rutas[0]); echo '</prev>';
 
-      if(isset($rutas[1]) && $rutas[1] == "terminacionNew"){
+      if(isset($rutas[1])){
+        if ($rutas[1] == "terminacionNew"||$rutas[1] == "tablaTerminacion"||$rutas[1] == "consolidado" || $rutas[1] == "lluvia"){
         include "./vistas/paginas/modulos/paginacion/".$rutas[1].".php";
+        }
       }
       elseif ($rutas[0] == "contenido-inicio" ||  $rutas[0] == "contenido-cuerpo" || $rutas[0] == "contenido-consolidado" || $rutas[0] == "contenido-terminacion" || $rutas[0] == "contenido-lluvia" || $rutas[0] == "contenido-editar" || $rutas[0] == "contenido-borrar" || $rutas[0] == "salir") {
 

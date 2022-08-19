@@ -44,6 +44,25 @@
 
 }
 
+#iconos{
+    width: 2em;
+    
+}
+#iconosEdit{
+    width: 1em;
+    font-size: large;
+    /* filter: invert(99%) sepia(1%) saturate(3149%) hue-rotate(294deg) brightness(112%) contrast(100%); */
+    
+}
+#iconosEditTrash{
+    width: 1em;
+    font-size: large;
+    filter: invert(99%) sepia(1%) saturate(3149%) hue-rotate(294deg) brightness(112%) contrast(100%);
+    
+}
+
+
+
 .bg-lightNew {
     --bs-bg-opacity: 1;
     background-color: #e1ffd091;

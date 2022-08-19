@@ -1,9 +1,11 @@
 
 
 </head>
+
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
   <symbol id="logo" viewBox="0 0 118 94">
     <image id="image0" width="118" height="94" x="0" y="0" href="./img/icono.svg" />
+    
 
 
 
@@ -31,7 +33,7 @@
 
       <div class="dropdown text-end">
         <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
-          <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
+          <!-- <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle"> -->
         </a>
         <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1">
           <li><a class="dropdown-item" href="#">New project...</a></li>
