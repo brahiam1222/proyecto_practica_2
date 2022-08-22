@@ -20,23 +20,80 @@
 
 .rectangulo {
     display: flex;
-    background-color: burlywood;
+    /* background-color: burlywood; */
     justify-content: space-between;
     align-items: baseline;
 }
 
-.rectangulo div{
-    background-color: #8c8c8ceb;
-    width: 100px;
-    margin:10px;
-    text-align: center; 
-    
+.rectangulo div {
+    /* background-color: #8c8c8ceb; */
+    width: 15%;
+    margin: 2%;
+    text-align: center;
+
 }
 
-.hijos {
-    /* position: absolute; */
-    
+.rectanguloVEmergentes {
+    display: inline-block;
+    /* background-color: burlywood; */
+    /* justify-content: space-between;
+    align-items: baseline; */
+    width: 50%;
+    font-weight: bold;
+}
 
+.rectanguloVEmergentes div {
+    /* background-color: #8c8c8ceb; */
+    width: 80%;
+    margin: 2%;
+    text-align: center;
+
+}
+
+.cajas6 {
+
+    width: 80%;
+    margin: 10px;
+    /* text-align: center;  */
+    font-weight: bold;  
+
+}
+
+
+.fechayFinca {
+    flex: 0 0 auto;
+    width: 100%;
+    display: flex;
+}
+
+
+.cardPersonal {
+    /* border: 1px solid; */
+    border-radius: 20px;
+    margin: 0;
+    padding: 2%;
+    width: 100%;
+    display: flex;
+
+}
+
+.cardPersonal .hijos {
+    width: 50%;
+    font-style: oblique;
+}
+
+/* .cardPersonal .hijos select{
+    margin: 2%;
+} */
+
+.cardHeaderPersonal {
+
+    background-color: rgba(143, 133, 133, 0.318);
+    border-radius: 10px;
+    text-align: center;
+    margin: 1%;
+    padding: 1%;
+    font-weight: bold;
 }
 
 #iconosBarra {
