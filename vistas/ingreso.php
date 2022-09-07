@@ -7,6 +7,8 @@
   <meta name="description" content="">
   <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
   <meta name="generator" content="Hugo 0.98.0">
+  <link rel="stylesheet" type="text/css" href="../css/plugins/notie.min.css">
+  <script src="../js/plugins/notie.min.js"></script>
   <?php
 
   require_once "../controlador/formulario-controlador.php";

@@ -8,7 +8,9 @@
   <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
   <meta name="generator" content="Hugo 0.98.0">
   <link rel="stylesheet" href="../css/valid.css">
-  
+  <link rel="stylesheet" type="text/css" href="../css/plugins/notie.min.css">
+  <script src="../js/plugins/notie.min.js"></script>
+
   <!-- <script src="Scripts/My Script File -1.7.1.js"></script> -->
   <?php
 
@@ -136,7 +138,7 @@
       <?php
 
       $registro = ControladorFormulario::ctrRegistro();
-      
+
       if ($registro == "ok") {
 
         echo '<script>
@@ -145,18 +147,42 @@
                 }
           </script>';
 
-        echo  "<div class='alert alert-success'>
-                  <strong>¡Registro exitoso!</strong> Ya puedes ingresar.
-                </div>";
+        echo  '<script>
+        
+        notie.alert({ 
+          type:1,
+          text:"Cuenta registrada con éxito.",
+          position:"top",
+          time: 5
+
+          })
+        
+          </script>';
       } elseif ($registro == "specialCharacters") {
 
-        echo  "<div class='alert alert-danger'>
-                <strong>¡Error!</strong> No se permiten caracteres especiales.
-                </div>";
+        echo   '<script>
+        
+        notie.alert({ 
+          type:2,
+          text:"No se permiten carácteres especiales.",
+          position:"top",
+          time: 5
+
+          })
+        
+          </script>';
       } elseif ($registro == "existe") {
-        echo  "<div class='alert alert-danger'>
-                        <strong>¡Error!</strong> El correo ya está registrado.
-                      </div>";
+        echo  '<script>
+        
+        notie.alert({ 
+          type:3,
+          text:"Este correo ya está registrado.",
+          position:"top",
+          time: 5
+
+          })
+        
+          </script>';
       }
 
 
@@ -170,7 +196,7 @@
   </main>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  
+
   <script src="../js/script.js"></script>
 
 </body>

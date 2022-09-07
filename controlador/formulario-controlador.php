@@ -163,24 +163,56 @@ class ControladorFormulario
                     }
               </script>';
 
-                            echo  "<div class='alert alert-danger'>
-                      <strong>¡Error al ingresar!</strong> email o contraseña no coincide.
-                    </div>";
+              echo  '<script>
+        
+              notie.alert({ 
+                type:3,
+                text:"Email o contraseña no coinciden.",
+                position:"top",
+                time: 5
+      
+                })
+              
+                </script>';
                         } else {
-                            echo  "<div class='alert alert-danger'>
-                      <strong>¡Error al ingresar!</strong> email o contraseña no coincide.
-                      </div>";
+                            echo  '<script>
+        
+              notie.alert({ 
+                type:3,
+                text:"Email o contraseña no coinciden.",
+                position:"top",
+                time: 5
+      
+                })
+              
+                </script>';
                         }
                     } else {
-                        echo  "<div class='alert alert-warning'>
-                      <strong>¡Error al ingresar!</strong> Demasiado número de intentos.
-                      </div>";
+                        echo  '<script>
+        
+              notie.alert({ 
+                type:2,
+                text:"Demasiado número de intentos.",
+                position:"top",
+                time: 5
+      
+                })
+              
+                </script>';
                     }
                 }
             } else {
-                echo  "<div class='alert alert-danger'>
-                  <strong>¡Error al ingresar!</strong> Ingrese datos válidos.
-                  </div>";
+                echo  '<script>
+        
+              notie.alert({ 
+                type:2,
+                text:"Ingrese datos validos.",
+                position:"top",
+                time: 5
+      
+                })
+              
+                </script>';
             }
         }
     }
