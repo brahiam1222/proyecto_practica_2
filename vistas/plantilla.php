@@ -12,8 +12,8 @@
   <!-- <script src="https://kit.fontawesome.com/eeaede5d80.js" crossorigin="anonymous"></script> -->
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" type="text/css" href="../css/plugins/notie.min.css">
-  <script src="../js/plugins/notie.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="./css/plugins/notie.min.css">
+  <script src="./js/plugins/notie.min.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Principal</title>
@@ -42,6 +42,10 @@
       if(isset($rutas[1])){
         if ($rutas[1] == "terminacionNew"||$rutas[1] == "tablaTerminacion"||$rutas[1] == "consolidado" || $rutas[1] == "lluvia"){
         include "./vistas/paginas/modulos/paginacion/".$rutas[1].".php";
+      }
+      else{
+          include "./vistas/paginas/buscador.php";
+
         }
       }
       elseif ($rutas[0] == "contenido-inicio" ||  $rutas[0] == "contenido-cuerpo" || $rutas[0] == "contenido-consolidado" || $rutas[0] == "contenido-terminacion" || $rutas[0] == "contenido-lluvia" || $rutas[0] == "contenido-editar" || $rutas[0] == "contenido-borrar" || $rutas[0] == "salir") {
@@ -51,7 +55,7 @@
         // </div>";
 
         $pagina = $rutas[0];
-        $adicional = $rutas[0];
+        // $adicional = $rutas[0];
         //incluye la pagina dentro del body como debe hacerlo un pagina, pero el "Contenido-inicio" es otra página
         //hallar la forma de iniciar otra página al darle al botón inicio
         //Cambiar la forma de redirigir las páginas, usar el Dashboard para navegar entre consolidado, lluvia, etc. en sus href enviando gets
@@ -59,7 +63,7 @@
         // el método de redigir con header puede ser una opción para cambiar entre informes u otras opciones
 
         include "./vistas/paginas/modulos/" . $pagina . ".php";
-        echo '<pre>'; print_r($adicional); '</pre>';
+        // echo '<pre>'; print_r($adicional); '</pre>';
       } 
       
       
@@ -82,6 +86,9 @@
 
   //hacer la redirección de otras paginas en el contenido del cuerpo con el get paginas
   ?>
+
+<input type="hidden" id="rutaActual" value="<?php echo $pagina;?>">
+<!-- echo '<pre>'; print_r($adicional); '</pre>'; -->
 
 </body>
 

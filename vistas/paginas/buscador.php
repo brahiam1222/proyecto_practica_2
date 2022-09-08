@@ -1,6 +1,3 @@
-<?php 
-    
-    include "./modulos/cabecera.php";
-    include "./modulos/contenido-borrar.php";
-    include "./modulos/footer.php";
-
+<?php
+include "modulos/contenido-buscador.php";
+include "modulos/footer.php";

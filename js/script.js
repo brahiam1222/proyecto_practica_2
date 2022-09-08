@@ -1,3 +1,6 @@
+/*======================
+VALIDAR USER
+=======================*/
 const registro = document.getElementsByName('registroEmail')[0];
 registro.addEventListener('keyup', (e) => {
     if (e.target.value <= "" || e.target.value == null) {
@@ -39,6 +42,9 @@ registro.addEventListener('keyup', (e) => {
     }
 })
 
+/*======================
+BUSCADOR
+=======================*/
 
 
 // const selectFinca = document.querySelector('#terminacionesFincas').value;

@@ -1,11 +1,9 @@
-
-
 </head>
 
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
   <symbol id="logo" viewBox="0 0 118 94">
     <image id="image0" width="118" height="94" x="0" y="0" href="./img/icono.svg" />
-    
+
 
 
 
@@ -27,9 +25,13 @@
         <!-- <li><a href="../vistas/registro.php" class="nav-link px-2 link-dark">Registro</a></li> -->
       </ul>
 
-      <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
-        <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
-      </form>
+      <div id="buscador">
+
+        
+          <!-- <i class="fas fa-search buscar"></i> -->
+          <input type="text" class="form-control buscador text-lowercase" placeholder="Search..." aria-label="Search">
+        
+      </div>
 
       <div class="dropdown text-end">
         <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
@@ -52,7 +54,3 @@
 <main>
 
   <div class="container">
-
-    
-    
-    

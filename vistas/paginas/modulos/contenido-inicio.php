@@ -52,6 +52,7 @@ if (!isset($_SESSION["validar"])) {
 
     </div>
   </div>
+  
 </div>
 
 <!-- <ul> -->

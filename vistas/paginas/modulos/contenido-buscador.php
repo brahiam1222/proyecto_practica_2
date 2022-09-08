@@ -1,4 +1,10 @@
-<?php if (!isset($_SESSION["validar"])) {
+<?php 
+
+echo "hola soy el buscador";
+return;
+
+
+if (!isset($_SESSION["validar"])) {
 
 echo '<script> window.location = "index.php";</script>';
 return;

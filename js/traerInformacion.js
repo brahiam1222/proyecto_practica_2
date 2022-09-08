@@ -1,3 +1,7 @@
+/*======================
+Trae información para mostrar en tabla
+=======================*/
+
 const actualizaTabla = document.getElementById('actualizaTabla');
 
 actualizaTabla.addEventListener('click', function (e) {
