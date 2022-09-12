@@ -10,11 +10,13 @@
   <link href="./css/carousel.rtl.css" rel="stylesheet">
   <link href="./css/ventana.css" rel="stylesheet">
   <!-- <script src="https://kit.fontawesome.com/eeaede5d80.js" crossorigin="anonymous"></script> -->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" type="text/css" href="./css/plugins/notie.min.css">
   <script src="./js/plugins/notie.min.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="./js/scriptBuscar.js"></script>
 
   <title>Principal</title>
 </head>
@@ -87,8 +89,8 @@
   //hacer la redirección de otras paginas en el contenido del cuerpo con el get paginas
   ?>
 
-<input type="hidden" id="rutaActual" value="<?php echo $pagina;?>">
-<!-- echo '<pre>'; print_r($adicional); '</pre>'; -->
+<!-- <input type="hidden" class="rutaActual" id="rutaActual" value="<php echo "index.php?pagina=".$pagina;?>"> -->
+  <!-- echo '<pre>'; print_r("index.php?pagina=".$pagina); '</pre>'; -->
 
 </body>
 

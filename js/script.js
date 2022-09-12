@@ -42,9 +42,7 @@ registro.addEventListener('keyup', (e) => {
     }
 })
 
-/*======================
-BUSCADOR
-=======================*/
+
 
 
 // const selectFinca = document.querySelector('#terminacionesFincas').value;

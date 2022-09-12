@@ -25,13 +25,13 @@
         <!-- <li><a href="../vistas/registro.php" class="nav-link px-2 link-dark">Registro</a></li> -->
       </ul>
 
-      <div id="buscador">
+      <!-- <div id="buscador"> -->
 
         
           <!-- <i class="fas fa-search buscar"></i> -->
-          <input type="text" class="form-control buscador text-lowercase" placeholder="Search..." aria-label="Search">
+          <!-- <input type="text" class="form-control buscador text-lowercase" placeholder="Search..." aria-label="Search">
         
-      </div>
+      </div> -->
 
       <div class="dropdown text-end">
         <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
