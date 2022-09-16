@@ -1,10 +1,16 @@
+
+@extends('plantilla')
+
+@section('content')
+
+
 <div class="content-wrapper" style="min-height: 264.4px;">
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Fixed Layout</h1>
+            <h1>Registrar Terminacion</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -38,7 +44,14 @@
                 </div>
               </div>
               <div class="card-body">
-                Start creating your amazing application!
+
+
+                @foreach ($regTerminacion as $item)
+                
+                {{$item}}
+
+                @endforeach
+
               </div>
               <!-- /.card-body -->
               <div class="card-footer">
@@ -53,3 +66,5 @@
     </section>
     <!-- /.content -->
   </div>
+
+  @endsection

@@ -65,28 +65,40 @@
                                  con font-awesome o cualquier otro ícono de la librería -->
              
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ url('/') }}/consolidado">
+                                <a class="nav-link" href="{{ url("/tabla")}}">
                                   <i class="nav-icon fa fa-bar-chart"></i>
-                                    Informe Consolidado Anual
+                                    Tabla de Datos
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ url("/fincas")}}">
+                                  <i class="nav-icon fa fa-bar-chart"></i>
+                                    Fincas
                                 </a>
                             </li>
 
                             <li class="nav-item bordear">
-                              <a class="nav-link" href="{{ url('/') }}/regTerminacion">
+                              <a class="nav-link" href="{{ url("/regTerminacion") }}">
                                 <i class="nav-icon fa fa-pencil-square-o"></i>
-                                Registrar Terminacion
+                                Terminacion
                               </a>
                             </li>
                             <li class="nav-item bordear">
-                              <a class="nav-link" href="{{ url('/') }}/lluvias">
+                              <a class="nav-link" href="{{ url('/lluvias') }}">
                                 <i class="nav-icon fa fa-tint"></i>
-                                Reporte de Precipitaciones
+                                Precipitaciones
                               </a>
                             </li>
                             <li class="nav-item bordear">
-                              <a class="nav-link" href="{{ url('/') }}/tabla">
+                              <a class="nav-link" href="{{ url('/defectos') }}">
                                 <i class="nav-icon fa fa-file-text"></i>
-                                Tabla Terminaciones
+                                Defectos
+                              </a>
+                            </li>
+                            <li class="nav-item bordear">
+                              <a class="nav-link" href="{{ url('/tapas') }}">
+                                <i class="nav-icon fa fa-file-text"></i>
+                                Codigo de Tapas
                               </a>
                             </li>
 
