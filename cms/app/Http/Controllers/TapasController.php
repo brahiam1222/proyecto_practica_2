@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class TapasController extends Controller
 {
-    public function tapas(){
+    public function index(){
 
         $tapas = Tapas::all(); 
         return view("paginas.tapas", array("Tapas"=>$tapas));

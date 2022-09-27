@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class DefectosController extends Controller
 {
-    public function defectos(){
+    public function index(){
 
         $defectos = Defectos::all(); 
         return view("paginas.defectos", array("Defectos"=>$defectos));

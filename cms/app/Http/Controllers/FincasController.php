@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class FincasController extends Controller
 {
-    public function traerFincas(){
+    public function index(){
 
         $fincas = Fincas::all(); 
         return view("paginas.fincas", array("fincas"=>$fincas));

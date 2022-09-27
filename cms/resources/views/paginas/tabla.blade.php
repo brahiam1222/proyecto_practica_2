@@ -47,7 +47,8 @@
                                     @foreach ($Tabla as $item => $key)
                                         <li>
 
-                                            <h3>{{$key}}</h3>
+                                            {{-- <h3>{{$key["finca"]}}</h3> --}}
+                                            <h3>{{$key->tapas["nombre"]}}</h3>
 
                                         </li>
                                     @endforeach

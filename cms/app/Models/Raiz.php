@@ -5,16 +5,16 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Tabla extends Model
+class Raiz extends Model
 {
     use HasFactory;
     protected $table = 'terminacion';
+
     /* =================================== 
     INNER JOIN DESDE MODELO
      ===================================== */
-     public function tapas(){
+     public function inicio(){
 
-         return $this->belongsTo('App\Models\Fincas', 'finca', 'id_fincas');
+        // return $this->belongsTo('')
     }
-
 }

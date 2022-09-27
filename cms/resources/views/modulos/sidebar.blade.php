@@ -65,6 +65,12 @@
                                  con font-awesome o cualquier otro ícono de la librería -->
              
                             <li class="nav-item">
+                                <a class="nav-link" href="{{ url("/")}}">
+                                  <i class="nav-icon fa fa-bar-chart"></i>
+                                    Inicio
+                                </a>
+                            </li>
+                            <li class="nav-item">
                                 <a class="nav-link" href="{{ url("/tabla")}}">
                                   <i class="nav-icon fa fa-bar-chart"></i>
                                     Tabla de Datos

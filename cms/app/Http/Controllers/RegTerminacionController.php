@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 
 class RegTerminacionController extends Controller
 {
-    public function RegTerminacion(){
+    public function index(){
 
         $regTerminacion = RegTerminacion::all(); 
         return view("paginas.regTerminacion", array("regTerminacion"=>$regTerminacion));

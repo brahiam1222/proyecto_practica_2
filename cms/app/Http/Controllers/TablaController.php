@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class TablaController extends Controller
 {
-    public function tabla(){
+    public function index(){
 
         $tabla = Tabla::all(); 
         return view("paginas.tabla", array("Tabla"=>$tabla));
