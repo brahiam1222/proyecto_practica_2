@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Raiz;
 use Illuminate\Http\Request;
+use Termwind\Components\Raw;
 
 class RaizController extends Controller
 {
@@ -14,4 +15,10 @@ class RaizController extends Controller
 
 
     }
+    // public function terminacion(){
+    //     // $terminacion = Raiz::all(); 
+    //     // // $terminacion->fecha;
+    //     // return; view("paginas.raiz", array("Fecha"=>$terminacion));
+
+    // }
 }

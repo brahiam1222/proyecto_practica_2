@@ -43,18 +43,99 @@
                             </div>
                             <div class="card-body">
 
-                                <ul>
-                                    @foreach ($Tabla as $item => $key)
-                                        <li>
+                                <form action="{{ route('tabla.store') }}" method="post">
+                                @csrf       
+                                    <div class="row">
+                                        <div class="row col-lg-7">
+                                            <div class="card col-lg-6">
+                                                <div class="card-body col-lg-12">
+                                                    <label for="Fecha">Fecha</label>
+                                                    <input class="form-control" type="date" name="fecha" id="Fecha"
+                                                        value="">
+                                                </div>
+                                            </div>
+                                        
 
-                                            {{-- <h3>{{$key["finca"]}}</h3> --}}
-                                            <h3>{{$key->tapas["nombre"]}}</h3>
+                                            <div class="card col-lg-6">
+                                                <div class="card-body col-lg-12">
+                                                    <label for="fincas">Fincas</label>
+                                                        <select class="form-control" name="Fincas" id="Fincas">
+                                                            <option value="MN">Manantiales</option>
+                                                            <option value="MD">Madelandia</option>
+                                                            <option value="SH">Santa_Helena</option>
+                                                            <option value="CO">Corrales</option>
+                                                            <option value="GA">Galilea</option>
+                                                        </select>
+                                                </div>
+                                            </div>
+                                            <div class="row col-lg-2">
+                                                <div class="card">
+                                                    <div class="card-body col-lg-12">
+                                                        <label for="Arecorrida" class="form-label">Area Recorrida</label>
+                                                        <input type="text" class="form-control" name="arecorrida" id="Arecorrida">
+        
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row col-lg-2">
+                                                <div class="card">
+                                                    <div class="card-body col-lg-12">
+                                                        <label for="Cjsestimadas" class="form-label">Cajas Estimadas</label>
+                                                        <input type="text" class="form-control" name="cjsestimadas" id="Cjsestimadas">
+        
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row col-lg-2">
+                                                <div class="card">
+                                                    <div class="card-body col-lg-12">
+                                                        <label for="pempacadora" class="form-label">Persona Empacadora</label>
+                                                        <input type="text" class="form-control" name="pempacadora" id="pempacadora">
+        
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row col-lg-2">
+                                                <div class="card">
+                                                    <div class="card-body col-lg-12">
+                                                        <label for="pcampo" class="form-label">Persona Campo</label>
+                                                        <input type="text" class="form-control" name="pcampo" id="pcampo">
+        
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row col-lg-2">
+                                                <div class="card">
+                                                    <div class="card-body col-lg-12">
+                                                        <label for="calibre" class="form-label">Calibre 2da Mano</label>
+                                                        <input type="text" class="form-control" name="calibre" id="calibre">
+        
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
 
-                                        </li>
-                                    @endforeach
+                                        
+                                        {{-- <button class="btn btn-primary float-right">Guardar</button> --}}
+                                        <div class="row col-lg-2">
+                                            <div class="card">
+                                                <div class="card-body col-lg-12">
+                                                    <label for="Arecorrida" class="form-label">Area Recorrida</label>
+                                                    <input type="text" class="form-control" name="arecorrida" id="Arecorrida">
+    
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            <div class="card-body">
+
+                                <ul>    
+                                    
                                 </ul>
 
                             </div>
+
                             <!-- /.card-body -->
                             <div class="card-footer">
                                 Footer

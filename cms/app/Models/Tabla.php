@@ -12,9 +12,15 @@ class Tabla extends Model
     /* =================================== 
     INNER JOIN DESDE MODELO
      ===================================== */
-     public function tapas(){
+     public function equal_Fincas(){
 
          return $this->belongsTo('App\Models\Fincas', 'finca', 'id_fincas');
     }
+    //  public function nom_Fincas(){
+
+    //      return $this->belongsToMany('App\Models\Fincas') ;
+    // }
+     
+    public $timestamps = false;
 
 }
