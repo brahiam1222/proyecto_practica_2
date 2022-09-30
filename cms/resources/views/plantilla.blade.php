@@ -63,6 +63,8 @@
 
     {{-- ADMINLTE JS --}}
     <script src="{{ url('/') }}/js/plugins/adminlte.js"></script>
+    {{-- REGISTRAR TERMINACION JS --}}
+    <script src="{{ url('/') }}/js/registroTerminacion.js"></script>
 
 
     <!-- ========== End Section PLUGINS JS ========== -->
