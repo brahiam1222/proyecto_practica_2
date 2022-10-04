@@ -119,30 +119,62 @@
                                                     </div>
                                                 </div>
                                             </div>
+                                            <div class="row col-lg-6">
+                                                <div class="col-lg-6">
+                                                    <div class="card">
+                                                        <div class="card-body col-lg-12">
+                                                            <a data-toggle="modal" data-target="#modelracimos">modelo
+                                                                racimos</a>
+    
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-6">
+                                                    <div class="card">
+                                                        <div class="card-body col-lg-12">
+                                                            <a data-toggle="modal" data-target="#modelrepicados">modelo
+                                                                repiques</a>
+    
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
 
-
+                                        {{-- Tabla, añadir funciones y nombres --}}
                                         
-                                        <div class="row col-lg-6">
-                                            <div class="col-lg-6">
-                                                <div class="card">
-                                                    <div class="card-body col-lg-12">
-                                                        <a data-toggle="modal" data-target="#modelracimos">modelo
-                                                            racimos</a>
-
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-6">
-                                                <div class="card">
-                                                    <div class="card-body col-lg-12">
-                                                        <a data-toggle="modal" data-target="#modelrepicados">modelo
-                                                            repiques</a>
-
-                                                    </div>
-                                                </div>
-                                            </div>
+                                        <div class="table-responsive-sm col-lg-6">
+                                            <table class="table table-striped-columns
+                                            table-hover	
+                                            table-borderless
+                                            table-primary
+                                            align-middle">
+                                                <thead class="table-light">
+                                                    <caption>Table Name</caption>
+                                                    <tr>
+                                                        <th>Column 1</th>
+                                                        <th>Column 2</th>
+                                                        <th>Column 3</th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody class="table-group-divider">
+                                                        <tr class="table-primary" >
+                                                            <td scope="row">Item</td>
+                                                            <td>Item</td>
+                                                            <td>Item</td>
+                                                        </tr>
+                                                        <tr class="table-primary">
+                                                            <td scope="row">Item</td>
+                                                            <td>Item</td>
+                                                            <td>Item</td>
+                                                        </tr>
+                                                    </tbody>
+                                                    <tfoot>
+                                                        
+                                                    </tfoot>
+                                            </table>
                                         </div>
+                                        
                                     </div>
 
                                     <div class="form-group">

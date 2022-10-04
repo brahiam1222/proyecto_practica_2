@@ -55,6 +55,112 @@ botonEnviar.addEventListener('click', function (e) {
         // klsPersonal = document.getElementById('klspersonal').value,
         // klsFrPiso = document.getElementById('klsfrpiso').value;
 
+        function datosTerminacion() {
+            var data = [];
+            data.push({
+                "RacimosCortados": [
+                    {
+                        "sem5": sem5,
+                        "sem6": sem6,
+                        "sem7": sem7,
+                        "sem8": sem8,
+                        "sem9": sem9,
+                        "sem10": sem10,
+                        "sem11": sem11,
+                        "sem12": sem12,
+                        "sem13": sem13,
+                        "rechazados": rechazados
+                    }
+                ],
+    
+                "Repiques": [
+                    {
+                        "Rsm5": Rsm5,
+                        "Rsm6": Rsm6,
+                        "Rsm7": Rsm7,
+                        "Rsm8": Rsm8,
+                        "Rsm9": Rsm9,
+                        "Rsm10": Rsm10,
+                        "Rsm11": Rsm11,
+                        "Rsm12": Rsm12,
+                        "Rsm13": Rsm13
+                    }
+                ]
+                // >"Defectos": [
+                //     {
+                //         "defecto1": defecto1,
+                //         "valDefecto1": valDefecto1
+                //     },
+                //     {
+                //         "defecto2": defecto2,
+                //         "valDefecto2": valDefecto2
+                //     },
+                //     {
+                //         "defecto3": defecto3,
+                //         "valDefecto3": valDefecto3
+                //     }
+                // ],
+    
+                // "ArrayTabla": ArrayTabla,
+                // "cjsNal": cjsNal,
+                // "bolNacional": bolNacional,
+                // "klsNacional": klsNacional,
+                // "klsPersonal": klsPersonal,
+                // "klsFrPiso": klsFrPiso
+    
+    
+            });
+            var jsDataTerminacion = { "data": data };
+            return data //jsData--;
+        }
+
+        function guardar() {
+
+
+            //     let jsonData = JSON.stringify(datosTerminacion());
+            //     fs.writeFileSync('./Json/terminacion.json', jsonData);
+            //     console.log('terminacion.json guardado');
+            //     alert('terminacion.json guardado');
+            // }
+    
+    
+            datos = new FormData();
+            datos.append("guardarTerminacion", JSON.stringify(datosTerminacion())); //Json Stringfy
+             console.log(datos);
+            //  var guardarJSON = JSON.stringify(datosTerminacion());
+    
+            __ajax("./ajax/formulario.ajax.php", datos)
+                .done(function (enviado) {
+                    msg.innerHTML = `<div class="alert alert-success" role="alert">
+                                 Terminacion subida con éxito!
+                               </div>`;
+                    location.reload();
+                    // msg.innerHTML = `<div class="alert alert-danger" role="alert">
+                    // Error al enviar el mensaje!
+                    // </div>`;
+    
+                    console.log(enviado);     //Json Stringfy
+                    //   console.log(enviado[0]["finca"]);
+                    //    var terminacionList = datosTerminacion();
+                    //   console.log(terminacionList);                
+                }
+    
+                );
+        }
+    
+        function __ajax(url, datos) {
+            var ajax = $.ajax({
+                url: url,
+                method: "POST",
+                data: datos,
+                cache: false,
+                contentType: false,
+                processData: false,
+                dataType: "json"
+            });
+            return ajax;
+        }
+
 
 
     });
