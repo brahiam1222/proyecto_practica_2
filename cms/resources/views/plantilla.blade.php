@@ -16,6 +16,8 @@
 
     {{-- SCROLL CSS --}}
     <link rel="stylesheet" href="{{ url('/') }}/css/plugins/OverlayScrollbars.min.css">
+    {{-- SCROLL CSS --}}
+    <link rel="stylesheet" href="{{ url('/') }}/css/ownstyle.css">
 
     {{-- ADMINLTE --}}
     <link rel="stylesheet" href="{{ url('/') }}/css/plugins/adminlte.min.css">

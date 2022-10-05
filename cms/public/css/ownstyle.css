@@ -1,0 +1,22 @@
+#button-agregar {
+    background-color: #4CAF50C4;
+    color: white;
+    text-align: center;
+    font-size: 20px;
+    border-radius: 20px;
+}
+#button-agregar:hover {
+    background-color: #56ca5ac4;
+}
+
+#button-eliminar {
+    background-color: #cf0707a3;
+    color: white;
+    text-align: center;
+    font-size: 20px;
+    border-radius: 20px;
+}
+
+#button-eliminar:hover {
+    background-color: #db1f1fa3;
+}

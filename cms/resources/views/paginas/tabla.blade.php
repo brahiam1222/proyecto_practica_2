@@ -60,11 +60,10 @@
                                                 <div class="card-body col-lg-12">
                                                     <label for="fincas">Fincas</label>
                                                     <select class="form-control" name="Fincas" id="Fincas">
-                                                        <option value="1">Manantiales</option>
-                                                        <option value="2">Madelandia</option>
-                                                        <option value="3">Santa_Helena</option>
-                                                        <option value="4">Corrales</option>
-                                                        <option value="5">Galilea</option>
+                                                        @foreach ($Fincas as $item)
+                                                            <option value="{{ $item['id_fincas'] }}">{{ $item['nombre'] }}
+                                                            </option>
+                                                        @endforeach
                                                     </select>
                                                 </div>
                                             </div>
@@ -125,7 +124,7 @@
                                                         <div class="card-body col-lg-12">
                                                             <a data-toggle="modal" data-target="#modelracimos">modelo
                                                                 racimos</a>
-    
+
                                                         </div>
                                                     </div>
                                                 </div>
@@ -134,7 +133,7 @@
                                                         <div class="card-body col-lg-12">
                                                             <a data-toggle="modal" data-target="#modelrepicados">modelo
                                                                 repiques</a>
-    
+
                                                         </div>
                                                     </div>
                                                 </div>
@@ -142,43 +141,61 @@
                                         </div>
 
                                         {{-- Tabla, añadir funciones y nombres --}}
-                                        
+
                                         <div class="table-responsive-sm col-lg-6">
-                                            <table class="table table-striped-columns
+                                            <table id="tabla-extend"
+                                                class="table table-striped-columns
                                             table-hover	
                                             table-borderless
                                             table-primary
                                             align-middle">
                                                 <thead class="table-light">
-                                                    <caption>Table Name</caption>
+                                                    <caption></caption>
                                                     <tr>
-                                                        <th>Column 1</th>
-                                                        <th>Column 2</th>
-                                                        <th>Column 3</th>
+                                                        <th>#</th>
+                                                        <th>Tapa</th>
+                                                        <th>Cantidad</th>
+                                                        <th>Rechazo</th>
                                                     </tr>
-                                                    </thead>
-                                                    <tbody class="table-group-divider">
-                                                        <tr class="table-primary" >
-                                                            <td scope="row">Item</td>
-                                                            <td>Item</td>
-                                                            <td>Item</td>
-                                                        </tr>
-                                                        <tr class="table-primary">
-                                                            <td scope="row">Item</td>
-                                                            <td>Item</td>
-                                                            <td>Item</td>
-                                                        </tr>
-                                                    </tbody>
-                                                    <tfoot>
-                                                        
-                                                    </tfoot>
+                                                </thead>
+                                                <tbody class="table-group-divider">
+                                                    <tr class="table-primary">
+                                                        <td scope="row">Item</td>
+                                                        <td>
+                                                            <div class="mb-3">
+                                                                <select class="form-select form-control form-select-sm"
+                                                                    name="tapasValor" id="tapasValor">
+                                                                    <option selected>Select one</option>
+                                                                    @foreach ($Tapas as $item)
+                                                                        <option value="{{$item['cod']}}">{{ $item['descripcion'] }}
+                                                                        </option>
+                                                                    @endforeach
+                                                                </select>
+                                                            </div>
+                                                        </td>
+                                                        <td><input class="form-control-sm" type="text" name="cjs" id="cjs"></td>
+                                                        <td><input class="form-control-sm" type="text" name="cjsRechazadas" id="cjsRechazadas"></td>
+                                                        {{-- @foreach ($Tabla as $elemento => $key)
+                                                            {{ json_decode(Arr::get($key, 'fruta'))[0]->Fruta }}
+                                                            {{ $key->equal_Fincas }}
+                                                        @endforeach --}}
+                                                    </tr>
+                                                    
+                                                </tbody>
+                                                <tfoot>
+
+                                                </tfoot>
                                             </table>
+                                            <input type="button" class="btn btn-success btn-group-lg" id="button-agregar" value="+" onclick="insertaFila()">
+                                            <input type="button" class="btn btn-warning btn-group-lg" id="button-eliminar" value="-" onclick="eliminaFila()">
+
                                         </div>
-                                        
+
                                     </div>
 
                                     <div class="form-group">
-                                        <input type="submit" class="btn btn-primary" id="enviarterminacion" value="Guardar">
+                                        <input type="submit" class="btn btn-primary" id="enviarterminacion"
+                                            value="Guardar">
                                     </div>
                                     <div class="card-body">
 
@@ -332,7 +349,7 @@
 
                                     </div>
                                     {{-- Vista modelo racimos --}}
-                                                                        <!-- /.card-body -->
+                                    <!-- /.card-body -->
                                     <div class="card-footer">
                                         Footer
                                     </div>

@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Fincas;
 use App\Models\Tabla;
-// use App\Models\Fincas;
+use App\Models\Tapas;
 use Illuminate\Http\Request;
 
 class TablaController extends Controller
@@ -11,11 +12,21 @@ class TablaController extends Controller
     public function index(){
 
         $tabla = Tabla::all(); 
-        return view("paginas.tabla", array("Tabla"=>$tabla));
+        $fincas = Fincas::all();
+        $Tapas = Tapas::all();
+        return view("paginas.tabla", array("Tabla"=>$tabla, "Fincas"=>$fincas, "Tapas"=>$Tapas));
+        
 
 
     }
     public function store(Request $request){
+
+        $fila =[
+            "Fruta" =>$request->input("tapasValor"),
+            "Cjs" =>$request->input("cjs"),
+            "CjsRechazadas" =>$request->input("cjsRechazadas"),
+
+        ];
 
 
         $dataRacimos = [
@@ -58,7 +69,7 @@ class TablaController extends Controller
         $terminacion->klsnacional = $request->input("sm5");
         $terminacion->klspersonal = $request->input("sm5");
         $terminacion->klsfrpiso = $request->input("sm5");
-        $terminacion->fruta = $request->input("sm5");
+        $terminacion->fruta = json_encode($fila);
         $terminacion->save();
         return redirect()->route('tabla.index');
 

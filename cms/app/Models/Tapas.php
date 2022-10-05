@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Tapas extends Model
 {
     use HasFactory;
-    protected $table = 'terminacion';
+    protected $table = 'tapas';
 
     /* =================================== 
     INNER JOIN DESDE MODELO
