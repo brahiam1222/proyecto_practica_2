@@ -7,7 +7,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1>Tabla</h1>
+                        <h1>Registrar Terminacion</h1>
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
@@ -42,636 +42,188 @@
                                 </div>
                             </div>
                             <div class="card-body">
-
-                                <form action="{{ route('tabla.store') }}" method="post">
-                                    @csrf
-                                    <div class="row">
-                                        <div class="row col-lg-6">
-                                            <div class="card col-lg-6">
-                                                <div class="card-body col-lg-12">
-                                                    <label for="Fecha">Fecha</label>
-                                                    <input class="form-control" type="date" name="fecha" id="Fecha"
-                                                        value="">
-                                                </div>
-                                            </div>
-
-
-                                            <div class="card col-lg-6">
-                                                <div class="card-body col-lg-12">
-                                                    <label for="fincas">Fincas</label>
-                                                    <select class="form-control" name="Fincas" id="Fincas">
-                                                        @foreach ($Fincas as $item)
-                                                            <option value="{{ $item['id_fincas'] }}">{{ $item['nombre'] }}
-                                                            </option>
-                                                        @endforeach
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div class="row col-lg-4">
-                                                <div class="card">
-                                                    <div class="card-body col-lg-12">
-                                                        <label for="arecorrida" class="form-label">Area Recorrida</label>
-                                                        <input type="text" class="form-control" name="arecorrida"
-                                                            id="arecorrida">
-
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="row col-lg-4">
-                                                <div class="card">
-                                                    <div class="card-body col-lg-12">
-                                                        <label for="cjsestimadas" class="form-label">Cajas Estimadas</label>
-                                                        <input type="text" class="form-control" name="cjsestimadas"
-                                                            id="cjsestimadas">
-
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="row col-lg-4">
-                                                <div class="card">
-                                                    <div class="card-body col-lg-12">
-                                                        <label for="pempacadora" class="form-label">Persona
-                                                            Empacadora</label>
-                                                        <input type="text" class="form-control" name="pempacadora"
-                                                            id="pempacadora">
-
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="row col-lg-6">
-                                                <div class="card">
-                                                    <div class="card-body col-lg-12">
-                                                        <label for="pcampo" class="form-label">Persona Campo</label>
-                                                        <input type="text" class="form-control" name="pcampo"
-                                                            id="pcampo">
-
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="row col-lg-6">
-                                                <div class="card">
-                                                    <div class="card-body col-lg-12">
-                                                        <label for="calibre" class="form-label">Calibre 2da Mano</label>
-                                                        <input type="text" class="form-control" name="calibre"
-                                                            id="calibre">
-
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="row col-lg-4">
-                                                <div class="card">
-                                                    <div class="card-body col-lg-12">
-                                                        <label for="defecto1" class="form-label">Defecto 1</label>
-                                                        <select class="form-control" name="defectosLista1"
-                                                            id="defectosLista1">
-                                                            <option value="" selected>Seleccione una</option>
-                                                            @foreach ($Defectos as $element => $key)
-                                                                <option value="{{ $key['codigo'] }}">{{ $key['nombre'] }}
-                                                                </option>
-                                                            @endforeach
-                                                        </select>
-                                                        <input type="text" class="form-control" name="defecto1"
-                                                            id="defecto1">
-
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="row col-lg-4">
-                                                <div class="card">
-                                                    <div class="card-body col-lg-12">
-                                                        <label for="defecto2" class="form-label">Defecto 2</label>
-                                                        <select class="form-control" name="defectosLista2"
-                                                            id="defectosLista2">
-                                                            <option value="" selected>Seleccione una</option>
-                                                            @foreach ($Defectos as $element => $key)
-                                                                <option value="{{ $key['codigo'] }}">{{ $key['nombre'] }}
-                                                                </option>
-                                                            @endforeach
-                                                        </select>
-                                                        <input type="text" class="form-control" name="defecto2"
-                                                            id="defecto2">
-
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="row col-lg-4">
-                                                <div class="card">
-                                                    <div class="card-body col-lg-12">
-                                                        <label for="defecto3" class="form-label">Defecto 3</label>
-                                                        <select class="form-control" name="defectosLista3"
-                                                            id="defectosLista3">
-                                                            <option value="" selected>Seleccione una</option>
-                                                            @foreach ($Defectos as $element => $key)
-                                                                <option value="{{ $key['codigo'] }}">{{ $key['nombre'] }}
-                                                                </option>
-                                                            @endforeach
-                                                        </select>
-                                                        <input type="text" class="form-control" name="defecto3"
-                                                            id="defecto3">
-
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="row col-lg-4">
-                                                <div class="card">
-                                                    <div class="card-body col-lg-12">
-                                                        <label for="cjsnal" class="form-label">Cajas Nacional</label>
-                                                        <input type="text" class="form-control" name="cjsnal"
-                                                            id="cjsnal">
-
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="row col-lg-4">
-                                                <div class="card">
-                                                    <div class="card-body col-lg-12">
-                                                        <label for="blsnacional" class="form-label">Bolsas
-                                                            Nacional</label>
-                                                        <input type="text" class="form-control" name="blsnacional"
-                                                            id="blsnacional">
-
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="row col-lg-4">
-                                                <div class="card">
-                                                    <div class="card-body col-lg-12">
-                                                        <label for="klsnacional" class="form-label">Kilos Nacional</label>
-                                                        <input type="text" class="form-control" name="klsnacional"
-                                                            id="klsnacional">
-
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="row col-lg-4">
-                                                <div class="card">
-                                                    <div class="card-body col-lg-12">
-                                                        <label for="klspersonal" class="form-label">Kilos Personal</label>
-                                                        <input type="text" class="form-control" name="klspersonal"
-                                                            id="klspersonal">
-
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="row col-lg-4">
-                                                <div class="card">
-                                                    <div class="card-body col-lg-12">
-                                                        <label for="klsfrpiso" class="form-label">Kilos Fruta Piso</label>
-                                                        <input type="text" class="form-control" name="klsfrpiso"
-                                                            id="klsfrpiso">
-
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        {{-- Tabla, añadir funciones y nombres --}}
-
-                                        <div class="table-responsive-sm col-lg-6">
-                                            <table id="tabla-extend"
-                                                class="table table-striped-columns
+                                <div class="table-responsive-sm col-lg-12">
+                                    <table id="tabla-extend"
+                                        class="table table-striped-columns
                                             table-hover	
-                                            table-borderless
-                                            table-primary
+                                            table-dark
                                             align-middle">
-                                                <thead class="table-light">
-                                                    <caption></caption>
-                                                    <tr>
-                                                        {{-- <th>#</th> --}}
-                                                        <th>Tapa</th>
-                                                        <th>Cantidad</th>
-                                                        <th>Rechazo</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody class="table-group-divider">
-                                                    <tr class="table-primary">
-                                                        {{-- <td scope="row">Item</td> --}}
-                                                        <td>
-                                                            <div class="mb-3">
-                                                                <select class="form-select form-control form-select-sm"
-                                                                    name="tapasValor1" id="tapasValor1">
-                                                                    <option value="" selected>Seleccione una</option>
-                                                                    @foreach ($Tapas as $item)
-                                                                        <option value="{{ $item['cod'] }}">
-                                                                            {{ $item['descripcion'] }}
-                                                                        </option>
-                                                                    @endforeach
-                                                                </select>
-                                                            </div>
-                                                        </td>
-                                                        <td><input class="form-control-sm" type="text" name="cjs1"
-                                                                id="cjs1"></td>
-                                                        <td><input class="form-control-sm" type="text"
-                                                                name="cjsRechazadas1" id="cjsRechazadas1"></td>
+                                        <thead class="table-light">
+                                            <caption>Terminaciones registradas</caption>
+                                            <tr>
+                                                {{-- <th>#</th> --}}
+                                                <th>Fecha</th>
+                                                <th>Fincas</th>
+                                                <th>Tapas</th>
+                                                <th>Cantidad</th>
+                                                <th>Editar</th>
+                                                <th>Borrar</th>
+                                            </tr>
+                                        </thead>
+                                        @foreach ($Tabla as $item => $key)
+                                            <tbody class="table-group-divider">
+                                                <tr class="table-primary" style="background-color: #ffff; color:black" >
+                                                    {{-- <td scope="row">Item</td> --}}
+                                                    <td>
+                                                        <div class="mb-2">
 
-                                                    </tr>
-
-                                                </tbody>
-                                                <tbody class="table-group-divider">
-                                                    <tr class="table-primary">
-                                                        {{-- <td scope="row">Item</td> --}}
-                                                        <td>
-                                                            <div class="mb-3">
-                                                                <select class="form-select form-control form-select-sm"
-                                                                    name="tapasValor2" id="tapasValor2">
-                                                                    <option selected>Seleccione una</option>
-                                                                    @foreach ($Tapas as $item)
-                                                                        <option value="{{ $item['cod'] }}">
-                                                                            {{ $item['descripcion'] }}
-                                                                        </option>
-                                                                    @endforeach
-                                                                </select>
-                                                            </div>
-                                                        </td>
-                                                        <td><input class="form-control-sm" type="text" name="cjs2"
-                                                                id="cjs2"></td>
-                                                        <td><input class="form-control-sm" type="text"
-                                                                name="cjsRechazadas2" id="cjsRechazadas2"></td>
-
-                                                    </tr>
-
-                                                </tbody>
-                                                <tbody class="table-group-divider">
-                                                    <tr class="table-primary">
-                                                        {{-- <td scope="row">Item</td> --}}
-                                                        <td>
-                                                            <div class="mb-3">
-                                                                <select class="form-select form-control form-select-sm"
-                                                                    name="tapasValor3" id="tapasValor3">
-                                                                    <option selected>Seleccione una</option>
-                                                                    @foreach ($Tapas as $item)
-                                                                        <option value="{{ $item['cod'] }}">
-                                                                            {{ $item['descripcion'] }}
-                                                                        </option>
-                                                                    @endforeach
-                                                                </select>
-                                                            </div>
-                                                        </td>
-                                                        <td><input class="form-control-sm" type="text" name="cjs3"
-                                                                id="cjs3"></td>
-                                                        <td><input class="form-control-sm" type="text"
-                                                                name="cjsRechazadas3" id="cjsRechazadas3"></td>
-
-                                                    </tr>
-
-                                                </tbody>
-                                                <tbody class="table-group-divider">
-                                                    <tr class="table-primary">
-                                                        {{-- <td scope="row">Item</td> --}}
-                                                        <td>
-                                                            <div class="mb-3">
-                                                                <select class="form-select form-control form-select-sm"
-                                                                    name="tapasValor4" id="tapasValor4">
-                                                                    <option selected>Seleccione una</option>
-                                                                    @foreach ($Tapas as $item)
-                                                                        <option value="{{ $item['cod'] }}">
-                                                                            {{ $item['descripcion'] }}
-                                                                        </option>
-                                                                    @endforeach
-                                                                </select>
-                                                            </div>
-                                                        </td>
-                                                        <td><input class="form-control-sm" type="text" name="cjs4"
-                                                                id="cjs4"></td>
-                                                        <td><input class="form-control-sm" type="text"
-                                                                name="cjsRechazadas4" id="cjsRechazadas4"></td>
-
-                                                    </tr>
-
-                                                </tbody>
-                                                <tfoot>
-
-                                                </tfoot>
-                                            </table>
-                                            {{-- <input type="button" class="btn btn-success btn-group-lg" id="button-agregar" value="+" onclick="insertaFila()">
-                                            <input type="button" class="btn btn-warning btn-group-lg" id="button-eliminar" value="-" onclick="eliminaFila()"> --}}
-
-                                            <div class="row col-lg-6">
-                                                <div class="col-lg-6">
-                                                    <div data-toggle="modal" data-target="#modelracimos" class="card btnpersonal">
-                                                        <div class="card-body col-lg-12">
-                                                            <a data-toggle="modal" data-target="#modelracimos">modelo
-                                                                racimos</a>
+                                                            {{ $key['fecha'] }}
 
                                                         </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-6">
-                                                    <div data-toggle="modal" data-target="#modelrepicados" class="card btnpersonal">
-                                                        <div class="card-body col-lg-12">
-                                                            <a data-toggle="modal" data-target="#modelrepicados">modelo
-                                                                repiques</a>
+                                                    </td>
+                                                    <td>
+                                                        <div class="mb-2">
+
+                                                            {{ $key->equal_Fincas['nombre'] }}
 
                                                         </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="mb-3">
 
-                                    </div>
-
-                                    <div class="form-group">
-                                        <input type="submit" class="btn btn-primary" id="enviarterminacion"
-                                            value="Guardar">
-                                    </div>
-                                    <div class="card-body">
-
-                                        <ul>
-
-                                        </ul>
-
-                                    </div>
-
-
-
-                                    {{-- Vista modelo racimos --}}
-                                    <div class="modal fade" id="modelracimos" role="dialog"
-                                        style="z-index: 1050; display: none;" aria-hidden="true">
-
-                                        <div class="modal-dialog" role="document">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <h4 class="modal-title">Racimos Cortados</h4>
-                                                    <button type="button" class="close" data-dismiss="modal"
-                                                        aria-label="Close">
-                                                        <span aria-hidden="true"><i class="fa fa-close"></i></span>
-                                                    </button>
-                                                </div>
-                                                <form id="regisRacimos" action="" method="post">
-                                                    <!--formulario registro terminación-->
-                                                    @csrf
-                                                    <div class="modal-body" style="height: 87vh;overflow-y:auto;">
-                                                        <div class="form-group row">
-                                                            <label for="" class="col-sm-3 col-form-label">Racimo 5
-                                                                semanas</label>
-                                                            <div class="col sm-9">
-                                                                <input type="text" id="sm5" name="sm5"
-                                                                    class="form-control racimos"
-                                                                    placeholder="ingrese racimo de 5 semanas">
-                                                            </div>
-
-
-                                                        </div>
-                                                        <div class="form-group row">
-                                                            <label for="" class="col-sm-3 col-form-label">Racimo 6
-                                                                semanas</label>
-                                                            <div class="col sm-9">
-                                                                <input type="text" id="sm6" name="sm6"
-                                                                    class="form-control racimos"
-                                                                    placeholder="ingrese racimo de 6 semanas">
-                                                            </div>
-
+                                                            @if (json_decode($key['fruta'])->Fruta1 != '0' &&
+                                                                json_decode($key['fruta'])->Fruta1 != '' &&
+                                                                json_decode($key['fruta'])->Fruta1 != 'null')
+                                                                @foreach ($Tapas as $tapa)
+                                                                    @if (json_decode($key['fruta'])->Fruta1 == $tapa['cod'])
+                                                                        <div class="mb-3">
+                                                                            {{ $tapa['descripcion'] }}
+                                                                        </div>
+                                                                    @endif
+                                                                @endforeach
+                                                            @endif
+                                                            @if (json_decode($key['fruta'])->Fruta2 != '0' &&
+                                                                json_decode($key['fruta'])->Fruta2 != '' &&
+                                                                json_decode($key['fruta'])->Fruta2 != 'null')
+                                                                @foreach ($Tapas as $tapa)
+                                                                    @if (json_decode($key['fruta'])->Fruta2 == $tapa['cod'])
+                                                                        <div class="mb-3">
+                                                                            {{ $tapa['descripcion'] }}
+                                                                        </div>
+                                                                    @endif
+                                                                @endforeach
+                                                            @endif
+                                                            @if (json_decode($key['fruta'])->Fruta3 != '0' &&
+                                                                json_decode($key['fruta'])->Fruta3 != '' &&
+                                                                json_decode($key['fruta'])->Fruta3 != 'null')
+                                                                @foreach ($Tapas as $tapa)
+                                                                    @if (json_decode($key['fruta'])->Fruta3 == $tapa['cod'])
+                                                                        <div class="mb-3">
+                                                                            {{ $tapa['descripcion'] }}
+                                                                        </div>
+                                                                    @endif
+                                                                @endforeach
+                                                            @endif
+                                                            @if (json_decode($key['fruta'])->Fruta4 != '0' &&
+                                                                json_decode($key['fruta'])->Fruta4 != '' &&
+                                                                json_decode($key['fruta'])->Fruta4 != 'null')
+                                                                @foreach ($Tapas as $tapa)
+                                                                    @if (json_decode($key['fruta'])->Fruta4 == $tapa['cod'])
+                                                                        <div class="mb-3">
+                                                                            {{ $tapa['descripcion'] }}
+                                                                        </div>
+                                                                    @endif
+                                                                @endforeach
+                                                            @endif
 
                                                         </div>
-                                                        <div class="form-group row">
-                                                            <label for="" class="col-sm-3 col-form-label">Racimo 7
-                                                                semanas</label>
-                                                            <div class="col sm-9">
-                                                                <input type="text" id="sm7" name="sm7"
-                                                                    class="form-control racimos"
-                                                                    placeholder="ingrese racimo de 7 semanas">
-                                                            </div>
+                                                    </td>
+                                                    <td>
+                                                      <div class="mb-3">
+
+                                                          @if (json_decode($key['fruta'])->Cjs1 != '0' &&
+                                                              json_decode($key['fruta'])->Cjs1 != '' &&
+                                                              json_decode($key['fruta'])->Cjs1 != 'null')
+                                                              @foreach ($Tapas as $tapa)
+                                                                  @if (json_decode($key['fruta'])->Fruta1 == $tapa['cod'])
+                                                                      <div class="mb-3">
+                                                                          {{ json_decode($key['fruta'])->Cjs1 }}
+                                                                      </div>
+                                                                  @endif
+                                                              @endforeach
+                                                          @endif
+                                                          @if (json_decode($key['fruta'])->Cjs2 != '0' &&
+                                                              json_decode($key['fruta'])->Cjs2 != '' &&
+                                                              json_decode($key['fruta'])->Cjs2 != 'null')
+                                                              @foreach ($Tapas as $tapa)
+                                                                  @if (json_decode($key['fruta'])->Fruta2 == $tapa['cod'])
+                                                                      <div class="mb-3">
+                                                                          {{ json_decode($key['fruta'])->Cjs2 }}
+                                                                      </div>
+                                                                  @endif
+                                                              @endforeach
+                                                          @endif
+                                                          @if (json_decode($key['fruta'])->Cjs3 != '0' &&
+                                                              json_decode($key['fruta'])->Cjs3 != '' &&
+                                                              json_decode($key['fruta'])->Cjs3 != 'null')
+                                                              @foreach ($Tapas as $tapa)
+                                                                  @if (json_decode($key['fruta'])->Fruta3 == $tapa['cod'])
+                                                                      <div class="mb-3">
+                                                                          {{ json_decode($key['fruta'])->Cjs3 }}
+                                                                      </div>
+                                                                  @endif
+                                                              @endforeach
+                                                          @endif
+                                                          @if (json_decode($key['fruta'])->Cjs4 != '0' &&
+                                                              json_decode($key['fruta'])->Cjs4 != '' &&
+                                                              json_decode($key['fruta'])->Cjs4 != 'null')
+                                                              @foreach ($Tapas as $tapa)
+                                                                  @if (json_decode($key['fruta'])->Fruta4 == $tapa['cod'])
+                                                                      <div class="mb-3">
+                                                                          {{ json_decode($key['fruta'])->Cjs4 }}
+                                                                      </div>
+                                                                  @endif
+                                                              @endforeach
+                                                          @endif
+
+                                                      </div>
+                                                  </td>
+                                                    <td>
+                                                      <div class="mb-2">
+
+                                                        <a href="#" class="btn btn-warning btn-lg" style="border-radius: 30px"><i class="nav-icon fa-solid fa-pencil btn-lg "></i></a>
 
 
-                                                        </div>
-                                                        <div class="form-group row">
-                                                            <label for="" class="col-sm-3 col-form-label">Racimo 8
-                                                                semanas</label>
-                                                            <div class="col sm-9">
-                                                                <input type="text" id="sm8" name="sm8"
-                                                                    class="form-control racimos"
-                                                                    placeholder="ingrese racimo de 8 semanas">
-                                                            </div>
+                                                      </div>
+                                                  </td>
+                                                    <td>
+                                                      <div class="mb-2">
+
+                                                        <a href="#" class="btn btn-danger btn-lg" style="border-radius: 30px"><i class="nav-icon fa fa-trash btn-lg "></i></a>
 
 
-                                                        </div>
-                                                        <div class="form-group row">
-                                                            <label for="" class="col-sm-3 col-form-label">Racimo 9
-                                                                semanas</label>
-                                                            <div class="col sm-9">
-                                                                <input type="text" id="sm9" name="sm9"
-                                                                    class="form-control racimos"
-                                                                    placeholder="ingrese racimo de 9 semanas">
-                                                            </div>
+                                                      </div>
+                                                  </td>
+
+                                                </tr>
+
+                                            </tbody>
+                                        @endforeach
 
 
-                                                        </div>
-                                                        <div class="form-group row">
-                                                            <label for="" class="col-sm-3 col-form-label">Racimo
-                                                                10
-                                                                semanas</label>
-                                                            <div class="col sm-9">
-                                                                <input type="text" id="sm10" name="sm10"
-                                                                    class="form-control racimos"
-                                                                    placeholder="ingrese racimo de 10 semanas">
-                                                            </div>
+
+                                        <tfoot>
+
+                                        </tfoot>
+                                    </table>
+                                </div>
 
 
-                                                        </div>
-                                                        <div class="form-group row">
-                                                            <label for="" class="col-sm-3 col-form-label">Racimo
-                                                                11
-                                                                semanas</label>
-                                                            <div class="col sm-9">
-                                                                <input type="text" id="sm11" name="sm11"
-                                                                    class="form-control racimos"
-                                                                    placeholder="ingrese racimo de 11 semanas">
-                                                            </div>
-
-
-                                                        </div>
-                                                        <div class="form-group row">
-                                                            <label for="" class="col-sm-3 col-form-label">Racimo
-                                                                12
-                                                                semanas</label>
-                                                            <div class="col sm-9">
-                                                                <input type="text" id="sm12" name="sm12"
-                                                                    class="form-control racimos"
-                                                                    placeholder="ingrese racimo de 12 semanas">
-                                                            </div>
-
-
-                                                        </div>
-                                                        <div class="form-group row">
-                                                            <label for="" class="col-sm-3 col-form-label">Racimo
-                                                                13
-                                                                semanas</label>
-                                                            <div class="col sm-9">
-                                                                <input type="text" id="sm13" name="sm13"
-                                                                    class="form-control racimos"
-                                                                    placeholder="ingrese racimo de 13 semanas">
-                                                            </div>
-
-
-                                                        </div>
-                                                        <div class="form-group row">
-                                                            <label for="" class="col-sm-3 col-form-label">Racimo
-                                                                rechazo
-                                                            </label>
-                                                            <div class="col sm-9">
-                                                                <input type="text" id="rechazo" name="rechazo"
-                                                                    class="form-control racimos"
-                                                                    placeholder="ingrese racimos rechazados">
-                                                            </div>
-
-
-                                                        </div>
-                                                    </div>
-
-                                                </form>
-
-                                            </div>
-
-                                        </div>
-                                        {{-- Vista modelo repiques --}}
-
-                                    </div>
-                                    <div class="modal fade" id="modelrepicados" role="dialog"
-                                        style="z-index: 1050; display: none;" aria-hidden="true">
-
-                                        <div class="modal-dialog" role="document">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <h4 class="modal-title">Racimos Repicados</h4>
-                                                    <button type="button" class="close" data-dismiss="modal"
-                                                        aria-label="Close">
-                                                        <span aria-hidden="true"><i class="fa fa-close"></i></span>
-                                                    </button>
-                                                </div>
-                                                <form id="regisrepiques" action="" method="post">
-                                                    <!--formulario registro terminación-->
-                                                    @csrf
-                                                    <div class="modal-body" style="height: 87vh;overflow-y:auto;">
-                                                        <div class="form-group row">
-                                                            <label for="" class="col-sm-3 col-form-label">Repique
-                                                                5
-                                                                semanas</label>
-                                                            <div class="col sm-9">
-                                                                <input type="text" id="Rsm5" name="Rsm5"
-                                                                    class="form-control repiques"
-                                                                    placeholder="ingrese Repique de 5 semanas">
-                                                            </div>
-
-
-                                                        </div>
-                                                        <div class="form-group row">
-                                                            <label for="" class="col-sm-3 col-form-label">Repique
-                                                                6
-                                                                semanas</label>
-                                                            <div class="col sm-9">
-                                                                <input type="text" id="Rsm6" name="Rsm6"
-                                                                    class="form-control repiques"
-                                                                    placeholder="ingrese Repique de 6 semanas">
-                                                            </div>
-
-
-                                                        </div>
-                                                        <div class="form-group row">
-                                                            <label for="" class="col-sm-3 col-form-label">Repique
-                                                                7
-                                                                semanas</label>
-                                                            <div class="col sm-9">
-                                                                <input type="text" id="Rsm7" name="Rsm7"
-                                                                    class="form-control repiques"
-                                                                    placeholder="ingrese Repique de 7 semanas">
-                                                            </div>
-
-
-                                                        </div>
-                                                        <div class="form-group row">
-                                                            <label for="" class="col-sm-3 col-form-label">Repique
-                                                                8
-                                                                semanas</label>
-                                                            <div class="col sm-9">
-                                                                <input type="text" id="Rsm8" name="Rsm8"
-                                                                    class="form-control repiques"
-                                                                    placeholder="ingrese Repique de 8 semanas">
-                                                            </div>
-
-
-                                                        </div>
-                                                        <div class="form-group row">
-                                                            <label for="" class="col-sm-3 col-form-label">Repique
-                                                                9
-                                                                semanas</label>
-                                                            <div class="col sm-9">
-                                                                <input type="text" id="Rsm9" name="Rsm9"
-                                                                    class="form-control repiques"
-                                                                    placeholder="ingrese Repique de 9 semanas">
-                                                            </div>
-
-
-                                                        </div>
-                                                        <div class="form-group row">
-                                                            <label for="" class="col-sm-3 col-form-label">Repique
-                                                                10
-                                                                semanas</label>
-                                                            <div class="col sm-9">
-                                                                <input type="text" id="Rsm10" name="Rsm10"
-                                                                    class="form-control repiques"
-                                                                    placeholder="ingrese Repique de 10 semanas">
-                                                            </div>
-
-
-                                                        </div>
-                                                        <div class="form-group row">
-                                                            <label for="" class="col-sm-3 col-form-label">Repique
-                                                                11
-                                                                semanas</label>
-                                                            <div class="col sm-9">
-                                                                <input type="text" id="Rsm11" name="Rsm11"
-                                                                    class="form-control repiques"
-                                                                    placeholder="ingrese Repique de 11 semanas">
-                                                            </div>
-
-
-                                                        </div>
-                                                        <div class="form-group row">
-                                                            <label for="" class="col-sm-3 col-form-label">Repique
-                                                                12
-                                                                semanas</label>
-                                                            <div class="col sm-9">
-                                                                <input type="text" id="Rsm12" name="Rsm12"
-                                                                    class="form-control repiques"
-                                                                    placeholder="ingrese Repique de 12 semanas">
-                                                            </div>
-
-
-                                                        </div>
-                                                        <div class="form-group row">
-                                                            <label for="" class="col-sm-3 col-form-label">Repique
-                                                                13
-                                                                semanas</label>
-                                                            <div class="col sm-9">
-                                                                <input type="text" id="Rsm13" name="Rsm13"
-                                                                    class="form-control repiques"
-                                                                    placeholder="ingrese Repique de 13 semanas">
-                                                            </div>
-
-
-                                                        </div>
-                                                    </div>
-
-                                                </form>
-
-                                            </div>
-
-                                        </div>
-
-                                    </div>
-                                    {{-- Vista modelo repiques --}}
-                                    <!-- /.card-body -->
-                                    <div class="card-footer">
-                                        Footer
-                                    </div>
-                                    <!-- /.card-footer-->
-                                </form>
+                                {{-- @foreach ($Tabla as $item)
+                                    {{ $item }}
+                                @endforeach --}}
 
                             </div>
-                            <!-- /.card -->
+                            <!-- /.card-body -->
+                            <div class="card-footer">
+                                Footer
+                            </div>
+                            <!-- /.card-footer-->
                         </div>
+                        <!-- /.card -->
                     </div>
                 </div>
+            </div>
         </section>
         <!-- /.content -->
     </div>
