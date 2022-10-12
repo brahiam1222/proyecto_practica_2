@@ -21,6 +21,7 @@ class TablaController extends Controller
 
 
     }
+    
     // public function store(Request $request){
 
     //     $filas =[

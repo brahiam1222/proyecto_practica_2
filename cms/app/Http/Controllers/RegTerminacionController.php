@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 use App\Models\RegTerminacion;
 use App\Models\Fincas;
 use App\Models\Tapas;
+use App\Models\Tabla;
 use App\Models\Defectos;
 use Illuminate\Http\Request;
 
@@ -98,6 +99,26 @@ class RegTerminacionController extends Controller
         $terminacion->save();
         return redirect()->route('regTerminacion.index');
 
+
+    }
+
+    public function edit($id){
+
+        // $datos = array("finca"=>$request->input("finca"));
+        $termi = Tabla::findOrFail($id);
+        $regTerminacion = RegTerminacion::all();
+        $Fincas = Fincas::all();
+        $Tapas = Tapas::all();
+        $Defectos = Defectos::all();
+        return view('paginas.editar', compact('termi', 'regTerminacion', 'Fincas', 'Tapas', 'Defectos' ));
+        // echo '<pre>'; print_r($datos); echo '</pre>';
+        // echo '<pre>'; print_r($id); echo '</pre>';
+        // return $termi;
+
+    }
+    public function update($id){
+
+       //
 
     }
 }

@@ -61,10 +61,10 @@
                                             </tr>
                                         </thead>
                                         @foreach ($Tabla as $item => $key)
-                                            <form action="{{url('/')}}/editar/{{$key->id}}" method="post">
+                                            {{-- <form action="{{url('/')}}/editar/{{$key->id}}" method="post">
 
                                                 @method('PUT')
-                                                @csrf
+                                                @csrf --}}
                                                 <tbody class="table-group-divider">
                                                     <tr class="table-primary" style="background-color: #0000; color:black">
                                                         {{-- <td scope="row">Item</td> --}}
@@ -185,7 +185,7 @@
                                                         <td>
                                                             <div class="mb-2">
 
-                                                                <a href="{{url('/')}}/editar/{{$key->id}}" class="btn btn-warning btn-lg"
+                                                                <a href="{{route('regTerminacion.edit', $key->id)}}" class="btn btn-warning btn-lg"
                                                                     style="border-radius: 30px"><i
                                                                         class="nav-icon fa-solid fa-pencil btn-lg "></i></a>
 
@@ -206,7 +206,7 @@
                                                     </tr>
 
                                                 </tbody>
-                                            </form>
+                                            {{-- </form> --}}
                                         @endforeach
 
 

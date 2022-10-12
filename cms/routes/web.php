@@ -7,7 +7,6 @@ use App\Http\Controllers\RegTerminacionController;
 use App\Http\Controllers\DefectosController;
 use App\Http\Controllers\TapasController;
 use App\Http\Controllers\TablaController;
-use App\Http\Controllers\EditarController;
 
 /*
 |--------------------------------------------------------------------------
