@@ -64,18 +64,19 @@ class RegTerminacionController extends Controller
             'sem10'=>$request->input("sm10"),
             'sem11'=>$request->input("sm11"),
             'sem12'=>$request->input("sm12"),
-            'sem13'=>$request->input("sm13")
+            'sem13'=>$request->input("sm13"),
+            'rechazo'=>$request->input("rechazo")
         ];
         $dataRepiques = [
-            'sem5'=>$request->input("sm5"),
-            'sem6'=>$request->input("sm6"),
-            'sem7'=>$request->input("sm7"),
-            'sem8'=>$request->input("sm8"),
-            'sem9'=>$request->input("sm9"),
-            'sem10'=>$request->input("sm10"),
-            'sem11'=>$request->input("sm11"),
-            'sem12'=>$request->input("sm12"),
-            'sem13'=>$request->input("sm13")
+            'Rsem5'=>$request->input("Rsm5"),
+            'Rsem6'=>$request->input("Rsm6"),
+            'Rsem7'=>$request->input("Rsm7"),
+            'Rsem8'=>$request->input("Rsm8"),
+            'Rsem9'=>$request->input("Rsm9"),
+            'Rsem10'=>$request->input("Rsm10"),
+            'Rsem11'=>$request->input("Rsm11"),
+            'Rsem12'=>$request->input("Rsm12"),
+            'Rsem13'=>$request->input("Rsm13")
         ];
         
         $terminacion = new RegTerminacion;

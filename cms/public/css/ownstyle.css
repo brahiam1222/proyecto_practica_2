@@ -6,6 +6,12 @@
     cursor: pointer;
 
 }
+.tdCantidad{
+    width: 25%;
+}
+.tdCantidad td{
+    width:25%;
+}
 /* .btnActions{
 
     background-color: rgb(246, 178, 18);
