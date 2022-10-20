@@ -233,7 +233,8 @@
                                             table-hover	
                                             table-borderless
                                             table-primary
-                                            align-middle">
+                                            align-middle
+                                            table-sm">
                                                 <thead class="table-light">
                                                     <caption></caption>
                                                     <tr>
@@ -348,7 +349,8 @@
 
                                             <div class="row col-lg-6">
                                                 <div class="col-lg-6">
-                                                    <div data-toggle="modal" data-target="#modelracimos" class="card btnpersonal">
+                                                    <div data-toggle="modal" data-target="#modelracimos"
+                                                        class="card btnpersonal">
                                                         <div class="card-body col-lg-12">
                                                             <a data-toggle="modal" data-target="#modelracimos">modelo
                                                                 racimos</a>
@@ -356,15 +358,16 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="col-lg-6">
-                                                    <div data-toggle="modal" data-target="#modelrepicados" class="card btnpersonal">
+                                                {{-- <div class="col-lg-6">
+                                                    <div data-toggle="modal" data-target="#modelrepicados"
+                                                        class="card btnpersonal">
                                                         <div class="card-body col-lg-12">
                                                             <a data-toggle="modal" data-target="#modelrepicados">modelo
                                                                 repiques</a>
 
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </div> --}}
                                             </div>
                                         </div>
 
@@ -388,7 +391,7 @@
                                     <div class="modal fade" id="modelracimos" role="dialog"
                                         style="z-index: 1050; display: none;" aria-hidden="true">
 
-                                        <div class="modal-dialog" role="document">
+                                        <div class="modal-dialog modal-lg" role="document">
                                             <div class="modal-content">
                                                 <div class="modal-header">
                                                     <h4 class="modal-title">Racimos Cortados</h4>
@@ -400,118 +403,255 @@
                                                 <form id="regisRacimos" action="" method="post">
                                                     <!--formulario registro terminación-->
                                                     @csrf
-                                                    <div class="modal-body" style="height: 87vh;overflow-y:auto;">
-                                                        <div class="form-group row">
-                                                            <label for="" class="col-sm-3 col-form-label">Racimo 5
-                                                                semanas</label>
-                                                            <div class="col sm-9">
-                                                                <input type="text" id="sm5" name="sm5"
-                                                                    class="form-control racimos"
-                                                                    placeholder="ingrese racimo de 5 semanas">
+                                                    <div class="modal-body row" style="height: 87vh;overflow-y:auto;">
+                                                        <div class="col-lg-5 row">
+                                                            <div class="form-group row">
+                                                                <label for=""
+                                                                    class="col-sm-3 col-form-label">Racimo 5
+                                                                    semanas</label>
+                                                                <div class="col sm-3">
+                                                                    <input type="text" id="sm5" name="sm5"
+                                                                        class="form-control racimos"
+                                                                        placeholder="ingrese racimo de 5 semanas">
+                                                                </div>
+
+
                                                             </div>
+                                                            <div class="form-group row">
+                                                                <label for=""
+                                                                    class="col-sm-3 col-form-label">Racimo 6
+                                                                    semanas</label>
+                                                                <div class="col sm-3">
+                                                                    <input type="text" id="sm6" name="sm6"
+                                                                        class="form-control racimos"
+                                                                        placeholder="ingrese racimo de 6 semanas">
+                                                                </div>
 
 
-                                                        </div>
-                                                        <div class="form-group row">
-                                                            <label for="" class="col-sm-3 col-form-label">Racimo 6
-                                                                semanas</label>
-                                                            <div class="col sm-9">
-                                                                <input type="text" id="sm6" name="sm6"
-                                                                    class="form-control racimos"
-                                                                    placeholder="ingrese racimo de 6 semanas">
                                                             </div>
+                                                            <div class="form-group row">
+                                                                <label for=""
+                                                                    class="col-sm-3 col-form-label">Racimo 7
+                                                                    semanas</label>
+                                                                <div class="col sm-3">
+                                                                    <input type="text" id="sm7" name="sm7"
+                                                                        class="form-control racimos"
+                                                                        placeholder="ingrese racimo de 7 semanas">
+                                                                </div>
 
 
-                                                        </div>
-                                                        <div class="form-group row">
-                                                            <label for="" class="col-sm-3 col-form-label">Racimo 7
-                                                                semanas</label>
-                                                            <div class="col sm-9">
-                                                                <input type="text" id="sm7" name="sm7"
-                                                                    class="form-control racimos"
-                                                                    placeholder="ingrese racimo de 7 semanas">
                                                             </div>
+                                                            <div class="form-group row">
+                                                                <label for=""
+                                                                    class="col-sm-3 col-form-label">Racimo 8
+                                                                    semanas</label>
+                                                                <div class="col sm-3">
+                                                                    <input type="text" id="sm8" name="sm8"
+                                                                        class="form-control racimos"
+                                                                        placeholder="ingrese racimo de 8 semanas">
+                                                                </div>
 
 
-                                                        </div>
-                                                        <div class="form-group row">
-                                                            <label for="" class="col-sm-3 col-form-label">Racimo 8
-                                                                semanas</label>
-                                                            <div class="col sm-9">
-                                                                <input type="text" id="sm8" name="sm8"
-                                                                    class="form-control racimos"
-                                                                    placeholder="ingrese racimo de 8 semanas">
                                                             </div>
+                                                            <div class="form-group row">
+                                                                <label for=""
+                                                                    class="col-sm-3 col-form-label">Racimo 9
+                                                                    semanas</label>
+                                                                <div class="col sm-3">
+                                                                    <input type="text" id="sm9" name="sm9"
+                                                                        class="form-control racimos"
+                                                                        placeholder="ingrese racimo de 9 semanas">
+                                                                </div>
 
 
-                                                        </div>
-                                                        <div class="form-group row">
-                                                            <label for="" class="col-sm-3 col-form-label">Racimo 9
-                                                                semanas</label>
-                                                            <div class="col sm-9">
-                                                                <input type="text" id="sm9" name="sm9"
-                                                                    class="form-control racimos"
-                                                                    placeholder="ingrese racimo de 9 semanas">
                                                             </div>
+                                                            <div class="form-group row">
+                                                                <label for=""
+                                                                    class="col-sm-3 col-form-label">Racimo
+                                                                    10
+                                                                    semanas</label>
+                                                                <div class="col sm-3">
+                                                                    <input type="text" id="sm10" name="sm10"
+                                                                        class="form-control racimos"
+                                                                        placeholder="ingrese racimo de 10 semanas">
+                                                                </div>
 
 
-                                                        </div>
-                                                        <div class="form-group row">
-                                                            <label for="" class="col-sm-3 col-form-label">Racimo
-                                                                10
-                                                                semanas</label>
-                                                            <div class="col sm-9">
-                                                                <input type="text" id="sm10" name="sm10"
-                                                                    class="form-control racimos"
-                                                                    placeholder="ingrese racimo de 10 semanas">
                                                             </div>
+                                                            <div class="form-group row">
+                                                                <label for=""
+                                                                    class="col-sm-3 col-form-label">Racimo
+                                                                    11
+                                                                    semanas</label>
+                                                                <div class="col sm-3">
+                                                                    <input type="text" id="sm11" name="sm11"
+                                                                        class="form-control racimos"
+                                                                        placeholder="ingrese racimo de 11 semanas">
+                                                                </div>
 
 
-                                                        </div>
-                                                        <div class="form-group row">
-                                                            <label for="" class="col-sm-3 col-form-label">Racimo
-                                                                11
-                                                                semanas</label>
-                                                            <div class="col sm-9">
-                                                                <input type="text" id="sm11" name="sm11"
-                                                                    class="form-control racimos"
-                                                                    placeholder="ingrese racimo de 11 semanas">
                                                             </div>
+                                                            <div class="form-group row">
+                                                                <label for=""
+                                                                    class="col-sm-3 col-form-label">Racimo
+                                                                    12
+                                                                    semanas</label>
+                                                                <div class="col sm-3">
+                                                                    <input type="text" id="sm12" name="sm12"
+                                                                        class="form-control racimos"
+                                                                        placeholder="ingrese racimo de 12 semanas">
+                                                                </div>
 
 
-                                                        </div>
-                                                        <div class="form-group row">
-                                                            <label for="" class="col-sm-3 col-form-label">Racimo
-                                                                12
-                                                                semanas</label>
-                                                            <div class="col sm-9">
-                                                                <input type="text" id="sm12" name="sm12"
-                                                                    class="form-control racimos"
-                                                                    placeholder="ingrese racimo de 12 semanas">
                                                             </div>
+                                                            <div class="form-group row">
+                                                                <label for=""
+                                                                    class="col-sm-3 col-form-label">Racimo
+                                                                    13
+                                                                    semanas</label>
+                                                                <div class="col sm-3">
+                                                                    <input type="text" id="sm13" name="sm13"
+                                                                        class="form-control racimos"
+                                                                        placeholder="ingrese racimo de 13 semanas">
+                                                                </div>
 
 
-                                                        </div>
-                                                        <div class="form-group row">
-                                                            <label for="" class="col-sm-3 col-form-label">Racimo
-                                                                13
-                                                                semanas</label>
-                                                            <div class="col sm-9">
-                                                                <input type="text" id="sm13" name="sm13"
-                                                                    class="form-control racimos"
-                                                                    placeholder="ingrese racimo de 13 semanas">
                                                             </div>
+                                                            <div class="form-group row">
+                                                                <label for=""
+                                                                    class="col-sm-3 col-form-label">Racimo
+                                                                    rechazo
+                                                                </label>
+                                                                <div class="col sm-3">
+                                                                    <input type="text" id="rechazo" name="rechazo"
+                                                                        class="form-control racimos"
+                                                                        placeholder="ingrese racimos rechazados">
+                                                                </div>
 
 
+                                                            </div>
                                                         </div>
-                                                        <div class="form-group row">
-                                                            <label for="" class="col-sm-3 col-form-label">Racimo
-                                                                rechazo
-                                                            </label>
-                                                            <div class="col sm-9">
-                                                                <input type="text" id="rechazo" name="rechazo"
-                                                                    class="form-control racimos"
-                                                                    placeholder="ingrese racimos rechazados">
+                                                        <div class="col-lg-1 row">
+                                                        </div>
+
+                                                        <div class="col-lg-5 row">
+
+                                                            <div class="form-group row">
+                                                                <label for=""
+                                                                    class="col-sm-3 col-form-label">Repique
+                                                                    5
+                                                                    semanas</label>
+                                                                <div class="col sm-3">
+                                                                    <input type="text" id="Rsm5" name="Rsm5"
+                                                                        class="form-control repiques"
+                                                                        placeholder="ingrese Repique de 5 semanas">
+                                                                </div>
+
+
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <label for=""
+                                                                    class="col-sm-3 col-form-label">Repique
+                                                                    6
+                                                                    semanas</label>
+                                                                <div class="col sm-3">
+                                                                    <input type="text" id="Rsm6" name="Rsm6"
+                                                                        class="form-control repiques"
+                                                                        placeholder="ingrese Repique de 6 semanas">
+                                                                </div>
+
+
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <label for=""
+                                                                    class="col-sm-3 col-form-label">Repique
+                                                                    7
+                                                                    semanas</label>
+                                                                <div class="col sm-3">
+                                                                    <input type="text" id="Rsm7" name="Rsm7"
+                                                                        class="form-control repiques"
+                                                                        placeholder="ingrese Repique de 7 semanas">
+                                                                </div>
+
+
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <label for=""
+                                                                    class="col-sm-3 col-form-label">Repique
+                                                                    8
+                                                                    semanas</label>
+                                                                <div class="col sm-3">
+                                                                    <input type="text" id="Rsm8" name="Rsm8"
+                                                                        class="form-control repiques"
+                                                                        placeholder="ingrese Repique de 8 semanas">
+                                                                </div>
+
+
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <label for=""
+                                                                    class="col-sm-3 col-form-label">Repique
+                                                                    9
+                                                                    semanas</label>
+                                                                <div class="col sm-3">
+                                                                    <input type="text" id="Rsm9" name="Rsm9"
+                                                                        class="form-control repiques"
+                                                                        placeholder="ingrese Repique de 9 semanas">
+                                                                </div>
+
+
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <label for=""
+                                                                    class="col-sm-3 col-form-label">Repique
+                                                                    10
+                                                                    semanas</label>
+                                                                <div class="col sm-3">
+                                                                    <input type="text" id="Rsm10" name="Rsm10"
+                                                                        class="form-control repiques"
+                                                                        placeholder="ingrese Repique de 10 semanas">
+                                                                </div>
+
+
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <label for=""
+                                                                    class="col-sm-3 col-form-label">Repique
+                                                                    11
+                                                                    semanas</label>
+                                                                <div class="col sm-3">
+                                                                    <input type="text" id="Rsm11" name="Rsm11"
+                                                                        class="form-control repiques"
+                                                                        placeholder="ingrese Repique de 11 semanas">
+                                                                </div>
+
+
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <label for=""
+                                                                    class="col-sm-3 col-form-label">Repique
+                                                                    12
+                                                                    semanas</label>
+                                                                <div class="col sm-3">
+                                                                    <input type="text" id="Rsm12" name="Rsm12"
+                                                                        class="form-control repiques"
+                                                                        placeholder="ingrese Repique de 12 semanas">
+                                                                </div>
+
+
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <label for=""
+                                                                    class="col-sm-3 col-form-label">Repique
+                                                                    13
+                                                                    semanas</label>
+                                                                <div class="col sm-3">
+                                                                    <input type="text" id="Rsm13" name="Rsm13"
+                                                                        class="form-control repiques"
+                                                                        placeholder="ingrese Repique de 13 semanas">
+                                                                </div>
+
+
                                                             </div>
 
 
@@ -526,7 +666,7 @@
                                         {{-- Vista modelo repiques --}}
 
                                     </div>
-                                    <div class="modal fade" id="modelrepicados" role="dialog"
+                                    {{-- <div class="modal fade" id="modelrepicados" role="dialog"
                                         style="z-index: 1050; display: none;" aria-hidden="true">
 
                                         <div class="modal-dialog" role="document">
@@ -542,132 +682,25 @@
                                                     <!--formulario registro terminación-->
                                                     @csrf
                                                     <div class="modal-body" style="height: 87vh;overflow-y:auto;">
-                                                        <div class="form-group row">
-                                                            <label for="" class="col-sm-3 col-form-label">Repique
-                                                                5
-                                                                semanas</label>
-                                                            <div class="col sm-9">
-                                                                <input type="text" id="Rsm5" name="Rsm5"
-                                                                    class="form-control repiques"
-                                                                    placeholder="ingrese Repique de 5 semanas">
-                                                            </div>
 
-
-                                                        </div>
-                                                        <div class="form-group row">
-                                                            <label for="" class="col-sm-3 col-form-label">Repique
-                                                                6
-                                                                semanas</label>
-                                                            <div class="col sm-9">
-                                                                <input type="text" id="Rsm6" name="Rsm6"
-                                                                    class="form-control repiques"
-                                                                    placeholder="ingrese Repique de 6 semanas">
-                                                            </div>
-
-
-                                                        </div>
-                                                        <div class="form-group row">
-                                                            <label for="" class="col-sm-3 col-form-label">Repique
-                                                                7
-                                                                semanas</label>
-                                                            <div class="col sm-9">
-                                                                <input type="text" id="Rsm7" name="Rsm7"
-                                                                    class="form-control repiques"
-                                                                    placeholder="ingrese Repique de 7 semanas">
-                                                            </div>
-
-
-                                                        </div>
-                                                        <div class="form-group row">
-                                                            <label for="" class="col-sm-3 col-form-label">Repique
-                                                                8
-                                                                semanas</label>
-                                                            <div class="col sm-9">
-                                                                <input type="text" id="Rsm8" name="Rsm8"
-                                                                    class="form-control repiques"
-                                                                    placeholder="ingrese Repique de 8 semanas">
-                                                            </div>
-
-
-                                                        </div>
-                                                        <div class="form-group row">
-                                                            <label for="" class="col-sm-3 col-form-label">Repique
-                                                                9
-                                                                semanas</label>
-                                                            <div class="col sm-9">
-                                                                <input type="text" id="Rsm9" name="Rsm9"
-                                                                    class="form-control repiques"
-                                                                    placeholder="ingrese Repique de 9 semanas">
-                                                            </div>
-
-
-                                                        </div>
-                                                        <div class="form-group row">
-                                                            <label for="" class="col-sm-3 col-form-label">Repique
-                                                                10
-                                                                semanas</label>
-                                                            <div class="col sm-9">
-                                                                <input type="text" id="Rsm10" name="Rsm10"
-                                                                    class="form-control repiques"
-                                                                    placeholder="ingrese Repique de 10 semanas">
-                                                            </div>
-
-
-                                                        </div>
-                                                        <div class="form-group row">
-                                                            <label for="" class="col-sm-3 col-form-label">Repique
-                                                                11
-                                                                semanas</label>
-                                                            <div class="col sm-9">
-                                                                <input type="text" id="Rsm11" name="Rsm11"
-                                                                    class="form-control repiques"
-                                                                    placeholder="ingrese Repique de 11 semanas">
-                                                            </div>
-
-
-                                                        </div>
-                                                        <div class="form-group row">
-                                                            <label for="" class="col-sm-3 col-form-label">Repique
-                                                                12
-                                                                semanas</label>
-                                                            <div class="col sm-9">
-                                                                <input type="text" id="Rsm12" name="Rsm12"
-                                                                    class="form-control repiques"
-                                                                    placeholder="ingrese Repique de 12 semanas">
-                                                            </div>
-
-
-                                                        </div>
-                                                        <div class="form-group row">
-                                                            <label for="" class="col-sm-3 col-form-label">Repique
-                                                                13
-                                                                semanas</label>
-                                                            <div class="col sm-9">
-                                                                <input type="text" id="Rsm13" name="Rsm13"
-                                                                    class="form-control repiques"
-                                                                    placeholder="ingrese Repique de 13 semanas">
-                                                            </div>
-
-
-                                                        </div>
                                                     </div>
 
                                                 </form>
 
                                             </div>
 
-                                        </div>
+                                        </div> 
 
-                                    </div>
+                                    </div> --}}
                                     {{-- Vista modelo repiques --}}
                                     <!-- /.card-body -->
-                                    <div class="card-footer">
-                                        Footer
-                                    </div>
-                                    <!-- /.card-footer-->
-                                </form>
 
                             </div>
+                            <div class="card-footer">
+                                Footer
+                            </div>
+                            <!-- /.card-footer-->
+                            </form>
                             <!-- /.card -->
                         </div>
                     </div>
