@@ -7,6 +7,8 @@ use App\Http\Controllers\RegTerminacionController;
 use App\Http\Controllers\DefectosController;
 use App\Http\Controllers\TapasController;
 use App\Http\Controllers\TablaController;
+use App\Http\Controllers\EmbolseController;
+use App\Http\Controllers\LluviaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -54,6 +56,8 @@ Route::resources([
     '/tapas'=>TapasController::class,
     '/tabla'=>TablaController::class,
     '/editar'=>EditarController::class,
+    '/embolse'=>EmbolseController::class,
+    '/lluvias'=>LluviaController::class,
 ]);
 
 Route::get('/dashboard', function () {

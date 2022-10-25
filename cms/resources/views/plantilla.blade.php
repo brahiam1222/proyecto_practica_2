@@ -29,7 +29,7 @@
 
     <!-- ========== End Section PLUGIN CSS ========== -->
 
-    
+
 
 
 
@@ -45,7 +45,7 @@
         @include('modulos.sidebar')
 
         @yield('content')
-        
+
         @include('modulos.footer')
     </div>
 

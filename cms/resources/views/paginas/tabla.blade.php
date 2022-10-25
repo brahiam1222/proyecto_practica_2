@@ -42,6 +42,12 @@
                                 </div>
                             </div>
                             <div class="card-body">
+                                <div class="card">
+
+                                    <input type="text" class="form-control "id="filtrado" onkeyup="filtrar()"
+                                        placeholder="Search for names.." title="Type in a name">
+                                </div>
+
                                 <div class="table-responsive-sm col-lg-12">
                                     <table id="tabla-extend"
                                         class="table table-striped-columns
@@ -65,147 +71,148 @@
 
                                                 @method('PUT')
                                                 @csrf --}}
-                                                <tbody class="table-group-divider">
-                                                    <tr class="table-primary" style="background-color: #0000; color:black">
-                                                        {{-- <td scope="row">Item</td> --}}
-                                                        <td>
-                                                            <div class="mb-2">
+                                            <tbody class="table-group-divider">
+                                                <tr class="table-primary" style="background-color: #0000; color:black">
+                                                    {{-- <td scope="row">Item</td> --}}
+                                                    <td>
+                                                        <div class="mb-2">
 
-                                                                {{ $key['fecha'] }}
+                                                            {{ $key['fecha'] }}
 
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="mb-2">
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="mb-2">
 
-                                                                {{ $key->equal_Fincas['nombre'] }}
+                                                            {{ $key->equal_Fincas['nombre'] }}
 
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="mb-3">
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="mb-3">
 
-                                                                @if (json_decode($key['fruta'])->Fruta1 != '0' &&
-                                                                    json_decode($key['fruta'])->Fruta1 != '' &&
-                                                                    json_decode($key['fruta'])->Fruta1 != 'null')
-                                                                    @foreach ($Tapas as $tapa)
-                                                                        @if (json_decode($key['fruta'])->Fruta1 == $tapa['cod'])
-                                                                            <div class="mb-3">
-                                                                                {{ $tapa['descripcion'] }}
-                                                                            </div>
-                                                                        @endif
-                                                                    @endforeach
-                                                                @endif
-                                                                @if (json_decode($key['fruta'])->Fruta2 != '0' &&
-                                                                    json_decode($key['fruta'])->Fruta2 != '' &&
-                                                                    json_decode($key['fruta'])->Fruta2 != 'null')
-                                                                    @foreach ($Tapas as $tapa)
-                                                                        @if (json_decode($key['fruta'])->Fruta2 == $tapa['cod'])
-                                                                            <div class="mb-3">
-                                                                                {{ $tapa['descripcion'] }}
-                                                                            </div>
-                                                                        @endif
-                                                                    @endforeach
-                                                                @endif
-                                                                @if (json_decode($key['fruta'])->Fruta3 != '0' &&
-                                                                    json_decode($key['fruta'])->Fruta3 != '' &&
-                                                                    json_decode($key['fruta'])->Fruta3 != 'null')
-                                                                    @foreach ($Tapas as $tapa)
-                                                                        @if (json_decode($key['fruta'])->Fruta3 == $tapa['cod'])
-                                                                            <div class="mb-3">
-                                                                                {{ $tapa['descripcion'] }}
-                                                                            </div>
-                                                                        @endif
-                                                                    @endforeach
-                                                                @endif
-                                                                @if (json_decode($key['fruta'])->Fruta4 != '0' &&
-                                                                    json_decode($key['fruta'])->Fruta4 != '' &&
-                                                                    json_decode($key['fruta'])->Fruta4 != 'null')
-                                                                    @foreach ($Tapas as $tapa)
-                                                                        @if (json_decode($key['fruta'])->Fruta4 == $tapa['cod'])
-                                                                            <div class="mb-3">
-                                                                                {{ $tapa['descripcion'] }}
-                                                                            </div>
-                                                                        @endif
-                                                                    @endforeach
-                                                                @endif
+                                                            @if (json_decode($key['fruta'])->Fruta1 != '0' &&
+                                                                json_decode($key['fruta'])->Fruta1 != '' &&
+                                                                json_decode($key['fruta'])->Fruta1 != 'null')
+                                                                @foreach ($Tapas as $tapa)
+                                                                    @if (json_decode($key['fruta'])->Fruta1 == $tapa['cod'])
+                                                                        <div class="mb-3">
+                                                                            {{ $tapa['descripcion'] }}
+                                                                        </div>
+                                                                    @endif
+                                                                @endforeach
+                                                            @endif
+                                                            @if (json_decode($key['fruta'])->Fruta2 != '0' &&
+                                                                json_decode($key['fruta'])->Fruta2 != '' &&
+                                                                json_decode($key['fruta'])->Fruta2 != 'null')
+                                                                @foreach ($Tapas as $tapa)
+                                                                    @if (json_decode($key['fruta'])->Fruta2 == $tapa['cod'])
+                                                                        <div class="mb-3">
+                                                                            {{ $tapa['descripcion'] }}
+                                                                        </div>
+                                                                    @endif
+                                                                @endforeach
+                                                            @endif
+                                                            @if (json_decode($key['fruta'])->Fruta3 != '0' &&
+                                                                json_decode($key['fruta'])->Fruta3 != '' &&
+                                                                json_decode($key['fruta'])->Fruta3 != 'null')
+                                                                @foreach ($Tapas as $tapa)
+                                                                    @if (json_decode($key['fruta'])->Fruta3 == $tapa['cod'])
+                                                                        <div class="mb-3">
+                                                                            {{ $tapa['descripcion'] }}
+                                                                        </div>
+                                                                    @endif
+                                                                @endforeach
+                                                            @endif
+                                                            @if (json_decode($key['fruta'])->Fruta4 != '0' &&
+                                                                json_decode($key['fruta'])->Fruta4 != '' &&
+                                                                json_decode($key['fruta'])->Fruta4 != 'null')
+                                                                @foreach ($Tapas as $tapa)
+                                                                    @if (json_decode($key['fruta'])->Fruta4 == $tapa['cod'])
+                                                                        <div class="mb-3">
+                                                                            {{ $tapa['descripcion'] }}
+                                                                        </div>
+                                                                    @endif
+                                                                @endforeach
+                                                            @endif
 
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="mb-3">
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="mb-3">
 
-                                                                @if (json_decode($key['fruta'])->Cjs1 != '0' &&
-                                                                    json_decode($key['fruta'])->Cjs1 != '' &&
-                                                                    json_decode($key['fruta'])->Cjs1 != 'null')
-                                                                    @foreach ($Tapas as $tapa)
-                                                                        @if (json_decode($key['fruta'])->Fruta1 == $tapa['cod'])
-                                                                            <div class="mb-3">
-                                                                                {{ json_decode($key['fruta'])->Cjs1 }}
-                                                                            </div>
-                                                                        @endif
-                                                                    @endforeach
-                                                                @endif
-                                                                @if (json_decode($key['fruta'])->Cjs2 != '0' &&
-                                                                    json_decode($key['fruta'])->Cjs2 != '' &&
-                                                                    json_decode($key['fruta'])->Cjs2 != 'null')
-                                                                    @foreach ($Tapas as $tapa)
-                                                                        @if (json_decode($key['fruta'])->Fruta2 == $tapa['cod'])
-                                                                            <div class="mb-3">
-                                                                                {{ json_decode($key['fruta'])->Cjs2 }}
-                                                                            </div>
-                                                                        @endif
-                                                                    @endforeach
-                                                                @endif
-                                                                @if (json_decode($key['fruta'])->Cjs3 != '0' &&
-                                                                    json_decode($key['fruta'])->Cjs3 != '' &&
-                                                                    json_decode($key['fruta'])->Cjs3 != 'null')
-                                                                    @foreach ($Tapas as $tapa)
-                                                                        @if (json_decode($key['fruta'])->Fruta3 == $tapa['cod'])
-                                                                            <div class="mb-3">
-                                                                                {{ json_decode($key['fruta'])->Cjs3 }}
-                                                                            </div>
-                                                                        @endif
-                                                                    @endforeach
-                                                                @endif
-                                                                @if (json_decode($key['fruta'])->Cjs4 != '0' &&
-                                                                    json_decode($key['fruta'])->Cjs4 != '' &&
-                                                                    json_decode($key['fruta'])->Cjs4 != 'null')
-                                                                    @foreach ($Tapas as $tapa)
-                                                                        @if (json_decode($key['fruta'])->Fruta4 == $tapa['cod'])
-                                                                            <div class="mb-3">
-                                                                                {{ json_decode($key['fruta'])->Cjs4 }}
-                                                                            </div>
-                                                                        @endif
-                                                                    @endforeach
-                                                                @endif
+                                                            @if (json_decode($key['fruta'])->Cjs1 != '0' &&
+                                                                json_decode($key['fruta'])->Cjs1 != '' &&
+                                                                json_decode($key['fruta'])->Cjs1 != 'null')
+                                                                @foreach ($Tapas as $tapa)
+                                                                    @if (json_decode($key['fruta'])->Fruta1 == $tapa['cod'])
+                                                                        <div class="mb-3">
+                                                                            {{ json_decode($key['fruta'])->Cjs1 }}
+                                                                        </div>
+                                                                    @endif
+                                                                @endforeach
+                                                            @endif
+                                                            @if (json_decode($key['fruta'])->Cjs2 != '0' &&
+                                                                json_decode($key['fruta'])->Cjs2 != '' &&
+                                                                json_decode($key['fruta'])->Cjs2 != 'null')
+                                                                @foreach ($Tapas as $tapa)
+                                                                    @if (json_decode($key['fruta'])->Fruta2 == $tapa['cod'])
+                                                                        <div class="mb-3">
+                                                                            {{ json_decode($key['fruta'])->Cjs2 }}
+                                                                        </div>
+                                                                    @endif
+                                                                @endforeach
+                                                            @endif
+                                                            @if (json_decode($key['fruta'])->Cjs3 != '0' &&
+                                                                json_decode($key['fruta'])->Cjs3 != '' &&
+                                                                json_decode($key['fruta'])->Cjs3 != 'null')
+                                                                @foreach ($Tapas as $tapa)
+                                                                    @if (json_decode($key['fruta'])->Fruta3 == $tapa['cod'])
+                                                                        <div class="mb-3">
+                                                                            {{ json_decode($key['fruta'])->Cjs3 }}
+                                                                        </div>
+                                                                    @endif
+                                                                @endforeach
+                                                            @endif
+                                                            @if (json_decode($key['fruta'])->Cjs4 != '0' &&
+                                                                json_decode($key['fruta'])->Cjs4 != '' &&
+                                                                json_decode($key['fruta'])->Cjs4 != 'null')
+                                                                @foreach ($Tapas as $tapa)
+                                                                    @if (json_decode($key['fruta'])->Fruta4 == $tapa['cod'])
+                                                                        <div class="mb-3">
+                                                                            {{ json_decode($key['fruta'])->Cjs4 }}
+                                                                        </div>
+                                                                    @endif
+                                                                @endforeach
+                                                            @endif
 
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="mb-2">
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="mb-2">
 
-                                                                <a href="{{route('regTerminacion.edit', $key->id)}}" class="btn btn-warning btn-lg"
-                                                                    style="border-radius: 30px"><i
-                                                                        class="nav-icon fa-solid fa-pencil btn-lg "></i></a>
-
-
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="mb-2">
-
-                                                                <a href="#" class="btn btn-danger btn-lg"
-                                                                    style="border-radius: 30px"><i
-                                                                        class="nav-icon fa fa-trash btn-lg "></i></a>
+                                                            <a href="{{ route('regTerminacion.edit', $key->id) }}"
+                                                                class="btn btn-warning btn-lg"
+                                                                style="border-radius: 30px"><i
+                                                                    class="nav-icon fa-solid fa-pencil btn-lg "></i></a>
 
 
-                                                            </div>
-                                                        </td>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="mb-2">
 
-                                                    </tr>
+                                                            <a href="#" class="btn btn-danger btn-lg"
+                                                                style="border-radius: 30px"><i
+                                                                    class="nav-icon fa fa-trash btn-lg "></i></a>
 
-                                                </tbody>
+
+                                                        </div>
+                                                    </td>
+
+                                                </tr>
+
+                                            </tbody>
                                             {{-- </form> --}}
                                         @endforeach
 

@@ -375,7 +375,7 @@
 
                                     <div class="form-group">
                                         <input type="submit" class="btn btn-primary" id="enviarterminacion"
-                                            value="Guardar">
+                                            value="Guardar Terminacion">
                                     </div>
                                     <div class="card-body">
 
@@ -700,25 +700,58 @@
                                 </form>
 
                             </div>
-                            <div class="card collapsed-card">
-                                <div class="card-header">
-                                    <h3 class="card-title">Embolse</h3>
-    
-                                    <div class="card-tools">
-                                        <button type="button" class="btn btn-tool" data-card-widget="collapse"
-                                            title="Collapse">
-                                            <i class="fas fa-plus"></i>
-                                        </button>
-                                        {{-- <button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
+                        </div>
+                        <div class="card collapsed-card">
+                            <div class="card-header">
+                                <h3 class="card-title">Embolse</h3>
+
+                                <div class="card-tools">
+                                    <button type="button" class="btn btn-tool" data-card-widget="collapse"
+                                        title="Collapse">
+                                        <i class="fas fa-plus"></i>
+                                    </button>
+                                    {{-- <button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
                                             <i class="fas fa-times"></i>
                                         </button> --}}
-                                    </div>
                                 </div>
-                                <div class="card-body">
+                            </div>
+                            <div class="card-body">
 
-                                    <form action="">
-    
+                                <form action="{{ route('embolse.store') }}" method="POST">
+
+                                    @csrf
+
+
                                     <div class="table-responsive-sm col-lg-6">
+
+                                        <div class="card" style="width:30%">
+
+                                            <div class="row">
+                                                
+                                            <div class="col-6 row">
+                                                <select type="text" class="form-select form-control form-select-sm col-12" 
+                                                style="width:70px" name="fechaEmb"
+                                                id="fechaEmb">
+
+                                                    <option value="null">Año</option>
+                                                                <option value="2020">2020</option>
+                                                                <option value="2021">2021</option>
+                                                                <option value="2022">2022</option>
+                                                                <option value="2023">2023</option>
+
+                                                </select>
+                                            </div>
+                                            <div class="col-6 row">
+                                                <input type="text" class="form-control col-12 " 
+                                                style="width:100px" type="text"
+                                                name="semanaEmb"
+                                                id="semanaEmb" placeholder="Semana">
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+
+
                                         <table id="tabla-extend"
                                             class="table table-striped-columns
                                                 table-hover	
@@ -729,9 +762,8 @@
                                             <thead class="table-light">
                                                 <caption></caption>
                                                 <tr>
-    
-                                                    <th>Año</th>
-                                                    <th>Semana</th>
+
+                                                    
                                                     <th>Destino</th>
                                                     <th>Color</th>
                                                     <th>Finca</th>
@@ -742,28 +774,29 @@
                                             <tbody class="table-group-divider">
                                                 @for ($i = 0; $i < count($Fincas); $i++)
                                                     <tr class="table-primary">
-                                                        <td><input class="form-control form-control-sm" style="width:50px"
-                                                                type="text" name="año" id="año"></td>
-    
-                                                        <td><input class="form-control form-control-sm" style="width:100px"
-                                                                type="text" name="semana" id="semana"></td>
-    
-                                                        <td><input class="form-control form-control-sm" style="width:100px"
-                                                                type="text" name="año" value="Exportacion" disabled id="año"></td>
+
+                                                        <td><input class="form-control form-control-sm"
+                                                                style="width:100px" type="text" name="destinoEmb"
+                                                                value="Exportacion" disabled
+                                                                id="destinoEmb{{ $i }}"></td>
                                                         <td><select class="form-select form-control form-select-sm "
-                                                                style="width:100px" name="" id="">
+                                                                style="width:100px" name="colorEmb{{ $i }}"
+                                                                id="colorEmb{{ $i }}">
                                                                 <option value="null">Elija</option>
-                                                                <option value="Rojo">Rojo</option>
-                                                                <option value="Cafe">Cafe</option>
-                                                                <option value="Azul">Azul</option>
-                                                                <option value="Amarillo">Amarillo</option>
-                                                                <option value="Naranja">Naranja</option>
+                                                                <option value="RO">Rojo</option>
+                                                                <option value="CA">Cafe</option>
+                                                                <option value="AZ">Azul</option>
+                                                                <option value="AM">Amarillo</option>
+                                                                <option value="NA">Naranja</option>
                                                             </select>
                                                         <td>
                                                             <div class="mb-3">
                                                                 <select class="form-select form-control form-select-sm "
-                                                                    style="width:150px" name="fincasValor1" id="fincasValor1">
-                                                                    <option value="null" selected>Seleccione una</option>
+                                                                    style="width:150px"
+                                                                    name="fincasEmb{{ $i }}"
+                                                                    id="fincasEmb{{ $i }}">
+                                                                    <option value="null" selected>Seleccione una
+                                                                    </option>
                                                                     @foreach ($Fincas as $item)
                                                                         <option value="{{ $item['id_fincas'] }}">
                                                                             {{ $item['nombre'] }}
@@ -772,173 +805,136 @@
                                                                 </select>
                                                             </div>
                                                         </td>
-                                                        <td><input class="form-control form-control-sm" style="width:100px"
-                                                                type="text" name="año" id="año"></td>
-    
-                                                        {{-- {{count($fincas)}} --}}
-    
-                                                        {{-- <td>
-                                                        <div class="col-lg-12">
-                                                            <div data-toggle="modal" data-target="#modelracimos"
-                                                                class="card btnpersonal">
-                                                                <div class="card-body col-lg-12">
-                                                                    <a data-toggle="modal" data-target="#modelracimos"></a>
-    
-                                                                </div>
-                                                            </div>
-                                                        </div>
-    
-                                                    </td> --}}
-    
-    
+                                                        <td><input class="form-control form-control-sm"
+                                                                style="width:100px" type="text"
+                                                                name="totalEmb{{ $i }}"
+                                                                id="totalEmb{{ $i }}"></td>
+
+
+
+
                                                     </tr>
                                                 @endfor
-    
+
                                             </tbody>
-    
+
                                             <tfoot>
-    
+
                                             </tfoot>
                                         </table>
-    
-    
-                                        
+
+
+
                                     </div>
-                                </form>
                                     <div class="form-group">
                                         <input type="submit" class="btn btn-primary" id=""
-                                            value="Guardar">
+                                            value="Guardar Embolse">
                                     </div>
-    
-    
-                                </div>
-                                {{-- <div class="modal fade" id="modelracimos" role="dialog"
-                                            style="z-index: 1050; display: none;" aria-hidden="true">
-    
-                                            <div class="modal-dialog modal-sm" role="document">
-                                                <div class="modal-content">
-                                                    <div class="modal-header">
-                                                        <h4 class="modal-title">Embolse de la semana</h4>
-                                                        <button type="button" class="close" data-dismiss="modal"
-                                                            aria-label="Close">
-                                                            <span aria-hidden="true"><i class="fa fa-close"></i></span>
-                                                        </button>
-                                                    </div>
-                                                    <form id="regisRacimos" action="" method="post">
-                                                        <!--formulario registro terminación-->
-                                                        @csrf
-                                                        <div class="modal-body row" style="height: 80vh;overflow-y:auto;">
-                                                            <div class="col-lg-12 row">
-                                                                <div class="form-group row">
-                                                                    <label for="lt1"
-                                                                        class="col-lg col-sm-3 col-form-label">Lt 1</label>
-                                                                    <div class="col sm-3">
-                                                                        <input type="text" id="lt1" name="lt1"
-                                                                            class="form-control" style="width:70px"
-                                                                            placeholder="cantidad">
-                                                                    </div>
-                                                                </div>
-                                                                <div class="form-group row">
-                                                                  <label for="lt1"
-                                                                      class="col-lg col-sm-3 col-form-label">Lt 2</label>
-                                                                  <div class="col sm-3">
-                                                                      <input type="text" id="lt1" name="lt1"
-                                                                          class="form-control" style="width:70px"
-                                                                          placeholder="cantidad">
-                                                                  </div>
-                                                              </div>
-                                                              <div class="form-group row">
-                                                                <label for="lt1"
-                                                                    class="col-lg col-sm-3 col-form-label">Lt 3</label>
-                                                                <div class="col sm-3">
-                                                                    <input type="text" id="lt1" name="lt1"
-                                                                        class="form-control" style="width:70px"
-                                                                        placeholder="cantidad">
-                                                                </div>
-                                                            </div>
-                                                            <div class="form-group row">
-                                                              <label for="lt1"
-                                                                  class="col-lg col-sm-3 col-form-label">Lt 4</label>
-                                                              <div class="col sm-3">
-                                                                  <input type="text" id="lt1" name="lt1"
-                                                                      class="form-control" style="width:70px"
-                                                                      placeholder="cantidad">
-                                                              </div>
-                                                          </div>
-                                                          <div class="form-group row">
-                                                            <label for="lt1"
-                                                                class="col-lg col-sm-3 col-form-label">Lt 5</label>
-                                                            <div class="col sm-3">
-                                                                <input type="text" id="lt1" name="lt1"
-                                                                    class="form-control" style="width:70px"
-                                                                    placeholder="cantidad">
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-group row">
-                                                          <label for="lt1"
-                                                              class="col-lg col-sm-3 col-form-label">Lt 6</label>
-                                                          <div class="col sm-3">
-                                                              <input type="text" id="lt1" name="lt1"
-                                                                  class="form-control" style="width:70px"
-                                                                  placeholder="cantidad">
-                                                          </div>
-                                                      </div>
-                                                      <div class="form-group row">
-                                                        <label for="lt1"
-                                                            class="col-lg col-sm-3 col-form-label">Lt 7</label>
-                                                        <div class="col sm-3">
-                                                            <input type="text" id="lt1" name="lt1"
-                                                                class="form-control" style="width:70px"
-                                                                placeholder="cantidad">
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group row">
-                                                      <label for="lt1"
-                                                          class="col-lg col-sm-3 col-form-label">Lt 8</label>
-                                                      <div class="col sm-3">
-                                                          <input type="text" id="lt1" name="lt1"
-                                                              class="form-control" style="width:70px"
-                                                              placeholder="cantidad">
-                                                      </div>
-                                                  </div>
-                                                  <div class="form-group row">
-                                                    <label for="lt1"
-                                                        class="col-lg col-sm-3 col-form-label">Lt 9</label>
-                                                    <div class="col sm-3">
-                                                        <input type="text" id="lt1" name="lt1"
-                                                            class="form-control" style="width:70px"
-                                                            placeholder="cantidad">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                  <label for="lt1"
-                                                      class="col-lg col-sm-3 col-form-label">Lt 10</label>
-                                                  <div class="col sm-3">
-                                                      <input type="text" id="lt1" name="lt1"
-                                                          class="form-control" style="width:70px"
-                                                          placeholder="cantidad">
-                                                  </div>
-                                              </div>
-                                                            </div>
-                                                            
-                                                            
-                                                        </div>
-    
-                                                    </form>
-    
-                                                </div>
-    
-                                            </div> --}}
-                                {{-- Vista modelo repiques --}}
-                                
-    
+                                </form>
+
+
                             </div>
-                            <div class="card-footer">
-                                Footer
-                            </div>
-                            <!-- /.card-footer-->
-                        <!-- /.card -->
                         </div>
+                        <div class="card collapsed-card">
+                            <div class="card-header">
+                                <h3 class="card-title">Precipitacion</h3>
+
+                                <div class="card-tools">
+                                    <button type="button" class="btn btn-tool" data-card-widget="collapse"
+                                        title="Collapse">
+                                        <i class="fas fa-plus"></i>
+                                    </button>
+                                    {{-- <button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
+                                            <i class="fas fa-times"></i>
+                                        </button> --}}
+                                </div>
+                            </div>
+                            <div class="card-body">
+
+                                <form action="{{ route('lluvias.store') }}" method="POST">
+
+                                    @csrf
+
+
+                                    <div class="table-responsive-sm col-lg-4">
+                                        <table id="tabla-extend"
+                                            class="table table-striped-columns
+                                                table-hover	
+                                                table-borderless
+                                                table-primary
+                                                align-middle
+                                                table-sm">
+                                            <thead class="table-light">
+                                                <caption></caption>
+                                                <tr>
+
+
+                                                    <th>Fecha</th>
+                                                    <th>Finca</th>
+                                                    <th>Milimetros</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody class="table-group-divider">
+                                                @for ($i = 0; $i < count($Fincas); $i++)
+                                                    <tr class="table-primary">
+                                                        <td><input class="form-control" type="date"
+                                                                name="fechaMm{{ $i }}"
+                                                                id="fechaMm{{ $i }}" value="">
+                                                        </td>
+
+                                                        <td>
+                                                            <div class="mb-3">
+                                                                <select class="form-select form-control form-select-sm "
+                                                                    style="width:150px"
+                                                                    name="fincasMm{{ $i }}"
+                                                                    id="fincasMm{{ $i }}">
+                                                                    <option value="null" selected>Seleccione una
+                                                                    </option>
+                                                                    @foreach ($Fincas as $item)
+                                                                        <option value="{{ $item['id_fincas'] }}">
+                                                                            {{ $item['nombre'] }}
+                                                                        </option>
+                                                                    @endforeach
+                                                                </select>
+                                                            </div>
+                                                        </td>
+                                                        </td>
+                                                        <td><input class="form-control form-control-sm"
+                                                                style="width:80px; font-size:130%" type="text"
+                                                                name="mm{{ $i }}" id="mm{{ $i }}">
+                                                        </td>
+
+
+
+
+                                                    </tr>
+                                                @endfor
+
+                                            </tbody>
+
+                                            <tfoot>
+
+                                            </tfoot>
+                                        </table>
+
+
+
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="submit" class="btn btn-primary" id=""
+                                            value="Guardar Lluvia">
+                                    </div>
+                                </form>
+
+
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            Footer
+                        </div>
+                        <!-- /.card-footer-->
+                        <!-- /.card -->
+
                     </div>
                 </div>
         </section>
