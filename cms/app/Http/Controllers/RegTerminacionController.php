@@ -191,8 +191,8 @@ class RegTerminacionController extends Controller
         $termi->klspersonal = $request->input("klspersonal");
         $termi->klsfrpiso = $request->input("klsfrpiso");
         $termi->fruta = json_encode($filas);
-        // $termi->save();
-        // return redirect()->route('tabla.index');
+        $termi->save();
+        return redirect()->route('tabla.index');
 
             
        print( $request);
