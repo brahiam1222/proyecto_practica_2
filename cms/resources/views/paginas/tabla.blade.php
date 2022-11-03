@@ -7,7 +7,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1>Registrar Terminacion</h1>
+                        <h1>Terminaciones Registradas</h1>
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
@@ -29,7 +29,7 @@
                         <!-- Default box -->
                         <div class="card">
                             <div class="card-header">
-                                <h3 class="card-title">Title</h3>
+                                <h3 class="card-title">Tabla</h3>
 
                                 <div class="card-tools">
                                     <button type="button" class="btn btn-tool" data-card-widget="collapse"
@@ -45,7 +45,7 @@
                                 <div class="card">
 
                                     <input type="text" class="form-control "id="filtrado" onkeyup="filtrar()"
-                                        placeholder="Search for names.." title="Type in a name">
+                                        placeholder="Buscar" title="Digite dato a encontrar">
                                 </div>
 
                                 <div class="table-responsive-sm col-lg-12">

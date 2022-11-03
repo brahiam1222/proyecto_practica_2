@@ -35,7 +35,7 @@
 
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <title>Document</title>
+    <title>Expobananas</title>
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">

@@ -79,7 +79,7 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ url("/fincas")}}">
                                   <i class="nav-icon fa fa-bar-chart"></i>
-                                    Fincas
+                                    Gráficas
                                 </a>
                             </li>
 
