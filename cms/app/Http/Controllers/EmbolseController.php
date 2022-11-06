@@ -69,6 +69,7 @@ class EmbolseController extends Controller
         $embolse->fechaEmb = $request->input("fechaEmb");
         $embolse->semanaEmb = $request->input("semanaEmb");
         $embolse->embfinca = $request->input("fincasEmb0");
+        $embolse->colorEmb = $request->input("colorEmb0");
         $embolse->embdatos = json_encode($embfinca1);
         $embolse->save();
 
@@ -76,24 +77,28 @@ class EmbolseController extends Controller
         $embolse1->fechaEmb = $request->input("fechaEmb");
         $embolse1->semanaEmb = $request->input("semanaEmb");
         $embolse1->embfinca = $request->input("fincasEmb1");
+        $embolse1->colorEmb = $request->input("colorEmb1");
         $embolse1->embdatos = json_encode($embfinca2);
         $embolse1->save();
 
         $embolse2->fechaEmb = $request->input("fechaEmb");
         $embolse2->semanaEmb = $request->input("semanaEmb");
         $embolse2->embfinca = $request->input("fincasEmb2");
+        $embolse2->colorEmb = $request->input("colorEmb2");
         $embolse2->embdatos = json_encode($embfinca3);
         $embolse2->save();
 
         $embolse3->fechaEmb = $request->input("fechaEmb");
         $embolse3->semanaEmb = $request->input("semanaEmb");
         $embolse3->embfinca = $request->input("fincasEmb3");
+        $embolse3->colorEmb = $request->input("colorEmb3");
         $embolse3->embdatos = json_encode($embfinca4);
         $embolse3->save();
 
         $embolse4->fechaEmb = $request->input("fechaEmb");
         $embolse4->semanaEmb = $request->input("semanaEmb");
         $embolse4->embfinca = $request->input("fincasEmb4");
+        $embolse4->colorEmb = $request->input("colorEmb4");
         $embolse4->embdatos = json_encode($embfinca5);
         $embolse4->save();
 

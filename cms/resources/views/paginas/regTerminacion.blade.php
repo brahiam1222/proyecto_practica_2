@@ -784,10 +784,15 @@
                                                                 id="colorEmb{{ $i }}">
                                                                 <option value="null">Elija</option>
                                                                 <option value="RO">Rojo</option>
-                                                                <option value="CA">Cafe</option>
-                                                                <option value="AZ">Azul</option>
-                                                                <option value="AM">Amarillo</option>
+                                                                <option value="CA">Café</option>
+                                                                <option value="NE">Negro</option>
                                                                 <option value="NA">Naranja</option>
+                                                                <option value="VE">Verde</option>
+                                                                <option value="AM">Amarillo</option>
+                                                                <option value="BL">Blanca</option>
+                                                                <option value="AZ">Azul</option>
+                                                                <option value="HB">Hábano</option>
+                                                                <option value="MR">Morado</option>
                                                             </select>
                                                         <td>
                                                             <div class="mb-3">
