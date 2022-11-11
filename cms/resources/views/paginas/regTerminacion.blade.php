@@ -11,9 +11,9 @@
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <li class="breadcrumb-item"><a href="#">Layout</a></li>
-                            <li class="breadcrumb-item active">Fixed Layout</li>
+                            {{-- <li class="breadcrumb-item"><a href="#">Home</a></li> --}}
+                            {{-- <li class="breadcrumb-item"><a href="#">Layout</a></li>
+                            <li class="breadcrumb-item active">Fixed Layout</li> --}}
                         </ol>
                     </div>
                 </div>
@@ -793,6 +793,7 @@
                                                                 <option value="AZ">Azul</option>
                                                                 <option value="HB">Hábano</option>
                                                                 <option value="MR">Morado</option>
+                                                                <option value="GR">Gris</option>
                                                             </select>
                                                         <td>
                                                             <div class="mb-3">
@@ -934,9 +935,9 @@
 
                             </div>
                         </div>
-                        <div class="card-footer">
+                        {{-- <div class="card-footer">
                             Footer
-                        </div>
+                        </div> --}}
                         <!-- /.card-footer-->
                         <!-- /.card -->
 

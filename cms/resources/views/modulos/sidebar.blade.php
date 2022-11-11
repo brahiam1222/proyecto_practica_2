@@ -20,14 +20,14 @@
             <div class="os-viewport os-viewport-native-scrollbars-invisible" style="overflow-y: scroll;">
                 <div class="os-content" style="padding: 0px 8px; height: 100%; width: 100%;">
                     <!-- Sidebar user (optional) -->
-                    <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+                    {{-- <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                         <div class="image">
                             <img src="../../dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
                         </div>
                         <div class="info">
                             <a href="#" class="d-block">Brahiam</a>
                         </div>
-                    </div>
+                    </div> --}}
 
                     <!-- SidebarSearch Form -->
                     {{-- <div class="form-inline">
@@ -89,7 +89,7 @@
                                 Terminacion
                               </a>
                             </li>
-                            <li class="nav-item bordear">
+                            {{-- <li class="nav-item bordear">
                               <a class="nav-link" href="{{ url('/lluvias') }}">
                                 <i class="nav-icon fa fa-tint"></i>
                                 Precipitaciones
@@ -113,7 +113,7 @@
                                 <i class="nav-icon fas fa-globe"></i>
                                 Ver sitio
                               </a>
-                            </li>
+                            </li> --}}
                         </ul>
                     </nav>
                     <!-- /.sidebar-menu -->

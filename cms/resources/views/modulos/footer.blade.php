@@ -1,12 +1,12 @@
 <footer class="main-footer">
     <div class="float-right d-none d-sm-block">
-        <strong>Derechos Reservados
+        {{-- <strong>Derechos Reservados --}}
     </div>
-    Copyright ©
+    {{-- Copyright © --}}
 
     @php
-        echo date('Y');
+        // echo date('Y');
     @endphp
 
-    <a href="{{ substr(url('/'), 0, -11) }}">Agroesco</a></strong>
+    {{-- <a href="{{ substr(url('/'), 0, -11) }}">Agroesco</a></strong> --}}
 </footer>
